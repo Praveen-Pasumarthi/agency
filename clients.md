@@ -20,6 +20,8 @@ Use this file to track all prospects, leads, and active clients.
 
 ## Active Leads
 
+> Last updated: July 25, 2026
+
 | # | Business Name | Type | Location | Status | Contact | Website Quality | Notes |
 |---|--------------|------|----------|--------|---------|----------------|-------|
 | 1 | Zamindari Restaurant | Restaurant | Maharani Peta, Vizag | Prospect | +91 99515 22111 | @zamindari_restaurant | None | 4.4/5, 3,500 reviews. Colonial-style Andhra cuisine. No website. Instagram: @zamindari_restaurant |
