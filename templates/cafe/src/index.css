@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --primary: #92400e;
+  --secondary: #78350f;
+  --accent: #d97706;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.bg-gradient-cafe {
+  background: linear-gradient(135deg, #451a03 0%, #78350f 50%, #92400e 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(146, 64, 14, 0.2);
+}

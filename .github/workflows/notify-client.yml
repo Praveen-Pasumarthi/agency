@@ -9,13 +9,67 @@ on:
       - master
 
 jobs:
-  send-email:
+  update-and-notify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get changed content
+        id: changes
+        run: |
+          NEW_LINES=$(git diff HEAD~1 HEAD -- clients.md | grep "^+" | grep -v "^+++" | sed 's/^+//' | grep "^|" || true)
+          echo "new_lines<<EOF" >> $GITHUB_OUTPUT
+          echo "$NEW_LINES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Generate outreach templates
+        if: steps.changes.outputs.new_lines != ''
+        run: |
+          echo "" >> outreach/generated-outreach.md
+          echo "---" >> outreach/generated-outreach.md
+          echo "## Auto-generated on $(date +'%Y-%m-%d %H:%M')" >> outreach/generated-outreach.md
+          echo "" >> outreach/generated-outreach.md
+          
+          echo "${{ steps.changes.outputs.new_lines }}" | while IFS='|' read -r num name type location status contact website notes; do
+            name=$(echo $name | xargs)
+            type=$(echo $type | xargs)
+            location=$(echo $location | xargs)
+            contact=$(echo $contact | xargs)
+            
+            if [ -n "$name" ]; then
+              echo "### $name" >> outreach/generated-outreach.md
+              echo "- **Type:** $type" >> outreach/generated-outreach.md
+              echo "- **Location:** $location" >> outreach/generated-outreach.md
+              echo "- **Contact:** $contact" >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "**Subject:** Upgrade Your Online Presence - $name" >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "Hi team at $name," >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "I came across $name and was impressed by your reviews. I help businesses like yours build modern websites that attract more customers." >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "Would you be open to a quick chat about improving your online presence?" >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "Best," >> outreach/generated-outreach.md
+              echo "Praveen" >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+              echo "---" >> outreach/generated-outreach.md
+              echo "" >> outreach/generated-outreach.md
+            fi
+          done
+
+      - name: Commit outreach updates
+        if: steps.changes.outputs.new_lines != ''
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add outreach/generated-outreach.md
+          git diff --staged --quiet || git commit -m "Auto-update outreach templates for new clients"
+          git push
 
       - name: Get commit info
         id: info
@@ -31,16 +85,16 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_ADDRESS }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Client List Updated - Praveen Dev"
+          subject: "New Client Added - Praveen Dev"
           to: ${{ secrets.EMAIL_ADDRESS }}, ${{ secrets.COLLABORATOR_EMAIL }}
           from: ${{ secrets.EMAIL_ADDRESS }}
           body: |
-            The client list was updated!
+            New client(s) added to the pipeline!
 
-            Commit: ${{ steps.info.outputs.message }}
-            Author: ${{ steps.info.outputs.author }}
-            View changes: ${{ steps.info.outputs.commit_url }}
-            View full list: https://github.com/${{ github.repository }}/blob/main/clients.md
+            Changes: ${{ steps.info.outputs.commit_url }}
+            Outreach templates auto-generated.
+
+            View clients: https://github.com/${{ github.repository }}/blob/main/clients.md
+            View outreach: https://github.com/${{ github.repository }}/blob/main/outreach/generated-outreach.md
 
             - Praveen Dev Agency
-            built with love
