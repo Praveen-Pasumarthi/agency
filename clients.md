@@ -20,7 +20,7 @@ Use this file to track all prospects, leads, and active clients.
 
 ## Active Leads
 
-> Last updated: July 25, 2026 - Testing email notifications
+> Last updated: July 25, 2026 - Testing email notifications v2
 
 | # | Business Name | Type | Location | Status | Contact | Website Quality | Notes |
 |---|--------------|------|----------|--------|---------|----------------|-------|
