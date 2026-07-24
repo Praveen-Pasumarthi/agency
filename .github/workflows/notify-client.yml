@@ -17,33 +17,29 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Get changed content
-        id: changes
+      - name: Get commit info
+        id: info
         run: |
-          git diff HEAD~1 HEAD -- clients.md > changes.txt
-          NEW_LINES=$(git diff HEAD~1 HEAD -- clients.md | grep "^+" | grep -v "^+++" | sed 's/^+//' || true)
-          echo "new_lines<<EOF" >> $GITHUB_OUTPUT
-          echo "$NEW_LINES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          echo "author=$(git log -1 --format='%an')" >> $GITHUB_OUTPUT
+          echo "message=$(git log -1 --format='%s')" >> $GITHUB_OUTPUT
+          echo "commit_url=https://github.com/${{ github.repository }}/commit/${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3
-        if: steps.changes.outputs.new_lines != ''
         with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_ADDRESS }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "New Client Added to Pipeline - Praveen Dev"
+          subject: "Client List Updated - Praveen Dev"
           to: ${{ secrets.EMAIL_ADDRESS }}, ${{ secrets.COLLABORATOR_EMAIL }}
           from: ${{ secrets.EMAIL_ADDRESS }}
           body: |
-            New client(s) added to the pipeline!
+            The client list was updated!
 
-            Changed entries:
-            ${{ steps.changes.outputs.new_lines }}
-
-            ---
-            View full client list: https://github.com/${{ github.repository }}/blob/main/clients.md
+            Commit: ${{ steps.info.outputs.message }}
+            Author: ${{ steps.info.outputs.author }}
+            View changes: ${{ steps.info.outputs.commit_url }}
+            View full list: https://github.com/${{ github.repository }}/blob/main/clients.md
 
             - Praveen Dev Agency
