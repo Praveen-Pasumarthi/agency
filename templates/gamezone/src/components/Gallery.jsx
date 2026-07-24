@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
+import { Gamepad2, Car, Box, Swords, Eye, Joystick } from 'lucide-react'
 
-const images = [
-  '/gallery-1.jpg',
-  '/gallery-2.jpg',
-  '/gallery-3.jpg',
-  '/gallery-4.jpg',
-  '/gallery-5.jpg',
-  '/gallery-6.jpg',
+const items = [
+  { icon: Eye, name: 'VR Zone', gradient: 'from-purple-500 to-indigo-600' },
+  { icon: Gamepad2, name: 'Arcade', gradient: 'from-cyan-500 to-blue-600' },
+  { icon: Car, name: 'Bumper Cars', gradient: 'from-yellow-500 to-orange-600' },
+  { icon: Box, name: '5D Cinema', gradient: 'from-pink-500 to-rose-600' },
+  { icon: Swords, name: 'Horror House', gradient: 'from-red-500 to-red-700' },
+  { icon: Joystick, name: 'Bowling', gradient: 'from-green-500 to-emerald-600' },
 ]
 
 export default function Gallery() {
@@ -23,10 +24,11 @@ export default function Gallery() {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img, i) => (
+          {items.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="rounded-2xl overflow-hidden aspect-square">
-              <img src={img} alt={`Gallery ${i + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+              className={`rounded-2xl aspect-square bg-gradient-to-br ${item.gradient} flex flex-col items-center justify-center`}>
+              <item.icon className="h-16 w-16 text-white/80 mb-4" />
+              <p className="text-white font-bold text-lg">{item.name}</p>
             </motion.div>
           ))}
         </div>

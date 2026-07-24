@@ -1,4 +1,4 @@
-import { Baby, Instagram, Facebook, Twitter } from 'lucide-react'
+import { Baby, Heart } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -35,14 +35,14 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors text-sm font-bold">
+                IG
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors text-sm font-bold">
+                FB
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors text-sm font-bold">
+                WA
               </a>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
           <p>&copy; 2026 FunLand Kids Play Zone. All rights reserved.</p>
-          <p className="mt-2">Built with <span className="text-orange-400">Praveen Dev</span></p>
+          <p className="mt-2 flex items-center justify-center gap-1">Built with <Heart className="h-3 w-3 text-orange-400 fill-orange-400" /> by Praveen Dev</p>
         </div>
       </div>
     </footer>

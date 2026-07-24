@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Cake, Music, Gift, Camera } from 'lucide-react'
+import { Cake, Music, Gift, Camera, PartyPopper } from 'lucide-react'
 
 export default function Party() {
   return (
@@ -59,12 +59,15 @@ export default function Party() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-            <div className="bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-3xl p-8 border border-purple-500/30">
-              <img src="/party-zone.jpg" alt="Party Zone" className="rounded-2xl w-full h-80 object-cover" />
-              <div className="absolute -bottom-6 -left-6 bg-gray-800 rounded-2xl p-4 border border-gray-700">
-                <p className="text-2xl font-bold text-purple-400">500+</p>
-                <p className="text-gray-400 text-sm">Parties Hosted</p>
+            <div className="bg-gradient-to-br from-purple-600 to-cyan-600 rounded-3xl p-8 h-80 flex items-center justify-center">
+              <div className="text-center">
+                <PartyPopper className="h-24 w-24 text-white/30 mx-auto mb-4" />
+                <p className="text-white/50 text-lg">Party Zone</p>
               </div>
+            </div>
+            <div className="absolute -bottom-6 -left-6 bg-gray-800 rounded-2xl p-4 border border-gray-700">
+              <p className="text-2xl font-bold text-purple-400">500+</p>
+              <p className="text-gray-400 text-sm">Parties Hosted</p>
             </div>
           </motion.div>
         </div>

@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
+import { Coffee, Cake, Sandwich, Cookie, IceCream, Croissant } from 'lucide-react'
 
-const images = [
-  '/gallery-coffee-1.jpg',
-  '/gallery-coffee-2.jpg',
-  '/gallery-coffee-3.jpg',
-  '/gallery-coffee-4.jpg',
-  '/gallery-coffee-5.jpg',
-  '/gallery-coffee-6.jpg',
+const items = [
+  { icon: Coffee, name: 'Espresso', gradient: 'from-amber-700 to-stone-800' },
+  { icon: Cake, name: 'Cakes', gradient: 'from-pink-600 to-rose-700' },
+  { icon: Sandwich, name: 'Snacks', gradient: 'from-green-600 to-emerald-700' },
+  { icon: Cookie, name: 'Cookies', gradient: 'from-amber-600 to-orange-700' },
+  { icon: IceCream, name: 'Desserts', gradient: 'from-purple-600 to-pink-700' },
+  { icon: Croissant, name: 'Bakes', gradient: 'from-yellow-600 to-amber-700' },
 ]
 
 export default function Gallery() {
@@ -23,10 +24,11 @@ export default function Gallery() {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img, i) => (
+          {items.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="rounded-2xl overflow-hidden aspect-square">
-              <img src={img} alt={`Gallery ${i + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+              className={`rounded-2xl aspect-square bg-gradient-to-br ${item.gradient} flex flex-col items-center justify-center`}>
+              <item.icon className="h-16 w-16 text-white/80 mb-4" />
+              <p className="text-white font-bold text-lg">{item.name}</p>
             </motion.div>
           ))}
         </div>

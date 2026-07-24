@@ -4,7 +4,7 @@ import { Star, Users, Shield } from 'lucide-react'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-400 opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-400 via-pink-400 to-purple-400"></div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

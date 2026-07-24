@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { Slide, Puzzle, Music, TreePine, Gamepad2, Utensils } from 'lucide-react'
+import { Mountain, Puzzle, Music, TreePine, Gamepad2, Utensils } from 'lucide-react'
 
 const activities = [
-  { icon: Slide, name: 'Slides & Climbing', desc: 'Multi-level slides and climbing structures', color: 'from-orange-400 to-red-500' },
+  { icon: Mountain, name: 'Slides & Climbing', desc: 'Multi-level slides and climbing structures', color: 'from-orange-400 to-red-500' },
   { icon: Puzzle, name: 'Soft Play Area', desc: 'Safe padded zone for toddlers', color: 'from-cyan-400 to-blue-500' },
   { icon: Music, name: 'Music Zone', desc: 'Interactive musical instruments', color: 'from-purple-400 to-pink-500' },
   { icon: TreePine, name: 'Ball Pit', desc: 'Thousands of colorful balls to dive in', color: 'from-green-400 to-emerald-500' },

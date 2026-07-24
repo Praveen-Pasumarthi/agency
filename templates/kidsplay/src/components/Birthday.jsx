@@ -41,12 +41,15 @@ export default function Birthday() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-            <div className="bg-gradient-to-br from-orange-100 to-pink-100 rounded-3xl p-8">
-              <img src="/birthday-party.jpg" alt="Birthday Party" className="rounded-2xl w-full h-80 object-cover" />
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-lg">
-                <p className="text-2xl font-bold text-orange-500">500+</p>
-                <p className="text-gray-500 text-sm">Happy Birthdays</p>
+            <div className="bg-gradient-to-br from-orange-400 to-pink-400 rounded-3xl p-8 h-80 flex items-center justify-center">
+              <div className="text-center">
+                <Cake className="h-24 w-24 text-white/30 mx-auto mb-4" />
+                <p className="text-white/50 text-lg">Birthday Zone</p>
               </div>
+            </div>
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-lg">
+              <p className="text-2xl font-bold text-orange-500">500+</p>
+              <p className="text-gray-500 text-sm">Happy Birthdays</p>
             </div>
           </motion.div>
         </div>

@@ -4,8 +4,7 @@ import { Coffee, Star, Clock } from 'lucide-react'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/hero-cafe.jpg')] bg-cover bg-center opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-900/60 to-stone-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-amber-950 to-stone-900"></div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

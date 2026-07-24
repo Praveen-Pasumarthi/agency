@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Leaf, Heart, Truck, Clock } from 'lucide-react'
+import { Leaf, Heart, Truck, Clock, Coffee } from 'lucide-react'
 
 export default function About() {
   return (
@@ -50,8 +50,11 @@ export default function About() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <div className="relative">
-              <img src="/about-cafe.jpg" alt="Our Cafe" className="rounded-3xl w-full h-96 object-cover" />
+            <div className="bg-gradient-to-br from-amber-700 to-stone-700 rounded-3xl p-8 h-96 flex items-center justify-center relative">
+              <div className="text-center">
+                <Coffee className="h-24 w-24 text-white/30 mx-auto mb-4" />
+                <p className="text-white/50 text-lg">Our Space</p>
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-amber-600 text-white rounded-2xl p-6">
                 <p className="text-3xl font-bold">126+</p>
                 <p className="text-sm">Happy Reviews</p>
