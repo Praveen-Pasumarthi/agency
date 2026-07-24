@@ -1,0 +1,49 @@
+name: Notify New Client Added
+
+on:
+  push:
+    paths:
+      - 'clients.md'
+    branches:
+      - main
+      - master
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed content
+        id: changes
+        run: |
+          git diff HEAD~1 HEAD -- clients.md > changes.txt
+          NEW_LINES=$(git diff HEAD~1 HEAD -- clients.md | grep "^+" | grep -v "^+++" | sed 's/^+//' || true)
+          echo "new_lines<<EOF" >> $GITHUB_OUTPUT
+          echo "$NEW_LINES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        if: steps.changes.outputs.new_lines != ''
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_ADDRESS }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New Client Added to Pipeline - Praveen Dev"
+          to: ${{ secrets.EMAIL_ADDRESS }}, ${{ secrets.COLLABORATOR_EMAIL }}
+          from: ${{ secrets.EMAIL_ADDRESS }}
+          body: |
+            New client(s) added to the pipeline!
+
+            Changed entries:
+            ${{ steps.changes.outputs.new_lines }}
+
+            ---
+            View full client list: https://github.com/${{ github.repository }}/blob/main/clients.md
+
+            - Praveen Dev Agency
