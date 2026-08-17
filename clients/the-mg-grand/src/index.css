@@ -7,6 +7,7 @@
   --color-surface-dark: #1a1a1a;
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
+
 }
 
 @custom-variant dark (&:is(.dark *));
