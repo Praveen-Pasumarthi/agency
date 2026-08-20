@@ -11,7 +11,7 @@ This is a **freelance web agency workspace** for building premium websites for l
 
 - **7 reusable templates** under `templates/`
 - **Client scaffolding script** under `scripts/`
-- **Business docs** (plan, proposals, outreach, checklists)
+- **Business docs** (plan, checklists, prompts)
 - **1 live client** under `clients/` (The MG Grand — restaurant)
 
 **Goal:** Land paying clients quickly by offering premium websites at ₹8,000–₹20,000, then scale to recurring revenue (maintenance, SEO, booking systems).
@@ -53,9 +53,9 @@ agency/
 │   ├── create-client.ps1       # PowerShell scaffolding script (Windows)
 │   └── create-client.sh        # Bash scaffolding script (Linux/Mac)
 ├── portfolio/                  # Freelancer's own portfolio site
-├── proposals/                  # Client proposals
-├── outreach/                   # Outreach message templates
 ├── plan.md                     # 30-day business plan
+├── redesign-plan.md            # Template redesign plan (GSAP + unique layouts)
+├── notes.md                    # AI session context notes
 ├── todo.md                     # Task tracker
 ├── checklists.md               # Delivery checklists
 ├── formsubmit-setup.md         # FormSubmit reference
@@ -181,6 +181,8 @@ Each form also includes:
 | `templates/<name>/vite.config.js` | Vite config (identical across all) |
 | `scripts/create-client.ps1` | Client scaffolding |
 | `plan.md` | Full business plan |
+| `redesign-plan.md` | Template redesign plan (GSAP + unique layouts) |
+| `notes.md` | AI session context notes |
 | `checklists.md` | Delivery checklists |
 | `formsubmit-setup.md` | FormSubmit reference |
 | `prompts.md` | AI prompt library |
@@ -227,3 +229,15 @@ Each client project deploys independently:
 - **Maintenance:** ₹500–₹2,000/month recurring
 - **Outreach:** WhatsApp + Instagram DMs, personalized messages
 - **Process:** Research → Demo → Proposal → 50% advance → Build → Deploy → Collect balance → Testimonial
+
+---
+
+## 13. Template Redesign (In Progress)
+
+Full redesign of all 7 templates with unique layouts + GSAP animations. See `redesign-plan.md` for details.
+
+- **Why:** Current templates all look the same — need differentiation
+- **Tech:** Adding GSAP for scroll-driven animations, keeping Framer Motion for UI
+- **Backup:** Old templates will be copied to `templates-backup/` before changes
+- **Status:** Planned — ready to implement
+- **Read `notes.md` first** in any new session to get current context
