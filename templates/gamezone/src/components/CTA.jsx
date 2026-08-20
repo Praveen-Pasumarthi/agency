@@ -1,7 +1,45 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, MapPin, Clock } from 'lucide-react'
+import { Phone, MapPin, Clock, CheckCircle, Loader2 } from 'lucide-react'
+
+const FORM_ENDPOINT = 'https://formsubmit.co/yourgmail@gmail.com'
 
 export default function CTA() {
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [form, setForm] = useState({ name: '', phone: '', date: '', package: '' })
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+
+    try {
+      const formData = new FormData()
+      Object.entries(form).forEach(([key, value]) => {
+        formData.append(key, value)
+      })
+      formData.append('_gotcha', '')
+
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!response.ok) throw new Error('Submission failed')
+
+      setSubmitted(true)
+      setForm({ name: '', phone: '', date: '', package: '' })
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -41,21 +79,46 @@ export default function CTA() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <form className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50">
-                <h3 className="text-2xl font-bold mb-6">Book a Party</h3>
-                <input type="text" placeholder="Your Name" className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-                <input type="date" className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500" />
-                <select className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-                  <option>Select Package</option>
-                  <option>Birthday Party</option>
-                  <option>Corporate Event</option>
-                  <option>Group Booking</option>
-                </select>
-                <button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-xl font-bold transition-all">
-                  Send Inquiry
-                </button>
-              </form>
+              {submitted ? (
+                <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 text-center">
+                  <CheckCircle className="mx-auto text-green-500 mb-4" size={48} />
+                  <h3 className="text-2xl font-bold mb-2">Inquiry Sent!</h3>
+                  <p className="text-gray-400">We&apos;ll get back to you shortly. Get ready to play!</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50">
+                  <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off"
+                    style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true" />
+                  <h3 className="text-2xl font-bold mb-6">Book a Party</h3>
+                  <input type="text" name="name" required value={form.name} onChange={handleChange}
+                    placeholder="Your Name" className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+                  <input type="tel" name="phone" required value={form.phone} onChange={handleChange}
+                    placeholder="Phone Number" className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+                  <input type="date" name="date" required value={form.date} onChange={handleChange}
+                    className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500" />
+                  <select name="package" required value={form.package} onChange={handleChange}
+                    className="w-full bg-gray-700/50 rounded-xl px-4 py-3 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <option value="">Select Package</option>
+                    <option value="birthday">Birthday Party</option>
+                    <option value="corporate">Corporate Event</option>
+                    <option value="group">Group Booking</option>
+                  </select>
+                  {error && (
+                    <p className="text-sm text-red-400 bg-red-900/20 rounded-xl px-4 py-3 mb-4">{error}</p>
+                  )}
+                  <button type="submit" disabled={loading}
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                    {loading ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 size={18} className="animate-spin" />
+                        Sending...
+                      </span>
+                    ) : (
+                      'Send Inquiry'
+                    )}
+                  </button>
+                </form>
+              )}
             </motion.div>
           </div>
         </div>

@@ -1,18 +1,45 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { User, Mail, Phone, CheckCircle } from 'lucide-react'
+import { User, Mail, Phone, CheckCircle, Loader2 } from 'lucide-react'
 import { useInView } from './useInView'
+
+const FORM_ENDPOINT = 'https://formsubmit.co/yourgmail@gmail.com'
 
 export default function FreeTrial() {
   const [ref, isInView] = useInView(0.1)
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', email: '', phone: '', goal: '' })
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+
+    try {
+      const formData = new FormData()
+      Object.entries(form).forEach(([key, value]) => {
+        formData.append(key, value)
+      })
+      formData.append('_gotcha', '')
+
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!response.ok) throw new Error('Submission failed')
+
+      setSubmitted(true)
+      setForm({ name: '', email: '', phone: '', goal: '' })
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -57,6 +84,8 @@ export default function FreeTrial() {
             onSubmit={handleSubmit}
             className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-12"
           >
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off"
+              style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true" />
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium dark:text-gray-300 mb-2">Full Name</label>
@@ -121,11 +150,22 @@ export default function FreeTrial() {
             </div>
 
             <div className="mt-8 text-center">
+              {error && (
+                <p className="text-sm text-red-500 bg-red-50 dark:bg-red-900/20 rounded-xl px-4 py-3 mb-4">{error}</p>
+              )}
               <button
                 type="submit"
-                className="px-10 py-4 bg-brand text-white font-bold tracking-wider uppercase text-sm rounded-full hover:bg-brand-dark transition-all duration-300 hover:shadow-lg hover:shadow-brand/20"
+                disabled={loading}
+                className="px-10 py-4 bg-brand text-white font-bold tracking-wider uppercase text-sm rounded-full hover:bg-brand-dark transition-all duration-300 hover:shadow-lg hover:shadow-brand/20 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Claim Free Trial
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 size={18} className="animate-spin" />
+                    Sending...
+                  </span>
+                ) : (
+                  'Claim Free Trial'
+                )}
               </button>
             </div>
           </motion.form>

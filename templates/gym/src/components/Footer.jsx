@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-black text-gray-400 pt-20 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Dumbbell className="text-brand" size={24} />
@@ -45,23 +45,6 @@ export default function Footer() {
             </div>
           ))}
 
-          <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-6">Newsletter</h4>
-            <p className="text-sm mb-4">Get fitness tips and exclusive offers.</p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-2.5 bg-white/5 border border-white/10 rounded-l-full text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand"
-              />
-              <button
-                type="submit"
-                className="px-5 py-2.5 bg-brand text-white text-sm font-medium rounded-r-full hover:bg-brand-dark transition-colors"
-              >
-                Join
-              </button>
-            </form>
-          </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
