@@ -29,7 +29,7 @@ This is a **freelance web agency workspace** for building premium websites for l
 | Icons | Lucide React |
 | Forms | FormSubmit (free, no API key) |
 | Linting | OxLint |
-| Deployment | Netlify / Vercel / GitHub Pages |
+| Deployment | Cloudflare Pages / Hostinger |
 
 No routing — single-page apps with anchor links. Dark mode via `.dark` class + `localStorage`.
 
@@ -216,7 +216,7 @@ To view a client: `cd clients/<name> && npm run dev`
 
 Each client project deploys independently:
 - `npm run build` → creates `dist/`
-- Deploy `dist/` to Netlify/Vercel/GitHub Pages
+- Deploy `dist/` to Cloudflare Pages or Hostinger
 - Connect custom domain if client has one
 - SSL is automatic on all platforms
 
