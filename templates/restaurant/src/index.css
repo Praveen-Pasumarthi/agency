@@ -2,14 +2,13 @@
 
 @theme {
   --color-brand: #c8a97e;
-  --color-brand-dark: #b8956a;
-  --color-surface: #faf8f5;
-  --color-surface-dark: #1a1a1a;
+  --color-brand-dark: #a8895e;
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #141414;
+  --color-surface-hover: #1a1a1a;
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
 }
-
-@custom-variant dark (&:is(.dark *));
 
 @layer base {
   html {
@@ -18,11 +17,21 @@
   body {
     font-family: var(--font-body);
     background-color: var(--color-surface);
-    color: #111827;
-    transition: background-color 0.3s, color 0.3s;
+    color: #e5e5e5;
+    overflow-x: hidden;
   }
-  .dark body {
-    background-color: var(--color-surface-dark);
-    color: #f3f4f6;
+  ::selection {
+    background-color: var(--color-brand);
+    color: #0a0a0a;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
