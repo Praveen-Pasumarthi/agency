@@ -9,12 +9,10 @@
   --color-accent: #d97706;
   --color-accent-light: #f59e0b;
   --color-emergency: #dc2626;
-  --color-surface: #f0fdf4;
-  --color-surface-dark: #0a0f1a;
+  --color-surface: #ffffff;
+  --font-heading: "Playfair Display", serif;
   --font-body: "DM Sans", sans-serif;
 }
-
-@custom-variant dark (&:is(.dark *));
 
 @layer base {
   html {
@@ -25,10 +23,6 @@
     background-color: var(--color-surface);
     color: #1e293b;
     transition: background-color 0.3s, color 0.3s;
-  }
-  .dark body {
-    background-color: var(--color-surface-dark);
-    color: #e2e8f0;
   }
 }
 

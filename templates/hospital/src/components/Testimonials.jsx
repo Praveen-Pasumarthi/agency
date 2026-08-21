@@ -30,7 +30,7 @@ export default function Testimonials() {
   const [ref, isInView] = useInView(0.05)
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="testimonials" className="py-24 sm:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -46,7 +46,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight"
+            className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight"
           >
             Trusted by <span className="text-gradient">thousands</span>
           </motion.h2>
@@ -60,7 +60,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.12 }}
-              className={`relative mb-6 last:mb-0 p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 ${
+              className={`relative mb-6 last:mb-0 p-8 rounded-2xl bg-gray-50 border border-gray-100 ${
                 i === 0 ? 'ml-0 mr-0' : i === 1 ? 'ml-8 sm:ml-12' : 'ml-16 sm:ml-24'
               }`}
               style={{ zIndex: i }}
@@ -79,14 +79,14 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">{t.text}</p>
+                  <p className="text-gray-600 leading-relaxed mb-5">{t.text}</p>
 
                   <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm`}>
                       {t.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 dark:text-white text-sm">{t.name}</div>
+                      <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
                       <div className="text-xs text-brand">{t.treatment}</div>
                     </div>
                   </div>

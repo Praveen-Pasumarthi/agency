@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Departments from './components/Departments'
@@ -13,21 +11,9 @@ import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
-  const [dark, setDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark'
-    }
-    return false
-  })
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
-
   return (
     <div className="min-h-screen">
-      <Navbar dark={dark} setDark={setDark} />
+      <Navbar />
       <Hero />
       <Departments />
       <Doctors />

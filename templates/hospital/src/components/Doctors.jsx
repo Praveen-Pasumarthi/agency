@@ -14,7 +14,7 @@ export default function Doctors() {
   const [ref, isInView] = useInView(0.05)
 
   return (
-    <section id="doctors" className="relative py-24 sm:py-32 bg-surface dark:bg-surface-dark transition-colors duration-300">
+    <section id="doctors" className="relative py-24 sm:py-32 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left — sticky label + heading */}
@@ -32,7 +32,7 @@ export default function Doctors() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-4"
+                className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4"
               >
                 Meet our
                 <br />
@@ -42,7 +42,7 @@ export default function Doctors() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed"
+                className="text-gray-500 text-lg leading-relaxed"
               >
                 Our doctors bring decades of experience across every major specialty,
                 delivering personalized, evidence-based care.
@@ -54,7 +54,7 @@ export default function Doctors() {
                 className="mt-6"
               >
                 <span className="text-5xl font-bold text-brand">50+</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 block mt-1">Expert Doctors</span>
+                <span className="text-sm text-gray-500 block mt-1">Expert Doctors</span>
               </motion.div>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Doctors() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.08 }}
-                className={`group rounded-2xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-brand/30 transition-all duration-300 ${
+                className={`group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-brand/30 transition-all duration-300 ${
                   i % 3 === 0 ? 'sm:row-span-1' : ''
                 }`}
               >
@@ -83,10 +83,10 @@ export default function Doctors() {
                 <div className="p-5">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white">{doc.name}</h3>
+                      <h3 className="font-bold text-gray-900">{doc.name}</h3>
                       <p className="text-brand text-sm font-medium">{doc.specialty}</p>
                     </div>
-                    <span className="text-xs text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full whitespace-nowrap">{doc.exp}</span>
+                    <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap">{doc.exp}</span>
                   </div>
                   <p className="text-xs text-gray-400 mt-1">{doc.qual}</p>
                 </div>

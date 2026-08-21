@@ -25,7 +25,7 @@ export default function Departments() {
   }
 
   return (
-    <section id="departments" className="relative py-24 sm:py-32 bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden">
+    <section id="departments" className="relative py-24 sm:py-32 bg-white overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand via-brand-light to-accent" />
 
@@ -45,7 +45,7 @@ export default function Departments() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight"
+              className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight"
             >
               Find the right care
               <br />
@@ -62,14 +62,14 @@ export default function Departments() {
           >
             <button
               onClick={() => scroll('left')}
-              className="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:border-brand hover:text-brand transition-all"
+              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-brand hover:text-brand transition-all"
               aria-label="Scroll left"
             >
               <ChevronLeft size={18} />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:border-brand hover:text-brand transition-all"
+              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-brand hover:text-brand transition-all"
               aria-label="Scroll right"
             >
               <ChevronRight size={18} />
@@ -99,13 +99,13 @@ export default function Departments() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
-                className="w-64 flex-shrink-0 p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 group hover:bg-brand hover:border-brand transition-all duration-500 cursor-pointer"
+                className="w-64 flex-shrink-0 p-6 rounded-2xl bg-gray-50 border border-gray-100 group hover:bg-brand hover:border-brand transition-all duration-500 cursor-pointer"
               >
                 <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
                   <Icon size={22} className="text-brand group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-white transition-colors">{dept.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed group-hover:text-white/80 transition-colors">{dept.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-white transition-colors">{dept.name}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed group-hover:text-white/80 transition-colors">{dept.desc}</p>
               </motion.div>
             )
           })}

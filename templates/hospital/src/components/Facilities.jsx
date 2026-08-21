@@ -17,7 +17,7 @@ export default function Facilities() {
   const [ref, isInView] = useInView(0.05)
 
   return (
-    <section id="facilities" className="relative py-24 sm:py-32 bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden">
+    <section id="facilities" className="relative py-24 sm:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Editorial heading */}
         <div className="text-center mb-20">
@@ -33,7 +33,7 @@ export default function Facilities() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight"
+            className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight"
           >
             Built for <span className="text-gradient">excellence</span>
           </motion.h2>
@@ -50,7 +50,7 @@ export default function Facilities() {
                 initial={{ opacity: 0, x: isEven ? -40 : 40 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                className={`flex items-center gap-6 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-brand/20 dark:hover:border-brand/20 transition-all duration-300 ${
+                className={`flex items-center gap-6 p-6 rounded-2xl border border-gray-100 hover:border-brand/20 transition-all duration-300 ${
                   isEven ? '' : 'sm:flex-row-reverse'
                 }`}
               >
@@ -58,8 +58,8 @@ export default function Facilities() {
                   <Icon size={26} className="text-brand" />
                 </div>
                 <div className={isEven ? '' : 'sm:text-right'}>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{fac.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{fac.desc}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{fac.title}</h3>
+                  <p className="text-sm text-gray-500">{fac.desc}</p>
                 </div>
               </motion.div>
             )

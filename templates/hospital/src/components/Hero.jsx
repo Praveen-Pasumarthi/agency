@@ -1,145 +1,163 @@
-import { motion } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import gsap from 'gsap'
 import { ArrowRight, HeartPulse, ShieldCheck, Award } from 'lucide-react'
 
 export default function Hero() {
+  const sectionRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start']
+  })
+
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -150])
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 0.5 })
+
+      tl.from('.hero-line', {
+        scaleX: 0,
+        duration: 1.2,
+        ease: 'power4.inOut'
+      })
+      .from('.hero-title-char', {
+        opacity: 0,
+        y: 120,
+        rotateX: -90,
+        stagger: 0.04,
+        duration: 1.4,
+        ease: 'power4.out'
+      }, '-=0.6')
+      .from('.hero-sub', {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=0.8')
+      .from('.hero-cta', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .from('.hero-scroll', {
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.3')
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
+  const titleWords = ['Your', 'Health,', 'Our', 'Priority']
+
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background — editorial split */}
-      <div className="absolute inset-0 bg-surface dark:bg-surface-dark" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand/5 to-transparent dark:from-brand/8 hidden lg:block" />
+    <section
+      ref={sectionRef}
+      id="home"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <motion.div style={{ scale }} className="absolute inset-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80"
+        >
+          <source src="/assets/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-white/60" />
+      </motion.div>
 
-      {/* Dot pattern */}
-      <div className="absolute inset-0 dot-grid opacity-50 dark:opacity-20" />
+      <div className="absolute top-20 left-8 lg:left-20 w-px h-32 bg-gradient-to-b from-transparent via-brand/40 to-transparent" />
+      <div className="absolute bottom-32 right-8 lg:right-20 w-px h-32 bg-gradient-to-b from-transparent via-brand/40 to-transparent" />
+      <div className="absolute top-1/2 left-8 lg:left-20 -translate-y-1/2 hidden lg:block">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-navy/30 [writing-mode:vertical-lr] rotate-180">
+          Est. 2009 — Medical Excellence
+        </p>
+      </div>
 
-      {/* Floating accent shapes */}
       <motion.div
-        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-        transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
-        className="absolute top-32 right-[15%] w-20 h-20 rounded-3xl bg-brand/10 border border-brand/20 hidden lg:block"
-      />
-      <motion.div
-        animate={{ y: [0, 15, 0], rotate: [0, -3, 0] }}
-        transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut', delay: 1 }}
-        className="absolute bottom-40 right-[10%] w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 hidden lg:block"
-      />
+        style={{ y: textY, opacity }}
+        className="relative z-10 text-center px-6 max-w-[1200px] mx-auto"
+      >
+        <div className="hero-line w-16 h-px bg-brand mx-auto mb-8 origin-center" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
-          {/* Left — editorial text */}
-          <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <div className="h-px w-12 bg-brand" />
-              <span className="text-brand text-sm font-semibold tracking-[0.2em] uppercase">
-                Trusted Since 2009
+        <h1 className="mb-8 perspective-[1000px] pb-4">
+          {titleWords.map((word, wi) => (
+            <span key={wi} className="inline-block">
+              <span className="hero-title-word inline-block">
+                {word.split('').map((char, ci) => (
+                  <span
+                    key={ci}
+                    className="hero-title-char inline-block font-[family-name:var(--font-heading)] text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.9] tracking-tight"
+                    style={{ color: wi === 3 ? 'var(--color-brand)' : 'var(--color-navy)' }}
+                  >
+                    {char}
+                  </span>
+                ))}
+                {wi < titleWords.length - 1 && (
+                  <span className="hero-title-char inline-block font-[family-name:var(--font-heading)] text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.9] text-navy/30 mx-3 sm:mx-5">
+                    &nbsp;
+                  </span>
+                )}
               </span>
-            </motion.div>
+            </span>
+          ))}
+        </h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="heading-editorial text-navy dark:text-white mb-6"
-            >
-              Your Health,{' '}
-              <br className="hidden sm:block" />
-              Our <span className="text-gradient italic">Priority</span>
-            </motion.h1>
+        <p className="hero-sub text-lg sm:text-xl text-gray-600 max-w-xl mx-auto mb-12 leading-relaxed font-light tracking-wide">
+          A team of 50+ specialists delivering advanced medical care
+          with compassion. From routine checkups to complex surgeries.
+        </p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              className="text-lg text-gray-500 dark:text-gray-400 max-w-lg mb-10 leading-relaxed"
-            >
-              A team of 50+ specialists delivering advanced medical care
-              with compassion. From routine checkups to complex surgeries —
-              we're here for every step of your journey.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex flex-wrap gap-4 mb-14"
-            >
-              <a
-                href="#appointment"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-brand text-white font-semibold rounded-full hover:bg-brand-dark transition-all duration-300 hover:shadow-xl hover:shadow-brand/25"
-              >
-                Book Appointment
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#departments"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:border-brand hover:text-brand transition-all duration-300"
-              >
-                Explore Departments
-              </a>
-            </motion.div>
-
-            {/* Trust badges — inline row */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.75 }}
-              className="flex flex-wrap gap-6"
-            >
-              {[
-                { icon: HeartPulse, text: '10,000+ Patients Treated' },
-                { icon: ShieldCheck, text: 'NABH Accredited' },
-                { icon: Award, text: '15+ Years of Care' },
-              ].map((badge) => {
-                const Icon = badge.icon
-                return (
-                  <div key={badge.text} className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    <Icon size={16} className="text-brand" />
-                    <span>{badge.text}</span>
-                  </div>
-                )
-              })}
-            </motion.div>
-          </div>
-
-          {/* Right — large stat visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="lg:col-span-5 hidden lg:flex items-center justify-center"
+        <div className="hero-cta flex flex-wrap justify-center gap-4 mb-14">
+          <a
+            href="#appointment"
+            className="group inline-flex items-center gap-4 px-10 py-5 border border-brand/30 text-brand text-sm font-medium tracking-[0.2em] uppercase hover:bg-brand hover:text-white transition-all duration-700"
           >
-            <div className="relative w-full max-w-sm">
-              {/* Main stat circle */}
-              <div className="aspect-square rounded-full bg-gradient-to-br from-brand/10 to-brand/5 dark:from-brand/15 dark:to-brand/5 border border-brand/10 flex flex-col items-center justify-center">
-                <span className="text-7xl font-bold text-brand mb-1">50+</span>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400 tracking-wide uppercase">Expert Doctors</span>
-              </div>
-
-              {/* Floating mini cards */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand/5 border border-gray-100 dark:border-gray-800"
-              >
-                <div className="text-2xl font-bold text-navy dark:text-white">20+</div>
-                <div className="text-xs text-gray-500">Departments</div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute -bottom-2 -left-6 bg-white dark:bg-gray-900 rounded-2xl px-4 py-3 shadow-xl shadow-brand/5 border border-gray-100 dark:border-gray-800"
-              >
-                <div className="text-2xl font-bold text-brand">24/7</div>
-                <div className="text-xs text-gray-500">Emergency Care</div>
-              </motion.div>
-            </div>
-          </motion.div>
+            Book Appointment
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#departments"
+            className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-brand hover:text-brand transition-all duration-300"
+          >
+            Explore Departments
+          </a>
         </div>
+
+        <div className="hero-cta flex flex-wrap justify-center gap-6">
+          {[
+            { icon: HeartPulse, text: '10,000+ Patients Treated' },
+            { icon: ShieldCheck, text: 'NABH Accredited' },
+            { icon: Award, text: '15+ Years of Care' },
+          ].map((badge) => {
+            const Icon = badge.icon
+            return (
+              <div key={badge.text} className="flex items-center gap-2 text-sm text-gray-600">
+                <Icon size={16} className="text-brand" />
+                <span>{badge.text}</span>
+              </div>
+            )
+          })}
+        </div>
+      </motion.div>
+
+      <div className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-navy/40">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+          className="w-px h-10 bg-gradient-to-b from-brand/60 to-transparent"
+        />
       </div>
     </section>
   )

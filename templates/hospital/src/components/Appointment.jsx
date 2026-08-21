@@ -48,12 +48,12 @@ export default function Appointment() {
   }
 
   return (
-    <section id="appointment" className="relative py-24 sm:py-32 bg-surface dark:bg-surface-dark transition-colors duration-300">
+    <section id="appointment" className="relative py-24 sm:py-32 bg-white">
       {/* Full-bleed accent stripe */}
-      <div className="absolute inset-0 dot-grid opacity-30 dark:opacity-10" />
+      <div className="absolute inset-0 dot-grid opacity-30" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-gray-100">
           {/* Left — info panel with dark bg */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -104,15 +104,15 @@ export default function Appointment() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white dark:bg-gray-900 p-10 sm:p-12"
+            className="bg-white p-10 sm:p-12"
           >
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center">
                 <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mb-4">
                   <CheckCircle size={32} className="text-brand" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Request Received!</h3>
-                <p className="text-gray-500 dark:text-gray-400">We'll confirm your appointment within 2 hours.</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Received!</h3>
+                <p className="text-gray-500">We'll confirm your appointment within 2 hours.</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-6 px-6 py-2 text-brand font-medium hover:underline"
@@ -129,39 +129,39 @@ export default function Appointment() {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Full Name *</label>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Full Name *</label>
                     <div className="relative">
                       <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input type="text" name="name" required value={form.name} onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
                         placeholder="John Doe" />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Phone *</label>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Phone *</label>
                     <div className="relative">
                       <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input type="tel" name="phone" required value={form.phone} onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
                         placeholder="+91 98765 43210" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Email</label>
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Email</label>
                   <div className="relative">
                     <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input type="email" name="email" value={form.email} onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm"
                       placeholder="john@example.com" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Department *</label>
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Department *</label>
                   <select name="department" required value={form.department} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm">
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm">
                     <option value="">Select department</option>
                     {departments.map(d => <option key={d} value={d}>{d}</option>)}
                   </select>
@@ -169,29 +169,29 @@ export default function Appointment() {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Date *</label>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Date *</label>
                     <div className="relative">
                       <Calendar size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input type="date" name="date" required value={form.date} onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm" />
+                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm" />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Time *</label>
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Time *</label>
                     <div className="relative">
                       <Clock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input type="time" name="time" required value={form.time} onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm" />
+                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all text-sm" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Message (Optional)</label>
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Message (Optional)</label>
                   <div className="relative">
                     <MessageSquare size={16} className="absolute left-3 top-3 text-gray-400" />
                     <textarea name="message" rows={3} value={form.message} onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all resize-none text-sm"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all resize-none text-sm"
                       placeholder="Describe your symptoms or concerns..." />
                   </div>
                 </div>

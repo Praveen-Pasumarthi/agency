@@ -13,7 +13,7 @@ export default function Contact() {
   const [ref, isInView] = useInView(0.05)
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="contact" className="py-24 sm:py-32 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -29,7 +29,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
           >
             Get in <span className="text-gradient">Touch</span>
           </motion.h2>
@@ -37,7 +37,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 dark:text-gray-400 text-lg"
+            className="text-gray-500 text-lg"
           >
             We're here to help. Reach out for appointments, emergencies, or general inquiries.
           </motion.p>
@@ -54,13 +54,13 @@ export default function Contact() {
             {info.map((item) => {
               const Icon = item.icon
               return (
-                <div key={item.label} className="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-brand/30 dark:hover:border-brand/30 transition-all duration-300">
+                <div key={item.label} className="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 hover:border-brand/30 transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
                     <Icon size={20} className="text-brand" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-0.5">{item.label}</div>
-                    <div className="text-gray-900 dark:text-white font-medium">{item.value}</div>
+                    <div className="text-sm font-medium text-gray-500 mb-0.5">{item.label}</div>
+                    <div className="text-gray-900 font-medium">{item.value}</div>
                   </div>
                 </div>
               )
@@ -72,7 +72,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800"
+            className="rounded-2xl overflow-hidden border border-gray-100"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d83.3!3d17.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
