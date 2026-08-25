@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOTNEKT — Premium Web Studio</title>
+  <meta name="description" content="DOTNEKT — Premium web development studio crafting fast, beautiful websites for local businesses.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">DOTNEKT</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Get in Touch</a>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-label">Web Development & Design Studio</div>
+        <h1 class="hero-title">
+          <span class="line">Websites</span>
+          <span class="line line--italic">that</span>
+          <span class="line line--bold">Stand Out</span>
+        </h1>
+        <p class="hero-sub">
+          We craft premium, high-performance websites for restaurants, gyms, cafes, 
+          and local businesses. Modern design meets conversion — turning visitors into customers.
+        </p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn--fill">See Our Work</a>
+          <a href="#contact" class="btn btn--line">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about">
+          <div class="about-left">
+            <span class="section-label">01 — About</span>
+            <h2 class="section-title">Building the web,<br>one pixel at a time</h2>
+          </div>
+          <div class="about-right">
+            <p class="about-lead">
+              We're DOTNEKT — a web development studio helping local businesses go digital 
+              with fast, beautiful, and conversion-focused websites.
+            </p>
+            <p class="about-body">
+              From restaurants to gyms, cafes to clinics — we turn your vision into a premium 
+              online presence that attracts customers and builds trust.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-num">7+</span>
+                <span class="stat-label">Templates Built</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">₹8K+</span>
+                <span class="stat-label">Starting Price</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Responsive</span>
+              </div>
+            </div>
+            <div class="tech">
+              <span class="tech-label">Our Stack</span>
+              <div class="tech-list">
+                <span>React</span>
+                <span>Vite</span>
+                <span>Tailwind</span>
+                <span>GSAP</span>
+                <span>Framer Motion</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--dark" id="services">
+      <div class="container">
+        <span class="section-label section-label--light">02 — Services</span>
+        <h2 class="section-title section-title--light">Services from start<br>to finish</h2>
+        <p class="section-sub section-sub--light">
+          Complete web solutions — from concept to deployment. We handle everything 
+          so you can focus on your business.
+        </p>
+        <div class="services-grid">
+          <div class="service">
+            <span class="service-num">01</span>
+            <h3>UI/UX Design</h3>
+            <p>Beautiful, intuitive interfaces designed to convert visitors into paying customers.</p>
+          </div>
+          <div class="service">
+            <span class="service-num">02</span>
+            <h3>Web Development</h3>
+            <p>Lightning-fast websites built with modern frameworks. No bloat, just performance.</p>
+          </div>
+          <div class="service">
+            <span class="service-num">03</span>
+            <h3>Responsive Design</h3>
+            <p>Pixel-perfect on every device — mobile, tablet, and desktop. Always.</p>
+          </div>
+          <div class="service">
+            <span class="service-num">04</span>
+            <h3>SEO Optimization</h3>
+            <p>Rank higher on Google. Get found by customers searching for your services.</p>
+          </div>
+          <div class="service">
+            <span class="service-num">05</span>
+            <h3>Deployment</h3>
+            <p>Hosted on Cloudflare or Hostinger with SSL. Fast, secure, always online.</p>
+          </div>
+          <div class="service">
+            <span class="service-num">06</span>
+            <h3>Maintenance</h3>
+            <p>Monthly updates, security patches, and content changes. We've got your back.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <span class="section-label">03 — Work</span>
+        <h2 class="section-title">Projects from<br>the field</h2>
+        <p class="section-sub">
+          Real websites built for real businesses. Each one crafted to match 
+          the client's brand and goals.
+        </p>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d);">
+              <span class="work-icon">◆</span>
+            </div>
+            <div class="work-info">
+              <span class="work-type">Restaurant</span>
+              <h3>The MG Grand</h3>
+              <p>Premium restaurant website with menu, gallery, and reservation system</p>
+              <div class="work-tags">
+                <span>React</span><span>Vite</span><span>Tailwind</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #0d0d0d, #1a1a1a);">
+              <span class="work-icon">◆</span>
+            </div>
+            <div class="work-info">
+              <span class="work-type">Gym</span>
+              <h3>IronForge</h3>
+              <p>Fitness center website with trainer profiles and BMI calculator</p>
+              <div class="work-tags">
+                <span>React</span><span>Vite</span><span>Tailwind</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #1a1a1a, #333);">
+              <span class="work-icon">◆</span>
+            </div>
+            <div class="work-info">
+              <span class="work-type">Cafe</span>
+              <h3>Brew & Bean</h3>
+              <p>Cozy cafe website with menu gallery and online booking</p>
+              <div class="work-tags">
+                <span>React</span><span>Vite</span><span>Tailwind</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">
+              <span class="work-icon">◆</span>
+            </div>
+            <div class="work-info">
+              <span class="work-type">Gaming</span>
+              <h3>Level Up</h3>
+              <p>Gaming zone website with package pricing and party booking</p>
+              <div class="work-tags">
+                <span>React</span><span>Vite</span><span>Tailwind</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section section--dark" id="process">
+      <div class="container">
+        <span class="section-label section-label--light">04 — Process</span>
+        <h2 class="section-title section-title--light">The development<br>process</h2>
+        <p class="section-sub section-sub--light">
+          Simple, transparent steps from first message to live website.
+        </p>
+        <div class="process">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <h3>Research</h3>
+            <p>Understanding your business, target audience, and goals.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <h3>Design</h3>
+            <p>Creating mockups that match your brand and convert visitors.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <h3>Build</h3>
+            <p>Developing with React + Vite for speed and performance.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <h3>Launch</h3>
+            <p>Deploy to cloud hosting with SSL. You're live and ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <span class="section-label">05 — Reviews</span>
+        <h2 class="section-title">What clients<br>say</h2>
+        <div class="testimonials">
+          <figure class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>
+              "DOTNEKT delivered exactly what we needed. The website looks premium 
+              and our reservations increased by 40%."
+            </blockquote>
+            <figcaption>
+              <div class="testimonial-avatar">MG</div>
+              <div class="testimonial-info">
+                <b>The MG Grand</b>
+                <span>Restaurant Client</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial testimonial--featured">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>
+              "Fast, responsive, and exactly on brand. Our members love the new site. 
+              Best investment we made."
+            </blockquote>
+            <figcaption>
+              <div class="testimonial-avatar">IF</div>
+              <div class="testimonial-info">
+                <b>IronForge</b>
+                <span>Gym Client</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>
+              "Professional from start to finish. The booking form alone pays for 
+              the website every month."
+            </blockquote>
+            <figcaption>
+              <div class="testimonial-avatar">BB</div>
+              <div class="testimonial-info">
+                <b>Brew & Bean</b>
+                <span>Cafe Client</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--dark section--contact" id="contact">
+      <div class="container">
+        <div class="contact">
+          <span class="section-label section-label--light">06 — Contact</span>
+          <h2 class="contact-title">Ready to<br>build your<br>website?</h2>
+          <p class="contact-sub">Free consultation. No commitment. Let's discuss your project.</p>
+          <div class="contact-cta">
+            <a href="mailto:hello@dotnekt.com" class="btn btn--fill btn--large">hello@dotnekt.com</a>
+            <a href="https://wa.me/919876543210" target="_blank" class="btn btn--line btn--large">WhatsApp Us ↯</a>
+          </div>
+          <p class="contact-price">
+            Starting at <strong>₹8,000</strong> · Maintenance from <strong>₹500/month</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">DOTNEKT</div>
+        <div class="footer-links">
+          <a href="https://instagram.com/dotnekt" target="_blank">Instagram</a>
+          <a href="https://linkedin.com/in/dotnekt" target="_blank">LinkedIn</a>
+          <a href="https://github.com/dotnekt" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copy">© 2026 DOTNEKT · Crafted from Vizag</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

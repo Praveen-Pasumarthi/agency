@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOTNEKT — Web Development & Design Studio</title>
+<meta name="description" content="DOTNEKT — Premium web development studio crafting fast, beautiful websites for local businesses.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="space" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="#home">DOT<span>✦</span>NEKT</a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#testimonials">Reviews</a>
+  </nav>
+  <a class="btn btn-small" href="#contact">Let's Talk</a>
+  <button class="hamburger" id="menuToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<aside class="rail" aria-label="Navigation">
+  <a href="#home"><span>00 Home</span><i></i></a>
+  <a href="#about"><span>01 About</span><i></i></a>
+  <a href="#services"><span>02 Services</span><i></i></a>
+  <a href="#work"><span>03 Work</span><i></i></a>
+  <a href="#testimonials"><span>04 Reviews</span><i></i></a>
+  <a href="#contact"><span>05 Contact</span><i></i></a>
+</aside>
+
+<main>
+
+  <section class="hero" id="home">
+    <svg class="planet parallax" data-speed="18" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="62" fill="#FF6B1A"/>
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#2B1608" stroke-width="6"/>
+      <circle cx="82" cy="84" r="12" fill="#FFB25C"/>
+      <circle cx="118" cy="120" r="8" fill="#FFB25C"/>
+      <ellipse cx="100" cy="102" rx="94" ry="22" fill="none" stroke="#2B1608" stroke-width="5" transform="rotate(-18 100 102)"/>
+    </svg>
+    <svg class="comet parallax" data-speed="34" viewBox="0 0 120 40" aria-hidden="true">
+      <circle cx="96" cy="20" r="12" fill="#FBF3E4" stroke="#2B1608" stroke-width="5"/>
+      <path d="M84 20 L8 20 M88 13 L34 6 M88 27 L34 34" stroke="#FF6B1A" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+
+    <p class="eyebrow" data-hero>WEB DEVELOPMENT & DESIGN STUDIO</p>
+    <h1 data-hero>WEBSITES THAT<br><em>STAND OUT<svg class="squiggle" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 Q30 4 56 14 T108 14 T160 14 T212 14 T264 14 T296 14" pathLength="1"/></svg></em>.</h1>
+    <p class="sub" data-hero>We craft premium, high-performance websites for restaurants, gyms, cafes, and local businesses. Modern design meets conversion — turning visitors into customers.</p>
+    <div class="cta-row" data-hero>
+      <a class="btn" href="#work">See our work ↓</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="scroll-cue" data-hero aria-hidden="true"><span></span>SCROLL TO EXPLORE</div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>REACT ✦ TAILWIND ✦ VITE ✦ RESPONSIVE DESIGN ✦ SEO ✦ FAST LOADING ✦ MODERN UI/UX ✦ </span>
+      <span>REACT ✦ TAILWIND ✦ VITE ✦ RESPONSIVE DESIGN ✦ SEO ✦ FAST LOADING ✦ MODERN UI/UX ✦ </span>
+    </div>
+  </div>
+
+  <section class="level" id="about">
+    <div class="sticker reveal">LVL 01 · WHO WE ARE</div>
+    <h2 class="reveal">Building the <em>web</em><br>one pixel at a time</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="lead">We're DOTNEKT — a web development studio helping local businesses go digital with fast, beautiful, and conversion-focused websites.</p>
+        <p class="lead">From restaurants to gyms, cafes to clinics — we turn your vision into a premium online presence that attracts customers and builds trust.</p>
+        <div class="about-stats">
+          <div class="mini-stat"><strong>7+</strong><span>Templates Built</span></div>
+          <div class="mini-stat"><strong>₹8K+</strong><span>Starting Price</span></div>
+          <div class="mini-stat"><strong>100%</strong><span>Responsive</span></div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="tech-stack">
+          <div class="tech-item">React</div>
+          <div class="tech-item">Vite</div>
+          <div class="tech-item">Tailwind</div>
+          <div class="tech-item">GSAP</div>
+          <div class="tech-item">Framer Motion</div>
+          <div class="tech-item">JavaScript</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><div class="portal"></div></div>
+
+  <section class="level" id="services">
+    <div class="sticker reveal">LVL 02 · WHAT WE DO</div>
+    <h2 class="reveal">Services from <em>start</em><br>to finish</h2>
+    <p class="lead reveal">Complete web solutions — from concept to deployment. We handle everything so you can focus on your business.</p>
+    <div class="cards">
+      <article class="card reveal"><div class="ico">🎨</div><h3>UI/UX Design</h3><p>Beautiful, intuitive interfaces designed to convert visitors into paying customers.</p></article>
+      <article class="card reveal"><div class="ico">⚡</div><h3>Web Development</h3><p>Lightning-fast websites built with modern frameworks. No bloat, just performance.</p></article>
+      <article class="card reveal"><div class="ico">📱</div><h3>Responsive Design</h3><p>Pixel-perfect on every device — mobile, tablet, and desktop. Always.</p></article>
+      <article class="card reveal"><div class="ico">🔍</div><h3>SEO Optimization</h3><p>Rank higher on Google. Get found by customers searching for your services.</p></article>
+      <article class="card reveal"><div class="ico">🚀</div><h3>Deployment</h3><p>Hosted on Cloudflare or Hostinger with SSL. Fast, secure, always online.</p></article>
+      <article class="card reveal"><div class="ico">🛡️</div><h3>Maintenance</h3><p>Monthly updates, security patches, and content changes. We've got your back.</p></article>
+    </div>
+  </section>
+
+  <section class="level" id="work">
+    <div class="sticker reveal">LVL 03 · OUR WORK</div>
+    <h2 class="reveal">Projects from the <em>field</em></h2>
+    <p class="lead reveal">Real websites built for real businesses. Each one crafted to match the client's brand and goals.</p>
+    <div class="work-grid">
+      <article class="work-card reveal">
+        <div class="work-img" style="background: linear-gradient(135deg, #c8a97e, #b8956a);">
+          <span class="work-icon">🍽️</span>
+        </div>
+        <div class="work-info">
+          <h3>The MG Grand</h3>
+          <p>Premium restaurant website with menu, gallery, and reservation system</p>
+          <div class="work-tags">
+            <span>React</span><span>Vite</span><span>Tailwind</span>
+          </div>
+        </div>
+      </article>
+      <article class="work-card reveal">
+        <div class="work-img" style="background: linear-gradient(135deg, #e63946, #c62828);">
+          <span class="work-icon">💪</span>
+        </div>
+        <div class="work-info">
+          <h3>IronForge Gym</h3>
+          <p>Fitness center website with trainer profiles and BMI calculator</p>
+          <div class="work-tags">
+            <span>React</span><span>Vite</span><span>Tailwind</span>
+          </div>
+        </div>
+      </article>
+      <article class="work-card reveal">
+        <div class="work-img" style="background: linear-gradient(135deg, #d97706, #b45309);">
+          <span class="work-icon">☕</span>
+        </div>
+        <div class="work-info">
+          <h3>Brew & Bean</h3>
+          <p>Cozy cafe website with menu gallery and online booking</p>
+          <div class="work-tags">
+            <span>React</span><span>Vite</span><span>Tailwind</span>
+          </div>
+        </div>
+      </article>
+      <article class="work-card reveal">
+        <div class="work-img" style="background: linear-gradient(135deg, #9333ea, #7c3aed);">
+          <span class="work-icon">🎮</span>
+        </div>
+        <div class="work-info">
+          <h3>Level Up</h3>
+          <p>Gaming zone website with package pricing and party booking</p>
+          <div class="work-tags">
+            <span>React</span><span>Vite</span><span>Tailwind</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><div class="portal"></div></div>
+
+  <section class="level" id="process">
+    <div class="sticker reveal">LVL 04 · HOW WE WORK</div>
+    <h2 class="reveal">The development <em>process</em></h2>
+    <p class="lead reveal">Simple, transparent steps from first message to live website.</p>
+    <ol class="steps">
+      <li class="reveal"><span class="num">01</span><h3>Research</h3><p>Understanding your business, target audience, and goals.</p></li>
+      <li class="reveal"><span class="num">02</span><h3>Design</h3><p>Creating mockups that match your brand and convert visitors.</p></li>
+      <li class="reveal"><span class="num">03</span><h3>Build</h3><p>Developing with React + Vite for speed and performance.</p></li>
+      <li class="reveal"><span class="num">04</span><h3>Launch</h3><p>Deploy to cloud hosting with SSL. You're live and ready.</p></li>
+    </ol>
+  </section>
+
+  <section class="level" id="testimonials">
+    <div class="sticker reveal">LVL 05 · CLIENT LOVE</div>
+    <h2 class="reveal">What clients <em>say</em></h2>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <div class="stars-row" aria-hidden="true">★★★★★</div>
+        <blockquote>"DOTNEKT delivered exactly what we needed. The website looks premium and our reservations increased by 40%."</blockquote>
+        <figcaption><i>MG</i><div><b>The MG Grand</b><span>Restaurant Client</span></div></figcaption>
+      </figure>
+      <figure class="quote tilt reveal">
+        <div class="stars-row" aria-hidden="true">★★★★★</div>
+        <blockquote>"Fast, responsive, and exactly on brand. Our members love the new site. Best investment we made."</blockquote>
+        <figcaption><i>IF</i><div><b>IronForge</b><span>Gym Client</span></div></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars-row" aria-hidden="true">★★★★★</div>
+        <blockquote>"Professional from start to finish. The booking form alone pays for the website every month."</blockquote>
+        <figcaption><i>BB</i><div><b>Brew & Bean</b><span>Cafe Client</span></div></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><div class="portal"></div></div>
+
+  <section class="level final" id="contact">
+    <div class="sticker reveal">LVL 06 · LET'S CONNECT</div>
+    <h2 class="mega reveal">READY TO<br><em>BUILD</em><br>YOUR WEBSITE?</h2>
+    <p class="lead reveal">Free consultation. No commitment. Let's discuss your project.</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-big" href="mailto:hello@dotnekt.com">hello@dotnekt.com</a>
+      <a class="btn btn-big btn-ghost" href="https://wa.me/919876543210" target="_blank">WhatsApp Us ↯</a>
+    </div>
+    <div class="pricing-note reveal">
+      <p>Starting at <strong>₹8,000</strong> · Maintenance from <strong>₹500/month</strong></p>
+    </div>
+    <footer class="footer">
+      <div class="socials">
+        <a href="https://instagram.com/dotnekt" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/in/dotnekt" target="_blank">LinkedIn</a>
+        <a href="https://github.com/dotnekt" target="_blank">GitHub</a>
+      </div>
+      <p>© 2026 DOTNEKT · Crafted with 🧡 from Vizag</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

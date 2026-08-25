@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOTNEKT — Web Development Studio</title>
+  <meta name="description" content="DOTNEKT — Premium web development studio crafting fast, beautiful websites for local businesses.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">DOTNEKT</a>
+      <nav class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="#contact" class="btn-talk">Let's Talk →</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <span class="hero-tag">← WEB DEVELOPMENT STUDIO</span>
+        <h1 class="hero-title">
+          WE BUILD DIGITAL
+          <span class="outline">EXPERIENCES</span>
+          THAT <span class="accent">STAND OUT.</span>
+        </h1>
+        <p class="hero-sub">
+          Premium web development studio crafting scalable websites 
+          with clean code, thoughtful design, and a focus on results.
+        </p>
+        <a href="#work" class="btn-primary">
+          VIEW OUR WORK
+          <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image">
+          <div class="hero-pattern"></div>
+          <div class="hero-code">
+            <pre><code>const studio = {
+  name: 'DOTNEKT',
+  role: 'Web Development',
+  mission: 'Building standout
+    websites that convert'
+};
+
+// Let's build something
+// great together</code></pre>
+          </div>
+        </div>
+        <div class="hero-dots"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-left">
+          <span class="section-num">01. ABOUT ME</span>
+          <h2 class="about-title">
+            WE'RE DOTNEKT, A WEB DEVELOPMENT
+            STUDIO BASED IN <span class="accent">VIZAG.</span>
+          </h2>
+          <p class="about-text">
+            We enjoy turning complex problems into simple, beautiful, and 
+            intuitive solutions. With a strong foundation in both front-end 
+            and back-end technologies, we build products that are fast, secure, 
+            and built to scale.
+          </p>
+          <a href="#contact" class="btn-outline">
+            MORE ABOUT US
+            <span class="btn-arrow">↗</span>
+          </a>
+        </div>
+        <div class="about-right">
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="stat-num">7+</span>
+              <span class="stat-label">TEMPLATES<br>BUILT</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">₹8K+</span>
+              <span class="stat-label">STARTING<br>PRICE</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">COMMITMENT<br>TO QUALITY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <span class="section-num">02. SERVICES</span>
+        <div class="services-grid">
+          <div class="service">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>WEB DEVELOPMENT</h3>
+            <p>Custom websites and web applications using modern technologies and best practices.</p>
+            <span class="service-arrow">→</span>
+          </div>
+          <div class="service">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>FRONT-END DEVELOPMENT</h3>
+            <p>Pixel-perfect, responsive interfaces with smooth animations and great user experiences.</p>
+            <span class="service-arrow">→</span>
+          </div>
+          <div class="service">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>BACK-END DEVELOPMENT</h3>
+            <p>Robust server-side applications optimized for performance, security, and scalability.</p>
+            <span class="service-arrow">→</span>
+          </div>
+          <div class="service">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>DEPLOYMENT & HOSTING</h3>
+            <p>Reliable deployments, CI/CD pipelines, and cloud infrastructure that scale with your product.</p>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="stack" id="stack">
+      <div class="stack-inner">
+        <div class="stack-left">
+          <span class="section-num section-num--light">03. STACK & TOOLS</span>
+          <h2 class="stack-title">TECHNOLOGIES<br>I WORK WITH</h2>
+        </div>
+        <div class="stack-right">
+          <div class="stack-group">
+            <span class="stack-label">FRONT-END</span>
+            <div class="stack-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="stack-label">BACK-END & DATABASES</span>
+            <div class="stack-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="stack-label">TOOLS & OTHERS</span>
+            <div class="stack-tags">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Jest</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+      <div class="work-inner">
+        <div class="work-header">
+          <span class="section-num">04. FEATURED PROJECTS</span>
+          <a href="#" class="view-all">VIEW ALL PROJECTS →</a>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+              <span class="work-overlay">Track. Analyze. Grow.</span>
+            </div>
+            <div class="work-info">
+              <h3>FINTRACK DASHBOARD</h3>
+              <p>A financial analytics dashboard for tracking investments, expenses, and financial goals.</p>
+              <div class="work-tags">
+                <span>React</span><span>Tailwind CSS</span><span>Recharts</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);">
+              <span class="work-overlay">Find your dream home.</span>
+            </div>
+            <div class="work-info">
+              <h3>HOMELISTINGS</h3>
+              <p>Real estate platform with advanced search, property listings, and virtual tours.</p>
+              <div class="work-tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #0c0c0c 0%, #2d2d2d 100%);">
+              <span class="work-overlay">Elevate Your Style</span>
+            </div>
+            <div class="work-info">
+              <h3>URBAN THREADS</h3>
+              <p>E-commerce store with product filtering, cart, and secure checkout.</p>
+              <div class="work-tags">
+                <span>Next.js</span><span>Stripe</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+      <div class="process-inner">
+        <span class="section-num">05. PROCESS</span>
+        <h2 class="process-title">MY DEVELOPMENT<br>PROCESS</h2>
+        <div class="process-steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <h4>DISCOVER</h4>
+            <p>Understand your goals, audience, and project requirements.</p>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4>PLAN</h4>
+            <p>Define scope, create wireframes, and plan the architecture.</p>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4>DEVELOP</h4>
+            <p>Build clean, scalable, and maintainable code with best practices.</p>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <span class="step-num">04</span>
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h4>TEST</h4>
+            <p>Ensure quality through testing and user feedback.</p>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <span class="step-num">05</span>
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </div>
+            <h4>DEPLOY</h4>
+            <p>Deploy to production and provide ongoing support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-inner">
+        <span class="section-num">06. TESTIMONIALS</span>
+        <h2 class="testimonials-title">WHAT CLIENTS<br>SAY</h2>
+        <div class="testimonials-grid">
+          <figure class="testimonial">
+            <div class="quote-mark">"</div>
+            <blockquote>
+              DOTNEKT delivered a high-quality product ahead of schedule. 
+              The design and functionality were excellent.
+            </blockquote>
+            <figcaption>
+              <div class="author-info">
+                <b>— The MG Grand</b>
+                <span>Restaurant Client</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <div class="quote-mark">"</div>
+            <blockquote>
+              Working with them was a game-changer. They understood our needs 
+              and built a solution that exceeded expectations.
+            </blockquote>
+            <figcaption>
+              <div class="author-info">
+                <b>— IronForge</b>
+                <span>Gym Client</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <div class="quote-mark">"</div>
+            <blockquote>
+              Professional, reliable, and skilled. Their code quality and 
+              problem-solving abilities are top-notch.
+            </blockquote>
+            <figcaption>
+              <div class="author-info">
+                <b>— Brew & Bean</b>
+                <span>Cafe Client</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <span class="section-num section-num--light">07. CONTACT</span>
+          <h2 class="contact-title">LET'S BUILD<br>SOMETHING GREAT</h2>
+        </div>
+        <div class="contact-right">
+          <div class="contact-form">
+            <span class="contact-form-title">SEND ME A MESSAGE</span>
+            <form id="contactForm">
+              <div class="form-row">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+              </div>
+              <textarea placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit" class="btn-submit">
+                SEND MESSAGE
+                <span class="btn-arrow">↗</span>
+              </button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <span class="contact-info-title">GET IN TOUCH</span>
+            <div class="info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@dotnekt.com</span>
+            </div>
+            <div class="info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Vizag, India</span>
+            </div>
+            <div class="info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Available for freelance & full-time opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">DOTNEKT</div>
+      <span class="footer-tagline">code . create . elevate</span>
+      <div class="footer-links">
+        <a href="https://instagram.com/dotnekt" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/in/dotnekt" target="_blank">LinkedIn</a>
+        <a href="https://github.com/dotnekt" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

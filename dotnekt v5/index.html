@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOTNEKT — Web Development Studio</title>
+  <meta name="description" content="DOTNEKT — Premium web development studio crafting fast, beautiful websites for local businesses.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">DOTNEKT</span>
+      </a>
+      <nav class="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="#contact" class="btn-hire">Hire Me <span>→</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-greeting">
+            <span class="greeting-leaf">🌿</span>
+            <span>Hello, I'm</span>
+          </div>
+          <h1 class="hero-name">DOT <span class="name-accent">NEKT</span></h1>
+          <h2 class="hero-role">Web Development & Design Studio</h2>
+          <p class="hero-desc">
+            We build fast, responsive and user-friendly websites 
+            that deliver real value. Passionate about clean code, 
+            modern technologies and great user experiences.
+          </p>
+          <div class="hero-buttons">
+            <a href="#work" class="btn-download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+            <a href="#work" class="btn-view">
+              View My Work <span>→</span>
+            </a>
+          </div>
+          <div class="hero-info">
+            <span class="info-item">
+              <span class="info-icon">📍</span>
+              Vizag, India
+            </span>
+            <span class="info-item">
+              <span class="info-icon">✉</span>
+              hello@dotnekt.com
+            </span>
+            <span class="info-item">
+              <span class="info-dot"></span>
+              Available for work
+            </span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-image"></div>
+        </div>
+      </div>
+      <!-- Leaf decorations -->
+      <div class="hero-leaf hero-leaf-1" aria-hidden="true">🌿</div>
+      <div class="hero-leaf hero-leaf-2" aria-hidden="true">🍃</div>
+    </section>
+    <svg class="hero-curve-svg" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M 0 0 C 360 80, 1080 80, 1440 0 Z" fill="#1a2f23"/>
+    </svg>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-left">
+          <div class="about-image">
+            <div class="experience-badge">
+              <span class="exp-num">7+</span>
+              <span class="exp-text">Years<br>Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="section-tag">
+            <span class="tag-leaf">🌿</span>
+            ABOUT US
+          </div>
+          <h2 class="about-title">Crafting Digital Experiences That Make an Impact</h2>
+          <p class="about-text">
+            We're DOTNEKT — a web development studio with 7+ years of experience 
+            building modern websites. We specialize in JavaScript technologies 
+            across the stack, and love turning ideas into scalable, efficient 
+            and beautiful products.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4>Clean Code</h4>
+                <p>Writing maintainable, reusable and efficient code.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4>User Focused</h4>
+                <p>Building with empathy and great UX in mind.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4>Problem Solver</h4>
+                <p>Turning complex problems into simple solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <div class="section-tag section-tag--center">
+          <span class="tag-leaf">🌿</span>
+          SERVICES
+          <span class="tag-leaf">🌿</span>
+        </div>
+        <h2 class="section-title">What I Can Do For You</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>Responsive, fast and modern websites using the latest technologies.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>Building interactive UIs with React, Tailwind CSS and more.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
+            </div>
+            <h3>Backend Development</h3>
+            <p>RESTful APIs, authentication, database design and server management.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Deploy & DevOps</h3>
+            <p>Deploying applications with CI/CD, Docker, AWS and best practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+      <div class="skills-inner">
+        <div class="skills-left">
+          <div class="section-tag section-tag--light">
+            <span class="tag-leaf">🌿</span>
+            SKILLS & EXPERIENCE
+          </div>
+          <h2 class="skills-title">Tools & Technologies<br>I Work With</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #F7DF1E; color: #000;">JS</div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #3178C6; color: #fff;">TS</div>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #61DAFB; color: #000;">⚛</div>
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #339933; color: #fff;">N</div>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #fff; color: #000; border: 1px solid #ddd;">ex</div>
+              <span>Express.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #47A248; color: #fff;">M</div>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #000; color: #fff;">N</div>
+              <span>Next.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #06B6D4; color: #fff;">TW</div>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #F05032; color: #fff;">⚙</div>
+              <span>Git & GitHub</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon" style="background: #FF9900; color: #000;">☁</div>
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="skills-right">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <span class="stat-num">7+</span>
+              <span class="stat-label">Years of<br>Experience</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Projects<br>Completed</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="stat-num">30+</span>
+              <span class="stat-label">Happy<br>Clients</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Client<br>Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+      <div class="work-inner">
+        <div class="work-header">
+          <div>
+            <div class="section-tag">
+              <span class="tag-leaf">🌿</span>
+              FEATURED PROJECTS
+            </div>
+            <h2 class="section-title">Some Things I've Built</h2>
+          </div>
+          <a href="#" class="view-all">View All Projects →</a>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #2d4a3e 0%, #1a3a2e 100%);">
+              <span class="work-label">Track. Analyze. Grow.</span>
+            </div>
+            <div class="work-info">
+              <h3>TaskFlow</h3>
+              <p>A productivity app to manage tasks and collaborate with teams.</p>
+              <div class="work-tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #3d5a4e 0%, #2d4a3e 100%);">
+              <span class="work-label">Wanderlust | Explore Summer</span>
+            </div>
+            <div class="work-info">
+              <h3>WanderNest</h3>
+              <p>A travel booking platform with beautiful UI and seamless experience.</p>
+              <div class="work-tags">
+                <span>Next.js</span><span>Tailwind CSS</span><span>MongoDB</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #4d6a5e 0%, #3d5a4e 100%);">
+              <span class="work-label">Elevate Your Everyday Style</span>
+            </div>
+            <div class="work-info">
+              <h3>ShopEase</h3>
+              <p>E-commerce platform with cart, payments and admin dashboard.</p>
+              <div class="work-tags">
+                <span>React</span><span>Express.js</span><span>MongoDB</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-img" style="background: linear-gradient(135deg, #5d7a6e 0%, #4d6a5e 100%);">
+              <span class="work-label">Real-time Analytics</span>
+            </div>
+            <div class="work-info">
+              <h3>AnalyticsPro</h3>
+              <p>Real-time analytics dashboard with charts and advanced filters.</p>
+              <div class="work-tags">
+                <span>TypeScript</span><span>Chart.js</span><span>Node.js</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-tag section-tag--center">
+          <span class="tag-leaf">🌿</span>
+          TESTIMONIALS
+          <span class="tag-leaf">🌿</span>
+        </div>
+        <h2 class="section-title section-title--center">What Clients Say <span class="text-accent">About Me</span></h2>
+        <div class="testimonials-grid">
+          <figure class="testimonial">
+            <div class="quote-mark">❝</div>
+            <blockquote>
+              DOTNEKT is an exceptional developer. They delivered our project on time 
+              with clean code and excellent communication.
+            </blockquote>
+            <figcaption>
+              <div class="author-avatar">RS</div>
+              <div class="author-info">
+                <b>Rohit Mehta</b>
+                <span>CEO, StartupX</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial testimonial--featured">
+            <div class="quote-mark">❝</div>
+            <blockquote>
+              Highly professional and skilled. They understood our requirements perfectly 
+              and the results were amazing.
+            </blockquote>
+            <figcaption>
+              <div class="author-avatar">NV</div>
+              <div class="author-info">
+                <b>Neha Verma</b>
+                <span>Product Manager</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <div class="quote-mark">❝</div>
+            <blockquote>
+              Working with them was a fantastic experience. They are reliable, creative 
+              and always go the extra mile.
+            </blockquote>
+            <figcaption>
+              <div class="author-avatar">VS</div>
+              <div class="author-info">
+                <b>Vikram Singh</b>
+                <span>Founder, TechWave</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- Leaf decorations -->
+      <div class="test-leaf test-leaf-1" aria-hidden="true">🌿</div>
+      <div class="test-leaf test-leaf-2" aria-hidden="true">🍃</div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="section-tag section-tag--light">
+            <span class="tag-leaf">🌿</span>
+            LET'S WORK TOGETHER
+          </div>
+          <h2 class="contact-title">Have a Project<br>in Mind?</h2>
+          <p class="contact-desc">
+            I'm always open to discussing new projects, creative ideas 
+            or opportunities to be part of your visions.
+          </p>
+          <div class="contact-info">
+            <div class="info-row">
+              <span class="info-icon">✉</span>
+              <span>hello@dotnekt.com</span>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">📞</span>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">📍</span>
+              <span>Vizag, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <div class="contact-form">
+            <h3>Drop me a message</h3>
+            <p>and let's build something great together.</p>
+            <form id="contactForm">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit" class="btn-submit">
+                Send Message
+                <span>🌿</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-leaf">🌿</span>
+        <span class="brand-text">DOTNEKT</span>
+        <p class="brand-desc">Building digital experiences that inspire and make a difference.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <a href="#work">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Me</h4>
+        <div class="social-links">
+          <a href="https://instagram.com/dotnekt" target="_blank">Instagram</a>
+          <a href="https://linkedin.com/in/dotnekt" target="_blank">LinkedIn</a>
+          <a href="https://github.com/dotnekt" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DOTNEKT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
