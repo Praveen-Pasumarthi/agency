@@ -125,7 +125,7 @@ body.scrollbar-dragging * {
    ========================================================= */
 
 nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -134,7 +134,17 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 50;
+    z-index: 1000;
+    transition: height 0.35s ease, background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease, border-bottom 0.35s ease;
+}
+
+nav.scrolled {
+    height: 70px;
+    background: rgba(26, 26, 26, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(245, 240, 235, 0.08);
 }
 
 .logo {
@@ -143,6 +153,7 @@ nav {
     font-weight: 900;
     letter-spacing: -1.5px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .logo-dot {
@@ -173,7 +184,11 @@ nav {
     color: var(--orange);
 }
 
-.nav-links .active::after {
+.nav-links a.active {
+    color: var(--white);
+}
+
+.nav-links a.active::after {
     content: "";
     position: absolute;
     width: 5px;

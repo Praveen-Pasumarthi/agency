@@ -40,6 +40,54 @@ if (mobileMenu) {
 
 
 // =========================================================
+// DYNAMIC FIXED NAVBAR & SCROLL SPY
+// =========================================================
+
+(function initDynamicNavbar() {
+    const nav = document.querySelector("nav");
+    if (!nav) return;
+
+    const navLinks = nav.querySelectorAll(".nav-links a");
+    const sections = document.querySelectorAll("section[id]");
+
+    function updateNavbar() {
+        const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+        // Toggle frosted glass scrolled state
+        if (scrollPos > 30) {
+            nav.classList.add("scrolled");
+        } else {
+            nav.classList.remove("scrolled");
+        }
+
+        // Active Section Scroll Spy
+        if (sections.length > 0 && navLinks.length > 0) {
+            let currentId = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentId = section.getAttribute("id");
+                }
+            });
+
+            if (currentId) {
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentId}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        }
+    }
+
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+    updateNavbar();
+})();
+
+
+// =========================================================
 // THEME MATCHING SCROLLBAR (DRAGGABLE & AUTO-HIDING)
 // =========================================================
 
