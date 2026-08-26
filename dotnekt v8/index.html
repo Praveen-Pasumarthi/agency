@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOTNEKT — Web Development & Design Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-icon">DN</span>
+        <span class="logo-text">DOTNEKT</span>
+      </a>
+      <nav class="nav">
+        <a href="#hero" class="active">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#services">SERVICES</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#testimonials">TESTIMONIALS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <a href="#contact" class="header-cta">LET'S WORK TOGETHER <i class="fas fa-paper-plane"></i></a>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero">
+    <!-- Diagonal orange stripes -->
+    <div class="hero-stripe hero-stripe-1" aria-hidden="true"></div>
+    <div class="hero-stripe hero-stripe-2" aria-hidden="true"></div>
+    <div class="hero-stripe hero-stripe-3" aria-hidden="true"></div>
+
+    <!-- Social sidebar -->
+    <div class="hero-social">
+      <span class="social-label">FOLLOW ME</span>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-hello">HELLO, I'M</span>
+        <h1 class="hero-name">DOTNEKT</h1>
+        <h2 class="hero-role">WEB DEVELOPER &<br/>DESIGNER</h2>
+        <p class="hero-desc">We craft premium, high-performance websites for restaurants, gyms, cafes, and local businesses. Modern design meets conversion — turning visitors into customers.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-orange">VIEW MY WORK <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-outline-white">CONTACT US <i class="fas fa-download"></i></a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <div class="hero-photo-inner"></div>
+        </div>
+        <div class="hero-signature">
+          <span class="sig-text">DOTNEKT</span>
+          <span class="sig-badge"><i class="fas fa-star"></i> AVAILABLE FOR FREELANCE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-photo-col">
+        <div class="about-photo">
+          <div class="about-photo-inner"></div>
+          <div class="about-exp-badge">
+            <i class="fas fa-user"></i>
+            <div>
+              <span class="exp-num">7+</span>
+              <span class="exp-label">YEARS EXPERIENCE</span>
+            </div>
+          </div>
+        </div>
+        <!-- Orange corner accent -->
+        <div class="about-corner" aria-hidden="true"></div>
+      </div>
+      <div class="about-text-col">
+        <span class="section-tag">ABOUT ME</span>
+        <h2 class="section-heading">Crafting Digital Experiences<br/>That <span class="text-orange">Inspire</span></h2>
+        <p class="about-desc">We're a web development studio helping local businesses go digital with fast, beautiful, and conversion-focused websites. From restaurants to gyms, cafes to clinics — we turn your vision into a premium online presence that attracts customers and builds trust.</p>
+        <div class="about-checks">
+          <div class="check-item"><i class="fas fa-check-circle"></i> User-Centered Design</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Clean & Modern UI</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Responsive Development</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Performance Focused</div>
+        </div>
+        <a href="#contact" class="btn-orange">MORE ABOUT ME <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section class="services" id="services">
+    <div class="services-inner">
+      <span class="section-tag">WHAT I DO</span>
+      <h2 class="section-heading">Services I Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+          <h3>UI/UX DESIGN</h3>
+          <p>We create intuitive and engaging user interfaces that delight users and achieve business goals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>WEB DEVELOPMENT</h3>
+          <p>We build responsive, fast, and dynamic websites using modern technologies and best practices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>RESPONSIVE DESIGN</h3>
+          <p>We design mobile-first interfaces that are sleek, user-friendly, and highly functional.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>SEO OPTIMIZATION</h3>
+          <p>We optimize websites for speed, performance, and SEO to ensure maximum visibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SKILLS ═══════════ -->
+  <section class="skills" id="skills">
+    <div class="skills-inner">
+      <span class="section-tag section-tag-light">SKILLS & TOOLS</span>
+      <h2 class="section-heading section-heading-light">Technologies I Work With</h2>
+      <div class="skills-row">
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-figma"></i></div>
+          <span>Figma</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-sketch"></i></div>
+          <span>Adobe XD</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-js"></i></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <span>React.js</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-wind"></i></div>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-sass"></i></div>
+          <span>Sass</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+          <span>Git</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-vs-code"></i></div>
+          <span>VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section class="projects" id="projects">
+    <div class="projects-inner">
+      <div class="projects-header">
+        <div>
+          <span class="section-tag">MY WORK</span>
+          <h2 class="section-heading">Featured Projects</h2>
+        </div>
+        <a href="#" class="view-all-btn">VIEW ALL PROJECTS <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-thumb thumb-1">
+            <div class="project-overlay">
+              <span>RESTAURANT</span>
+            </div>
+          </div>
+          <h4>THE MG GRAND</h4>
+          <p>UI/UX Design · Development</p>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb thumb-2">
+            <div class="project-overlay">
+              <span>FITNESS</span>
+            </div>
+          </div>
+          <h4>IRONFORGE GYM</h4>
+          <p>UI/UX Design · Development</p>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb thumb-3">
+            <div class="project-overlay">
+              <span>CAFE</span>
+            </div>
+          </div>
+          <h4>BREW & BEAN</h4>
+          <p>UI/UX Design · Development</p>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb thumb-4">
+            <div class="project-overlay">
+              <span>GAMING</span>
+            </div>
+          </div>
+          <h4>LEVEL UP ZONE</h4>
+          <p>UI/UX Design · Development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIALS ═══════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <span class="section-tag">WHAT CLIENTS SAY</span>
+      <h2 class="section-heading">Testimonials</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>DOTNEKT delivered exactly what we needed. The website looks premium and our reservations increased by 40%. Highly recommended!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-1">MG</div>
+            <div>
+              <strong>Rahul Sharma</strong>
+              <span>CEO, The MG Grand</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>Professional, creative, and timely. DOTNEKT turned our ideas into a beautiful digital experience that our members love.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-2">IF</div>
+            <div>
+              <strong>Priya Mehta</strong>
+              <span>Marketing Head, IronForge</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>Great communication and top-notch work. Highly recommended DOTNEKT for any web design or development project.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-3">BB</div>
+            <div>
+              <strong>Vikram Singh</strong>
+              <span>Founder, Brew & Bean</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <!-- Left: Info -->
+      <div class="contact-left">
+        <span class="section-tag section-tag-light">LET'S CONNECT</span>
+        <h2 class="contact-heading">Have a Project<br/>in Mind?</h2>
+        <p class="contact-desc">We'd love to hear about your project and help bring your ideas to life.</p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <span>hello@dotnekt.com</span>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Vizag, Andhra Pradesh, India</span>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div class="contact-right">
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" placeholder="Subject" required />
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="btn-orange">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="footer-logo">
+          <span class="logo-icon">DN</span>
+          <span class="logo-text">DOTNEKT</span>
+        </a>
+        <p>Designing and developing digital experiences that make an impact.</p>
+      </div>
+      <div class="footer-col">
+        <h5>QUICK LINKS</h5>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>SERVICES</h5>
+        <a href="#services">UI/UX Design</a>
+        <a href="#services">Web Development</a>
+        <a href="#services">Responsive Design</a>
+        <a href="#services">SEO Optimization</a>
+      </div>
+      <div class="footer-col">
+        <h5>LET'S CONNECT</h5>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
