@@ -1,0 +1,284 @@
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+
+/* =========================================================
+   HERO ORBITS
+   ========================================================= */
+
+.orbit-system {
+    position: absolute;
+    width: var(--outer-size);
+    height: var(--outer-size);
+    left: 50%;
+    top: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.orbit-center-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 20px rgba(232, 93, 38, 0.6), 0 0 60px rgba(232, 93, 38, 0.25);
+    z-index: 10;
+}
+
+.outer-orbit {
+    position: absolute;
+    width: var(--outer-size);
+    height: var(--outer-size);
+    left: 0;
+    top: 0;
+    border: 1px solid var(--circle-color);
+    border-radius: 50%;
+}
+
+.inner-orbit {
+    position: absolute;
+    width: var(--inner-size);
+    height: var(--inner-size);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--circle-color);
+    border-radius: 50%;
+}
+
+.outer-dot-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: outerRotate var(--outer-speed) linear infinite;
+}
+
+.inner-dot-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: innerRotate var(--inner-speed) linear infinite;
+}
+
+.dot-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.orbit-dot {
+    position: absolute;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--dot-color);
+}
+
+.outer-position-1 { transform: rotate(0deg); }
+.outer-position-2 { transform: rotate(120deg); }
+.outer-position-3 { transform: rotate(240deg); }
+.inner-position-1 { transform: rotate(0deg); }
+.inner-position-2 { transform: rotate(120deg); }
+.inner-position-3 { transform: rotate(240deg); }
+
+
+/* =========================================================
+   HERO CENTER
+   ========================================================= */
+
+.center-content {
+    position: absolute;
+    left: 50%;
+    top: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    text-align: center;
+    width: max-content;
+    pointer-events: none;
+}
+
+.main-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(75px, 9vw, 145px);
+    font-weight: 900;
+    letter-spacing: -7px;
+    line-height: 1.0;
+    white-space: nowrap;
+}
+
+.main-logo .dot {
+    color: var(--cream);
+}
+
+.main-logo .nekt {
+    color: var(--orange);
+}
+
+.tagline {
+    margin-top: 22px;
+    font-size: 18px;
+    letter-spacing: 6px;
+    line-height: 1.8;
+    color: var(--cream);
+    white-space: nowrap;
+}
+
+.tagline span {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   HERO INFORMATION
+   ========================================================= */
+
+.info-left {
+    position: absolute;
+    left: 45px;
+    top: 58%;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.number {
+    color: var(--orange);
+    font-size: 13px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.number::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: rgba(245, 240, 235, 0.45);
+}
+
+.agency-text {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 2.2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.info-right {
+    position: absolute;
+    right: 45px;
+    top: 56%;
+    z-index: 30;
+    text-align: right;
+    pointer-events: none;
+}
+
+.est {
+    color: var(--orange);
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.year {
+    margin-top: 18px;
+    font-size: 16px;
+    letter-spacing: 7px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.bottom-left::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--orange);
+}
+
+.bottom-left span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.scroll-arrow {
+    margin-top: 12px;
+    font-size: 22px;
+    animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+.scroll-right {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    z-index: 30;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.scroll-right span {
+    color: var(--orange);
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   HERO BOTTOM CURVE
+   ========================================================= */
+
+.hero-curve-svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: -1px;
+    position: relative;
+    z-index: 5;
+}

@@ -1,0 +1,186 @@
+/* =========================================================
+   SECTION 2 — WE CONNECT (ABOUT)
+   ========================================================= */
+
+.connect-section {
+    position: relative;
+    min-height: 100vh;
+    background: var(--cream);
+    overflow: hidden;
+    padding: 110px 7vw 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.connect-label {
+    position: absolute;
+    top: 42px;
+    left: 7vw;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.connect-title {
+    position: relative;
+    z-index: 10;
+    width: 52%;
+    max-width: 850px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(55px, 7.2vw, 115px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+
+.connect-title .outline {
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(26, 26, 26, 0.45);
+}
+
+.connect-title .red {
+    color: var(--orange);
+}
+
+.connect-description {
+    position: relative;
+    z-index: 10;
+    width: 580px;
+    max-width: 55%;
+    margin-top: 45px;
+    font-size: 16px;
+    line-height: 2.0;
+    letter-spacing: 0.8px;
+    color: var(--gray-600);
+}
+
+.connect-keywords {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    width: 52%;
+}
+
+.connect-keyword {
+    border: 1px solid rgba(26, 26, 26, 0.18);
+    padding: 14px 30px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.connect-keyword:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   CONNECT ORBIT
+   ========================================================= */
+
+.connect-orbit {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.connect-outer-ring {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 0;
+    top: 0;
+    border: 1px solid rgba(26, 26, 26, 0.10);
+    border-radius: 50%;
+}
+
+.connect-inner-ring {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 50%;
+}
+
+.connect-dot-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: connectOuterRotate 14s linear infinite;
+}
+
+.connect-inner-dot-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: connectInnerRotate 10s linear infinite;
+}
+
+.connect-dot-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.connect-dot {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.25);
+}
+
+.connect-dot-1 { transform: rotate(0deg); }
+.connect-dot-2 { transform: rotate(120deg); }
+.connect-dot-3 { transform: rotate(240deg); }
+.connect-inner-dot-1 { transform: rotate(0deg); }
+.connect-inner-dot-2 { transform: rotate(120deg); }
+.connect-inner-dot-3 { transform: rotate(240deg); }
+
+@keyframes connectOuterRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes connectInnerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+.connect-number {
+    position: absolute;
+    bottom: 32px;
+    right: 7vw;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gray-400);
+}

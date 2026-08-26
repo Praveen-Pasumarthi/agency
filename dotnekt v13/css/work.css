@@ -1,0 +1,313 @@
+/* =========================================================
+   SECTION 4 — OUR WORK
+   ========================================================= */
+
+.work-section {
+    position: relative;
+    min-height: 100vh;
+    background: var(--cream);
+    padding: 55px 7vw 55px;
+    overflow: visible;
+    scroll-margin-top: 100px;
+}
+
+.work-content {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+}
+
+
+/* LABEL */
+
+.work-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+/* HEADING */
+
+.work-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(48px, 6vw, 85px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.work-heading span {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   WORK HERO BACKGROUND
+   ========================================================= */
+
+.work-hero-bg {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.work-bg-outer {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    left: 0;
+    top: 0;
+    border: 1px solid rgba(26, 26, 26, 0.8);
+    border-radius: 50%;
+}
+
+.work-bg-inner {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(26, 26, 26, 0.8);
+    border-radius: 50%;
+}
+
+.work-bg-outer-track,
+.work-bg-inner-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.work-bg-outer-track {
+    animation: workOuterRotate 15s linear infinite;
+}
+
+.work-bg-inner-track {
+    animation: workInnerRotate 11s linear infinite;
+}
+
+.work-bg-dot-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.work-bg-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.8);
+}
+
+.work-bg-outer-1 { transform: rotate(0deg); }
+.work-bg-outer-2 { transform: rotate(120deg); }
+.work-bg-outer-3 { transform: rotate(240deg); }
+.work-bg-inner-1 { transform: rotate(0deg); }
+.work-bg-inner-2 { transform: rotate(120deg); }
+.work-bg-inner-3 { transform: rotate(240deg); }
+
+@keyframes workOuterRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes workInnerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
+
+.work-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 250px 250px;
+    gap: 14px;
+}
+
+
+/* PROJECT */
+
+.work-project {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+
+/* PROJECT POSITIONS */
+
+.work-project:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.work-project:nth-child(2) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(3) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(4) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(5) {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   PROJECT VISUAL
+   ========================================================= */
+
+.project-visual {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    background: var(--dark);
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.work-project:hover .project-visual img {
+    transform: scale(1);
+}
+
+/* LARGE NUMBER */
+
+.project-number {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(60px, 7vw, 110px);
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(26, 26, 26, 0.035);
+    user-select: none;
+}
+
+
+/* CROSS */
+
+.project-cross {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    opacity: 0.3;
+}
+
+.project-cross::before,
+.project-cross::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: rgba(26, 26, 26, 0.4);
+    transform: translate(-50%, -50%);
+}
+
+.project-cross::before {
+    width: 35px;
+    height: 1px;
+}
+
+.project-cross::after {
+    width: 1px;
+    height: 35px;
+}
+
+
+/* =========================================================
+   PROJECT INFO
+   ========================================================= */
+
+.project-info {
+    flex-shrink: 0;
+    min-height: 48px;
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-category {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.project-name {
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.project-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* =========================================================
+   PROJECT HOVER
+   ========================================================= */
+
+.work-project:hover .project-visual {
+    border-color: rgba(232, 93, 38, 0.55);
+    transform: scale(0.985);
+}
+
+.work-project:hover .project-name {
+    color: var(--orange);
+}
+
+.work-project:hover .project-arrow {
+    color: var(--orange);
+    transform: translate(4px, -4px);
+}

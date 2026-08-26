@@ -1,0 +1,3870 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DOTNEKT — Creative Agency</title>
+
+<style>
+
+/* =========================================================
+   DOTNEKT CONTROL PANEL
+========================================================= */
+
+:root {
+    --background: #050505;
+    --white: #f5f5f5;
+    --red: #ed1b2f;
+
+    --circle-color: rgba(255,255,255,0.14);
+    --dot-color: rgba(255,255,255,0.28);
+
+    --outer-size: 650px;
+    --inner-size: 430px;
+
+    --dot-size: 20px;
+
+    --outer-speed: 12s;
+    --inner-speed: 9s;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+    background: var(--background);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 50;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.logo-dot {
+    color: var(--white);
+}
+
+.logo-nekt {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--white);
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.nav-links .active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    bottom: -14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* MOBILE MENU HIDDEN ON DESKTOP */
+
+.mobile-menu {
+    display: none !important;
+}
+.menu {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+    position: relative;
+}
+
+/* THREE-DOT TRIANGLE */
+
+.menu-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dot-top {
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot-left {
+    left: 11px;
+    bottom: 9px;
+}
+
+.dot-right {
+    right: 11px;
+    bottom: 9px;
+}
+
+.menu:hover .menu-dot {
+    background: #ed1b2f;
+}
+
+/* =========================================================
+   HERO ORBITS
+========================================================= */
+
+.orbit-system {
+    position: absolute;
+
+    width: var(--outer-size);
+    height: var(--outer-size);
+
+    left: 50%;
+    top: 51%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.outer-orbit {
+    position: absolute;
+
+    width: var(--outer-size);
+    height: var(--outer-size);
+
+    left: 0;
+    top: 0;
+
+    border: 1px solid var(--circle-color);
+    border-radius: 50%;
+}
+
+.inner-orbit {
+    position: absolute;
+
+    width: var(--inner-size);
+    height: var(--inner-size);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid var(--circle-color);
+    border-radius: 50%;
+}
+
+.outer-dot-track {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        outerRotate var(--outer-speed)
+        linear infinite;
+}
+
+.inner-dot-track {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        innerRotate var(--inner-speed)
+        linear infinite;
+}
+
+.dot-position {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+}
+
+.orbit-dot {
+    position: absolute;
+
+    width: var(--dot-size);
+    height: var(--dot-size);
+
+    left: 50%;
+    top: 0;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--dot-color);
+}
+
+.outer-position-1 {
+    transform: rotate(0deg);
+}
+
+.outer-position-2 {
+    transform: rotate(120deg);
+}
+
+.outer-position-3 {
+    transform: rotate(240deg);
+}
+
+.inner-position-1 {
+    transform: rotate(0deg);
+}
+
+.inner-position-2 {
+    transform: rotate(120deg);
+}
+
+.inner-position-3 {
+    transform: rotate(240deg);
+}
+
+
+/* =========================================================
+   HERO CENTER
+========================================================= */
+
+.center-content {
+    position: absolute;
+
+    left: 50%;
+    top: 51%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    text-align: center;
+
+    width: max-content;
+
+    pointer-events: none;
+}
+
+.main-logo {
+    font-size: clamp(75px, 9vw, 145px);
+
+    font-weight: 900;
+
+    letter-spacing: -7px;
+
+    line-height: 0.85;
+
+    white-space: nowrap;
+}
+
+.main-logo .dot {
+    color: var(--white);
+}
+
+.main-logo .nekt {
+    color: var(--red);
+}
+
+.tagline {
+    margin-top: 22px;
+
+    font-size: 18px;
+
+    letter-spacing: 6px;
+
+    color: var(--white);
+
+    white-space: nowrap;
+}
+
+.tagline span {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   HERO INFORMATION
+========================================================= */
+
+.info-left {
+    position: absolute;
+
+    left: 45px;
+    top: 58%;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+.number {
+    color: var(--red);
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.number::after {
+    content: "";
+
+    width: 40px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.45);
+}
+
+.agency-text {
+    margin-top: 22px;
+
+    font-size: 12px;
+    line-height: 2;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.info-right {
+    position: absolute;
+
+    right: 45px;
+    top: 56%;
+
+    z-index: 30;
+
+    text-align: right;
+
+    pointer-events: none;
+}
+
+.est {
+    color: var(--red);
+
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.year {
+    margin-top: 18px;
+
+    font-size: 16px;
+    letter-spacing: 7px;
+}
+
+.bottom-left {
+    position: absolute;
+
+    bottom: 35px;
+    left: 35px;
+
+    z-index: 30;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.bottom-left::before {
+    content: "";
+
+    width: 32px;
+    height: 1px;
+
+    background: var(--red);
+}
+
+.bottom-left span {
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    text-align: center;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.scroll-arrow {
+    margin-top: 12px;
+
+    font-size: 22px;
+
+    animation:
+        scrollBounce 1.8s ease-in-out infinite;
+}
+
+.scroll-right {
+    position: absolute;
+
+    right: 35px;
+    bottom: 35px;
+
+    z-index: 30;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.scroll-right span {
+    color: var(--red);
+
+    margin-left: 8px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+@keyframes outerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes innerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* =========================================================
+   SECTION 2 — WE CONNECT
+========================================================= */
+
+.connect-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    overflow: hidden;
+
+    padding:
+        110px
+        7vw
+        80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.connect-label {
+    position: absolute;
+
+    top: 42px;
+    left: 7vw;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: var(--red);
+
+    text-transform: uppercase;
+}
+
+.connect-title {
+    position: relative;
+
+    z-index: 10;
+
+    width: 52%;
+    max-width: 850px;
+
+    font-size: clamp(55px, 7.2vw, 115px);
+
+    font-weight: 900;
+
+    line-height: 0.82;
+
+    letter-spacing: -5px;
+
+    text-transform: uppercase;
+}
+
+.connect-title .outline {
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,0.45);
+}
+
+.connect-title .red {
+    color: var(--red);
+}
+
+.connect-description {
+    position: relative;
+
+    z-index: 10;
+
+    width: 430px;
+    max-width: 42%;
+
+    margin-top: 45px;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    letter-spacing: 0.8px;
+
+    color: rgba(255,255,255,0.62);
+}
+
+.connect-keywords {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    width: 52%;
+}
+
+.connect-keyword {
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    padding: 11px 19px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.connect-keyword:hover {
+    background: var(--red);
+
+    border-color: var(--red);
+
+    color: var(--white);
+}
+
+
+/* SECTION 2 ORBIT */
+
+.connect-orbit {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: 5vw;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.connect-outer-ring {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 0;
+    top: 0;
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    border-radius: 50%;
+}
+
+.connect-inner-ring {
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+}
+
+.connect-dot-track {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        connectOuterRotate
+        14s
+        linear
+        infinite;
+}
+
+.connect-inner-dot-track {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        connectInnerRotate
+        10s
+        linear
+        infinite;
+}
+
+.connect-dot-position {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+}
+
+.connect-dot {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    left: 50%;
+    top: 0;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.28);
+}
+
+.connect-dot-1 {
+    transform: rotate(0deg);
+}
+
+.connect-dot-2 {
+    transform: rotate(120deg);
+}
+
+.connect-dot-3 {
+    transform: rotate(240deg);
+}
+
+.connect-inner-dot-1 {
+    transform: rotate(0deg);
+}
+
+.connect-inner-dot-2 {
+    transform: rotate(120deg);
+}
+
+.connect-inner-dot-3 {
+    transform: rotate(240deg);
+}
+
+@keyframes connectOuterRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes connectInnerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.connect-number {
+    position: absolute;
+
+    bottom: 32px;
+    right: 7vw;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.35);
+}
+
+
+/* =========================================================
+   SECTION 3 — SERVICES
+========================================================= */
+
+.services-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    padding:
+        90px
+        7vw
+        70px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE HERO ORBIT BACKGROUND
+   NO LOGO
+   NO LARGE NUMBER
+========================================================= */
+
+.services-hero-bg {
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    left: 50%;
+    top: 53%;
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0.075;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.services-bg-outer {
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    left: 0;
+    top: 0;
+
+    border:
+        1px solid rgba(255,255,255,0.75);
+
+    border-radius: 50%;
+}
+
+.services-bg-inner {
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid rgba(255,255,255,0.75);
+
+    border-radius: 50%;
+}
+
+.services-bg-outer-track {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        servicesOuterRotate
+        16s
+        linear
+        infinite;
+}
+
+.services-bg-inner-track {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation:
+        servicesInnerRotate
+        12s
+        linear
+        infinite;
+}
+
+.services-bg-dot-position {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+}
+
+.services-bg-dot {
+
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    left: 50%;
+    top: 0;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.75);
+}
+
+.services-bg-outer-1 {
+    transform: rotate(0deg);
+}
+
+.services-bg-outer-2 {
+    transform: rotate(120deg);
+}
+
+.services-bg-outer-3 {
+    transform: rotate(240deg);
+}
+
+.services-bg-inner-1 {
+    transform: rotate(0deg);
+}
+
+.services-bg-inner-2 {
+    transform: rotate(120deg);
+}
+
+.services-bg-inner-3 {
+    transform: rotate(240deg);
+}
+
+@keyframes servicesOuterRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes servicesInnerRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =========================================================
+   SERVICES CONTENT
+========================================================= */
+
+.services-content {
+    position: relative;
+
+    z-index: 5;
+}
+
+.services-label {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+.services-heading {
+
+    font-size:
+        clamp(55px, 7.5vw, 110px);
+
+    font-weight: 900;
+
+    line-height: 0.82;
+
+    letter-spacing: -5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 55px;
+}
+
+.services-heading span {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.services-list {
+
+    width: 100%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.18);
+}
+
+.service-item {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.18);
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1fr
+        60px;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    transition:
+        padding 0.4s ease;
+}
+
+.service-number {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--red);
+}
+
+.service-name {
+
+    font-size:
+        clamp(32px, 4.5vw, 62px);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.service-plus {
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.service-item:hover {
+    padding-left: 15px;
+}
+
+.service-item:hover .service-name {
+    color: var(--red);
+
+    transform: translateX(10px);
+}
+
+.service-item:hover .service-plus {
+    background: var(--red);
+
+    border-color: var(--red);
+
+    transform: rotate(45deg);
+}
+
+.service-details {
+
+    position: absolute;
+
+    left: 90px;
+
+    bottom: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+
+    color:
+        rgba(255,255,255,0.42);
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.service-item:hover .service-details {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SECTION 4 — OUR WORK
+========================================================= */
+
+.work-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    padding:
+        55px
+        7vw
+        55px;
+
+    overflow: visible;
+
+    scroll-margin-top: 100px;
+}
+
+.work-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    height: 100%;
+}
+
+
+/* LABEL */
+
+.work-label {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--red);
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+/* HEADING */
+
+.work-heading {
+
+    font-size:
+        clamp(48px, 6vw, 85px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+}
+
+.work-heading span {
+    color: var(--red);
+}
+
+/* =========================================================
+   WORK HERO BACKGROUND
+========================================================= */
+
+.work-hero-bg {
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.work-bg-outer {
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 0;
+    top: 0;
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+}
+
+
+.work-bg-inner {
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+}
+
+
+.work-bg-outer-track,
+.work-bg-inner-track {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+
+.work-bg-outer-track {
+
+    animation:
+        workOuterRotate
+        15s
+        linear
+        infinite;
+}
+
+
+.work-bg-inner-track {
+
+    animation:
+        workInnerRotate
+        11s
+        linear
+        infinite;
+}
+
+
+.work-bg-dot-position {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+
+.work-bg-dot {
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    left: 50%;
+    top: 0;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.8);
+}
+
+
+.work-bg-outer-1 {
+    transform: rotate(0deg);
+}
+
+.work-bg-outer-2 {
+    transform: rotate(120deg);
+}
+
+.work-bg-outer-3 {
+    transform: rotate(240deg);
+}
+
+
+.work-bg-inner-1 {
+    transform: rotate(0deg);
+}
+
+.work-bg-inner-2 {
+    transform: rotate(120deg);
+}
+
+.work-bg-inner-3 {
+    transform: rotate(240deg);
+}
+
+
+@keyframes workOuterRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes workInnerRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.work-list {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    grid-template-rows:
+       250px 250px;
+
+    gap: 14px;
+}
+
+
+/* PROJECT */
+
+.work-project {
+
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+    min-height: 0;
+
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+/* PROJECT POSITIONS */
+
+.work-project:nth-child(1) {
+
+    grid-column: span 2;
+
+    grid-row: span 2;
+}
+
+.work-project:nth-child(2) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(3) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(4) {
+    grid-column: span 2;
+}
+
+.work-project:nth-child(5) {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   PROJECT VISUAL
+========================================================= */
+
+.project-visual {
+
+    position: relative;
+
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
+    background: #0b0b0b;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.work-project:hover .project-visual img {
+    transform: scale(1);
+}
+
+/* LARGE NUMBER */
+
+.project-number {
+
+    font-size:
+        clamp(60px, 7vw, 110px);
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color:
+        rgba(255,255,255,0.035);
+
+    user-select: none;
+}
+
+
+/* CROSS */
+
+.project-cross {
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    opacity: 0.3;
+}
+
+.project-cross::before,
+.project-cross::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    background:
+        rgba(255,255,255,0.4);
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.project-cross::before {
+
+    width: 35px;
+    height: 1px;
+}
+
+.project-cross::after {
+
+    width: 1px;
+    height: 35px;
+}
+
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.project-info {
+
+    flex-shrink: 0;
+
+    min-height: 48px;
+
+    padding-top: 9px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+.project-category {
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+
+    text-transform: uppercase;
+}
+
+.project-name {
+
+    margin-top: 4px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
+}
+
+.project-arrow {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================================================
+   PROJECT HOVER
+========================================================= */
+
+.work-project:hover .project-visual {
+
+    border-color:
+        rgba(237,27,47,0.55);
+
+    transform:
+        scale(0.985);
+}
+
+.work-project:hover .project-name {
+
+    color: var(--red);
+}
+
+.work-project:hover .project-arrow {
+
+    color: var(--red);
+
+    transform:
+        translate(4px, -4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .connect-title {
+
+        width: 58%;
+
+        font-size:
+            clamp(50px, 7.5vw, 95px);
+    }
+
+    .connect-orbit {
+
+        width: 430px;
+        height: 430px;
+
+        right: -30px;
+    }
+
+    .connect-outer-ring {
+
+        width: 430px;
+        height: 430px;
+    }
+
+    .connect-inner-ring {
+
+        width: 275px;
+        height: 275px;
+    }
+
+    .services-hero-bg {
+
+        width: 560px;
+        height: 560px;
+    }
+
+    .services-bg-outer {
+
+        width: 560px;
+        height: 560px;
+    }
+
+    .services-bg-inner {
+
+        width: 365px;
+        height: 365px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .orbit-system {
+
+        width: 430px;
+        height: 430px;
+
+        top: 50%;
+    }
+
+    .outer-orbit {
+
+        width: 430px;
+        height: 430px;
+    }
+
+    .inner-orbit {
+
+        width: 285px;
+        height: 285px;
+    }
+
+    .main-logo {
+
+        font-size: 65px;
+
+        letter-spacing: -4px;
+    }
+
+    .tagline {
+
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+    .info-left {
+
+        left: 20px;
+
+        top: auto;
+
+        bottom: 105px;
+    }
+
+    .info-right {
+
+        right: 20px;
+
+        top: 125px;
+    }
+
+    .agency-text {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .bottom-left,
+    .scroll-right {
+        display: none;
+    }
+
+
+    /* SECTION 2 */
+
+    .connect-section {
+
+        min-height: 100vh;
+
+        padding:
+            100px
+            25px
+            100px;
+
+        justify-content: flex-start;
+    }
+
+    .connect-label {
+
+        left: 25px;
+        top: 40px;
+    }
+
+    .connect-title {
+
+        width: 100%;
+
+        font-size: 15vw;
+
+        letter-spacing: -3px;
+
+        margin-top: 30px;
+    }
+
+    .connect-description {
+
+        width: 85%;
+
+        max-width: 85%;
+
+        margin-top: 45px;
+
+        font-size: 12px;
+    }
+
+    .connect-keywords {
+
+        width: 90%;
+
+        margin-top: 28px;
+    }
+
+    .connect-orbit {
+
+        width: 360px;
+        height: 360px;
+
+        right: -120px;
+
+        top: 58%;
+    }
+
+    .connect-outer-ring {
+
+        width: 360px;
+        height: 360px;
+    }
+
+    .connect-inner-ring {
+
+        width: 235px;
+        height: 235px;
+    }
+
+    .connect-number {
+
+        bottom: 35px;
+
+        right: 25px;
+    }
+
+
+    /* SECTION 3 */
+
+    .services-section {
+
+        min-height: 100vh;
+
+        padding:
+            85px
+            25px
+            75px;
+    }
+
+    .services-heading {
+
+        font-size: 15vw;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 42px;
+    }
+
+    .service-item {
+
+        min-height: 92px;
+
+        grid-template-columns:
+            45px
+            1fr
+            45px;
+    }
+
+    .service-number {
+        font-size: 9px;
+    }
+
+    .service-name {
+
+        font-size: 7.5vw;
+
+        letter-spacing: -2px;
+    }
+
+    .service-plus {
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 16px;
+    }
+
+    .service-details {
+
+        left: 45px;
+
+        bottom: 7px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.2px;
+
+        max-width: 70%;
+    }
+
+
+    /* SECTION 3 CENTERED BACKGROUND */
+
+    .services-hero-bg {
+
+        width: 400px;
+        height: 400px;
+
+        left: 50%;
+
+        top: 55%;
+
+        transform:
+            translate(-50%, -50%);
+
+        opacity: 0.055;
+    }
+
+    .services-bg-outer {
+
+        width: 400px;
+        height: 400px;
+    }
+
+    .services-bg-inner {
+
+        width: 260px;
+        height: 260px;
+    }
+
+    .services-bg-dot {
+
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* =====================================================
+       SECTION 4 — MOBILE
+    ===================================================== */
+
+    .work-section {
+
+        height: auto;
+
+        min-height: 100vh;
+
+        padding:
+            85px
+            20px
+            100px;
+
+        overflow: visible;
+    }
+
+    .work-content {
+
+        height: auto;
+    }
+
+    .work-heading {
+
+        font-size: 15vw;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 35px;
+    }
+
+    .work-list {
+
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows: auto;
+
+        gap: 18px;
+    }
+
+    .work-project:nth-child(1),
+    .work-project:nth-child(2),
+    .work-project:nth-child(3),
+    .work-project:nth-child(4),
+    .work-project:nth-child(5) {
+
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+    .project-visual {
+
+        aspect-ratio: 1 / 1;
+
+        flex: none;
+    }
+
+    .project-name {
+
+        font-size: 12px;
+    }
+
+    .project-category {
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .project-arrow {
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .orbit-system {
+
+        width: 350px;
+        height: 350px;
+    }
+
+    .outer-orbit {
+
+        width: 350px;
+        height: 350px;
+    }
+
+    .inner-orbit {
+
+        width: 235px;
+        height: 235px;
+    }
+
+    .main-logo {
+
+        font-size: 51px;
+    }
+
+    .tagline {
+
+        margin-top: 15px;
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .orbit-dot {
+
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* SECTION 2 */
+
+    .connect-title {
+        font-size: 16vw;
+    }
+
+    .connect-description {
+
+        width: 92%;
+
+        max-width: 92%;
+    }
+
+    .connect-orbit {
+
+        width: 320px;
+        height: 320px;
+
+        right: -125px;
+
+        top: 61%;
+    }
+
+    .connect-outer-ring {
+
+        width: 320px;
+        height: 320px;
+    }
+
+    .connect-inner-ring {
+
+        width: 210px;
+        height: 210px;
+    }
+
+
+    /* SECTION 3 */
+
+    .services-section {
+
+        padding:
+            80px
+            20px
+            70px;
+    }
+
+    .services-heading {
+
+        font-size: 16vw;
+
+        margin-bottom: 38px;
+    }
+
+    .service-item {
+
+        min-height: 88px;
+
+        grid-template-columns:
+            38px
+            1fr
+            40px;
+    }
+
+    .service-name {
+
+        font-size: 7.2vw;
+
+        letter-spacing: -1.5px;
+    }
+
+    .service-plus {
+
+        width: 29px;
+        height: 29px;
+
+        font-size: 14px;
+    }
+
+    .service-details {
+
+        left: 38px;
+
+        font-size: 6.5px;
+    }
+
+
+    /* SECTION 3 ORBIT */
+
+    .services-hero-bg {
+
+        width: 340px;
+        height: 340px;
+
+        left: 50%;
+
+        top: 55%;
+
+        transform:
+            translate(-50%, -50%);
+
+        opacity: 0.045;
+    }
+
+    .services-bg-outer {
+
+        width: 340px;
+        height: 340px;
+    }
+
+    .services-bg-inner {
+
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* SECTION 4 */
+
+    .work-section {
+
+        padding:
+            80px
+            20px
+            100px;
+    }
+
+    .work-heading {
+
+        font-size: 16vw;
+
+        margin-bottom: 38px;
+    }
+
+    .project-name {
+
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   SECTION 5 — CONTACT
+===================================================== */
+
+.contact-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        80px
+        7vw
+        50px;
+
+    background: #050505;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* CONTACT CONTENT */
+
+.contact-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 40px;
+}
+
+
+.contact-label {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #ed1b2f;
+
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+}
+
+
+.contact-title {
+
+    font-size:
+        clamp(70px, 12vw, 180px);
+
+    font-weight: 900;
+
+    line-height: 0.78;
+
+    letter-spacing: -8px;
+
+    text-transform: uppercase;
+}
+
+
+.contact-title span {
+
+    color: #ed1b2f;
+}
+
+
+/* DESCRIPTION */
+
+.contact-description {
+
+    max-width: 480px;
+
+    margin-top: 40px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.6);
+}
+
+
+/* EMAIL */
+
+.contact-email {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+    color: #f5f5f5;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.35);
+
+    padding-bottom: 10px;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.contact-email:hover {
+
+    color: #ed1b2f;
+
+    border-color: #ed1b2f;
+}
+
+
+.contact-arrow {
+
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.contact-email:hover .contact-arrow {
+
+    transform:
+        translate(5px, -5px);
+}
+
+
+/* FOOTER */
+
+.contact-footer {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.contact-footer-left {
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+
+.contact-footer-left span {
+
+    color: #ed1b2f;
+}
+
+
+.contact-footer-right {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CONTACT HERO ORBIT
+===================================================== */
+
+.contact-hero-orbit {
+
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    left: 72%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.contact-orbit-outer {
+
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+}
+
+
+.contact-orbit-inner {
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+}
+
+
+.contact-outer-track,
+.contact-inner-track {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+
+.contact-outer-track {
+
+    animation:
+        contactOuterRotate
+        14s
+        linear
+        infinite;
+}
+
+
+.contact-inner-track {
+
+    animation:
+        contactInnerRotate
+        10s
+        linear
+        infinite;
+}
+
+
+.contact-dot-position {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+
+.contact-orbit-dot {
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    left: 50%;
+    top: 0;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.8);
+}
+
+
+.contact-dot-1 {
+    transform: rotate(0deg);
+}
+
+.contact-dot-2 {
+    transform: rotate(120deg);
+}
+
+.contact-dot-3 {
+    transform: rotate(240deg);
+}
+
+
+@keyframes contactOuterRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes contactInnerRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .contact-section {
+
+        min-height: 100svh;
+
+        padding:
+            60px
+            20px
+            30px;
+    }
+
+
+    .contact-content {
+
+        margin-top: 20px;
+    }
+
+
+    .contact-title {
+
+        font-size: 18vw;
+
+        letter-spacing: -4px;
+    }
+
+
+    .contact-description {
+
+        font-size: 13px;
+
+        max-width: 330px;
+
+        margin-top: 30px;
+    }
+
+
+    .contact-email {
+
+        font-size: 13px;
+
+        margin-top: 30px;
+    }
+
+
+    .contact-hero-orbit {
+
+        width: 360px;
+        height: 360px;
+
+        left: 65%;
+        top: 58%;
+
+        opacity: 0.06;
+    }
+
+
+    .contact-orbit-outer {
+
+        width: 360px;
+        height: 360px;
+    }
+
+
+    .contact-orbit-inner {
+
+        width: 235px;
+        height: 235px;
+    }
+
+
+    .contact-footer-left {
+
+        font-size: 18px;
+    }
+
+
+    .contact-footer-right {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+/* MOBILE MENU */
+
+.mobile-menu {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 75%;
+    max-width: 360px;
+
+    height: 100vh;
+
+    background: #050505;
+
+    border-left: 1px solid rgba(255,255,255,0.15);
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    padding: 40px;
+
+    z-index: 99;
+
+    transform: translateX(100%);
+
+    transition: transform 0.4s ease;
+}
+
+
+.mobile-menu.active {
+
+    transform: translateX(0);
+
+}
+
+
+.mobile-menu a {
+
+    color: #f5f5f5;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    transition: color 0.3s ease;
+}
+
+
+.mobile-menu a:hover {
+
+    color: #ed1b2f;
+
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SECTION 1 — HERO
+====================================================== -->
+
+<section class="hero" id="home">
+
+    <nav>
+
+        <div class="logo">
+            <span class="logo-dot">DOT</span><span class="logo-nekt">NEKT</span>
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
+
+            <li>
+                <a href="#connect">About</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#work">Work</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <button class="menu" id="menuButton" aria-label="Open menu">
+            <span class="menu-dot dot-top"></span>
+            <span class="menu-dot dot-left"></span>
+            <span class="menu-dot dot-right"></span>
+        </button>
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home">HOME</a>
+
+        <a href="#connect">ABOUT</a>
+
+        <a href="#services">SERVICES</a>
+ 
+        <a href="#work">WORK</a>
+
+        <a href="#contact">CONTACT</a>
+
+</div>
+
+</nav>
+
+
+    <!-- HERO ORBITS -->
+
+    <div class="orbit-system">
+
+        <div class="outer-orbit">
+
+            <div class="outer-dot-track">
+
+                <div class="dot-position outer-position-1">
+                    <div class="orbit-dot"></div>
+                </div>
+
+                <div class="dot-position outer-position-2">
+                    <div class="orbit-dot"></div>
+                </div>
+
+                <div class="dot-position outer-position-3">
+                    <div class="orbit-dot"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="inner-orbit">
+
+            <div class="inner-dot-track">
+
+                <div class="dot-position inner-position-1">
+                    <div class="orbit-dot"></div>
+                </div>
+
+                <div class="dot-position inner-position-2">
+                    <div class="orbit-dot"></div>
+                </div>
+
+                <div class="dot-position inner-position-3">
+                    <div class="orbit-dot"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO CENTER -->
+
+    <div class="center-content">
+
+        <div class="main-logo">
+
+            <span class="dot">DOT</span><span class="nekt">NEKT</span>
+
+        </div>
+
+
+        <div class="tagline">
+
+            CONNECTING <span>WHAT</span> MATTERS
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO LEFT -->
+
+    <div class="info-left">
+
+        <div class="number">
+            01
+        </div>
+
+
+        <div class="agency-text">
+
+            CREATIVE AGENCY<br>
+
+            BASED IN INDIA
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO RIGHT -->
+
+    <div class="info-right">
+
+        <div class="est">
+            EST.
+        </div>
+
+
+        <div class="year">
+            2026
+        </div>
+
+    </div>
+
+
+    <div class="bottom-left">
+
+        <span>
+            WE CONNECT IDEAS
+        </span>
+
+    </div>
+
+
+    <div class="scroll">
+
+        SCROLL DOWN
+
+        <div class="scroll-arrow">
+            ↓
+        </div>
+
+    </div>
+
+
+    <div class="scroll-right">
+
+        SCROLL
+
+        <span>↓</span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION 2 — WE CONNECT
+====================================================== -->
+
+<section class="connect-section" id="connect">
+
+    <div class="connect-label">
+        02 / WHAT WE DO
+    </div>
+
+
+    <div class="connect-orbit">
+
+        <div class="connect-outer-ring">
+
+            <div class="connect-dot-track">
+
+                <div class="connect-dot-position connect-dot-1">
+                    <div class="connect-dot"></div>
+                </div>
+
+                <div class="connect-dot-position connect-dot-2">
+                    <div class="connect-dot"></div>
+                </div>
+
+                <div class="connect-dot-position connect-dot-3">
+                    <div class="connect-dot"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="connect-inner-ring">
+
+            <div class="connect-inner-dot-track">
+
+                <div class="connect-dot-position connect-inner-dot-1">
+                    <div class="connect-dot"></div>
+                </div>
+
+                <div class="connect-dot-position connect-inner-dot-2">
+                    <div class="connect-dot"></div>
+                </div>
+
+                <div class="connect-dot-position connect-inner-dot-3">
+                    <div class="connect-dot"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="connect-title">
+
+        WE DON'T JUST
+
+        <span class="outline">
+            CREATE.
+        </span>
+
+        <br>
+
+        <span class="red">
+            WE CONNECT.
+        </span>
+
+    </h2>
+
+
+    <p class="connect-description">
+
+        We connect ideas with strategy,
+        creativity with purpose, and brands
+        with the people they matter to.
+
+        <br><br>
+
+        From identity and design to digital
+        experiences and stories, DOTNEKT
+        brings the right pieces together.
+
+    </p>
+
+
+    <div class="connect-keywords">
+
+        <div class="connect-keyword">
+            BRANDS
+        </div>
+
+        <div class="connect-keyword">
+            IDEAS
+        </div>
+
+        <div class="connect-keyword">
+            PEOPLE
+        </div>
+
+        <div class="connect-keyword">
+            STORIES
+        </div>
+
+    </div>
+
+
+    <div class="connect-number">
+        DOTNEKT / 02
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION 3 — SERVICES
+====================================================== -->
+
+<section class="services-section" id="services">
+
+
+    <!-- SUBTLE HERO CIRCLES -->
+
+    <div class="services-hero-bg">
+
+
+        <!-- OUTER CIRCLE -->
+
+        <div class="services-bg-outer">
+
+            <div class="services-bg-outer-track">
+
+
+                <div class="services-bg-dot-position services-bg-outer-1">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+                <div class="services-bg-dot-position services-bg-outer-2">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+                <div class="services-bg-dot-position services-bg-outer-3">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- INNER CIRCLE -->
+
+        <div class="services-bg-inner">
+
+            <div class="services-bg-inner-track">
+
+
+                <div class="services-bg-dot-position services-bg-inner-1">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+                <div class="services-bg-dot-position services-bg-inner-2">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+                <div class="services-bg-dot-position services-bg-inner-3">
+
+                    <div class="services-bg-dot"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SERVICES CONTENT -->
+
+    <div class="services-content">
+
+
+        <div class="services-label">
+            03 / SERVICES
+        </div>
+
+
+        <h2 class="services-heading">
+
+            WHAT WE<br>
+
+            <span>DO.</span>
+
+        </h2>
+
+
+        <div class="services-list">
+
+
+            <!-- BRANDING -->
+
+            <div class="service-item">
+
+                <div class="service-number">
+                    01
+                </div>
+
+
+                <div class="service-name">
+                    BRANDING
+                </div>
+
+
+                <div class="service-plus">
+                    +
+                </div>
+
+
+                <div class="service-details">
+
+                    LOGOS / BRAND IDENTITY / POSTERS /
+                    BROCHURES / FLYERS / PRINT DESIGN
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN -->
+
+            <div class="service-item">
+
+                <div class="service-number">
+                    02
+                </div>
+
+
+                <div class="service-name">
+                    DESIGN
+                </div>
+
+
+                <div class="service-plus">
+                    +
+                </div>
+
+
+                <div class="service-details">
+
+                    GRAPHIC DESIGN / SOCIAL CREATIVES /
+                    THUMBNAILS / ID CARDS / PROMOTIONAL DESIGN
+
+                </div>
+
+            </div>
+
+
+            <!-- EDITING & CONTENT -->
+
+            <div class="service-item">
+
+                <div class="service-number">
+                    03
+                </div>
+
+
+                <div class="service-name">
+                    EDITING &amp; CONTENT
+                </div>
+
+
+                <div class="service-plus">
+                    +
+                </div>
+
+
+                <div class="service-details">
+
+                    VIDEO EDITING / REELS / SHORT-FORM VIDEO /
+                    AI VIDEO / AI THUMBNAILS / CONTENT WRITING /
+                    PHOTOGRAPHY
+
+                </div>
+
+            </div>
+
+
+            <!-- DIGITAL -->
+
+            <div class="service-item">
+
+                <div class="service-number">
+                    04
+                </div>
+
+
+                <div class="service-name">
+                    DIGITAL
+                </div>
+
+
+                <div class="service-plus">
+                    +
+                </div>
+
+
+                <div class="service-details">
+
+                    WEBSITE DESIGN / WEBSITE DEVELOPMENT /
+                    APP DEVELOPMENT / LANDING PAGES
+
+                </div>
+
+            </div>
+
+
+            <!-- MARKETING -->
+
+            <div class="service-item">
+
+                <div class="service-number">
+                    05
+                </div>
+
+
+                <div class="service-name">
+                    MARKETING
+                </div>
+
+
+                <div class="service-plus">
+                    +
+                </div>
+
+
+                <div class="service-details">
+
+                    GOOGLE ADS / META ADS /
+                    WEB ADVERTISING / DIGITAL CAMPAIGNS
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION 4 — OUR WORK
+====================================================== -->
+
+<section class="work-section" id="work">
+<!-- WORK HERO BACKGROUND -->
+
+<div class="work-hero-bg">
+
+    <div class="work-bg-outer">
+
+        <div class="work-bg-outer-track">
+
+            <div class="work-bg-dot-position work-bg-outer-1">
+                <div class="work-bg-dot"></div>
+            </div>
+
+            <div class="work-bg-dot-position work-bg-outer-2">
+                <div class="work-bg-dot"></div>
+            </div>
+
+            <div class="work-bg-dot-position work-bg-outer-3">
+                <div class="work-bg-dot"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="work-bg-inner">
+
+        <div class="work-bg-inner-track">
+
+            <div class="work-bg-dot-position work-bg-inner-1">
+                <div class="work-bg-dot"></div>
+            </div>
+
+            <div class="work-bg-dot-position work-bg-inner-2">
+                <div class="work-bg-dot"></div>
+            </div>
+
+            <div class="work-bg-dot-position work-bg-inner-3">
+                <div class="work-bg-dot"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <div class="work-content">
+
+
+        <div class="work-label">
+            04 / OUR WORK
+        </div>
+
+
+        <h2 class="work-heading">
+
+            SELECTED<br>
+
+            <span>WORK.</span>
+
+        </h2>
+
+
+        <div class="work-list">
+
+<!-- PROJECT 01 -->
+
+<a href="project1.html" class="work-project">
+
+    <div class="project-visual">
+
+        <img src="images/project01.jpeg" alt="K — PERSONAL BRAND">
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div>
+
+            <div class="project-category">
+                BRANDING
+            </div>
+
+            <div class="project-name">
+                K — PERSONAL BRAND
+            </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- PROJECT 02 -->
+
+<a href="project2.html" class="work-project">
+
+    <div class="project-visual">
+
+        <img src="images/project02.jpeg" alt="Creative Design">
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div>
+
+            <div class="project-category">
+                DESIGN
+            </div>
+
+            <div class="project-name">
+                CREATIVE DESIGN
+            </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- PROJECT 03 -->
+
+<a href="project3.html" class="work-project">
+
+    <div class="project-visual">
+
+        <img src="images/project03.jpeg" alt="Character Art">
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div>
+
+            <div class="project-category">
+                CHARACTER ART
+            </div>
+
+            <div class="project-name">
+                CHARACTER ART
+            </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- PROJECT 04 -->
+
+<a href="project4.html" class="work-project">
+
+    <div class="project-visual">
+
+        <img src="images/project04.jpeg" alt="Video Content">
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div>
+
+            <div class="project-category">
+                EDITING &amp; CONTENT
+            </div>
+
+            <div class="project-name">
+                VIDEO / CONTENT
+            </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- PROJECT 05 -->
+
+<a href="project5.html" class="work-project">
+
+    <div class="project-visual">
+
+        <img src="images/project05.jpeg" alt="K — Visual Identity">
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div>
+
+            <div class="project-category">
+                MARKETING
+            </div>
+
+            <div class="project-name">
+                K — VISUAL IDENTITY
+            </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 5 — CONTACT
+===================================================== -->
+
+<section class="contact-section" id="contact">
+
+
+    <!-- HERO ORBIT -->
+
+    <div class="contact-hero-orbit">
+
+
+        <!-- OUTER CIRCLE -->
+
+        <div class="contact-orbit-outer">
+
+            <div class="contact-outer-track">
+
+
+                <div class="contact-dot-position contact-dot-1">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+                <div class="contact-dot-position contact-dot-2">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+                <div class="contact-dot-position contact-dot-3">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- INNER CIRCLE -->
+
+        <div class="contact-orbit-inner">
+
+            <div class="contact-inner-track">
+
+
+                <div class="contact-dot-position contact-dot-1">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+                <div class="contact-dot-position contact-dot-2">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+                <div class="contact-dot-position contact-dot-3">
+
+                    <div class="contact-orbit-dot"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CONTACT CONTENT -->
+
+    <div class="contact-content">
+
+
+        <div class="contact-label">
+
+            05 / CONTACT
+
+        </div>
+
+
+        <h2 class="contact-title">
+
+            LET'S<br>
+
+            <span>CONNECT</span>
+
+        </h2>
+
+
+        <p class="contact-description">
+
+            Have a project, idea or story in mind?
+            Let's create something meaningful together.
+
+        </p>
+
+
+        <a
+            href="mailto:hello@dotnekt.com"
+            class="contact-email"
+        >
+
+            hello@dotnekt.com
+
+            <span class="contact-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="contact-footer">
+
+
+        <div class="contact-footer-left">
+
+            DOT<span>NEKT</span>
+
+        </div>
+
+
+        <div class="contact-footer-right">
+
+            © 2026 DOTNEKT — ALL RIGHTS RESERVED
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<script>
+
+const menuButton = document.getElementById("menuButton");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuButton.addEventListener("click", function () {
+
+    mobileMenu.classList.toggle("active");
+
+    const isOpen = mobileMenu.classList.contains("active");
+
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+    );
+
+});
+
+const mobileMenuLinks =
+    mobileMenu.querySelectorAll("a");
+
+mobileMenuLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+        mobileMenu.classList.remove("active");
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>

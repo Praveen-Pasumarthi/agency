@@ -1,0 +1,606 @@
+/* =========================================================
+   DOTNEKT V13 — SHARED STYLES
+   Color palette from v4 (cream / dark / orange)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --cream: #F5F0EB;
+    --cream-dark: #E8E0D8;
+    --dark: #1A1A1A;
+    --dark-light: #2D2D2D;
+    --orange: #E85D26;
+    --orange-hover: #D14E1A;
+    --white: #FFFFFF;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+
+    --circle-color: rgba(245, 240, 235, 0.14);
+    --dot-color: rgba(245, 240, 235, 0.28);
+
+    --outer-size: 650px;
+    --inner-size: 430px;
+    --dot-size: 20px;
+    --outer-speed: 12s;
+    --inner-speed: 9s;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.logo-dot {
+    color: var(--cream);
+}
+
+.logo-nekt {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-links .active::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu {
+    display: none !important;
+}
+
+.menu {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+    position: relative;
+}
+
+.menu-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dot-top {
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot-left {
+    left: 11px;
+    bottom: 9px;
+}
+
+.dot-right {
+    right: 11px;
+    bottom: 9px;
+}
+
+.menu:hover .menu-dot {
+    background: var(--orange);
+}
+
+
+/* =========================================================
+   SHARED ORBIT KEYFRAMES
+   ========================================================= */
+
+@keyframes outerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes innerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+
+/* =========================================================
+   TABLET (1100px)
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .connect-title {
+        width: 58%;
+        font-size: clamp(50px, 7.5vw, 95px);
+    }
+
+    .connect-orbit {
+        width: 430px;
+        height: 430px;
+        right: -30px;
+    }
+
+    .connect-outer-ring {
+        width: 430px;
+        height: 430px;
+    }
+
+    .connect-inner-ring {
+        width: 275px;
+        height: 275px;
+    }
+
+    .services-hero-bg {
+        width: 560px;
+        height: 560px;
+    }
+
+    .services-bg-outer {
+        width: 560px;
+        height: 560px;
+    }
+
+    .services-bg-inner {
+        width: 365px;
+        height: 365px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE (800px)
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* HERO */
+
+    .orbit-system {
+        width: 430px;
+        height: 430px;
+        top: 50%;
+    }
+
+    .outer-orbit {
+        width: 430px;
+        height: 430px;
+    }
+
+    .inner-orbit {
+        width: 285px;
+        height: 285px;
+    }
+
+    .main-logo {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    .tagline {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .info-left {
+        left: 20px;
+        top: auto;
+        bottom: 105px;
+    }
+
+    .info-right {
+        right: 20px;
+        top: 125px;
+    }
+
+    .agency-text {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .bottom-left,
+    .scroll-right {
+        display: none;
+    }
+
+
+    /* SECTION 2 */
+
+    .connect-section {
+        min-height: 100vh;
+        padding: 100px 25px 100px;
+        justify-content: flex-start;
+    }
+
+    .connect-label {
+        left: 25px;
+        top: 40px;
+    }
+
+    .connect-title {
+        width: 100%;
+        font-size: 15vw;
+        letter-spacing: -3px;
+        margin-top: 30px;
+    }
+
+    .connect-description {
+        width: 85%;
+        max-width: 85%;
+        margin-top: 45px;
+        font-size: 12px;
+    }
+
+    .connect-keywords {
+        width: 90%;
+        margin-top: 28px;
+    }
+
+    .connect-orbit {
+        width: 360px;
+        height: 360px;
+        right: -120px;
+        top: 58%;
+    }
+
+    .connect-outer-ring {
+        width: 360px;
+        height: 360px;
+    }
+
+    .connect-inner-ring {
+        width: 235px;
+        height: 235px;
+    }
+
+    .connect-number {
+        bottom: 35px;
+        right: 25px;
+    }
+
+
+    /* SECTION 3 */
+
+    .services-section {
+        min-height: 100vh;
+        padding: 85px 25px 75px;
+    }
+
+    .services-heading {
+        font-size: 15vw;
+        letter-spacing: -3px;
+        margin-bottom: 42px;
+    }
+
+    .service-item {
+        min-height: 92px;
+        grid-template-columns: 45px 1fr 45px;
+    }
+
+    .service-number {
+        font-size: 9px;
+    }
+
+    .service-name {
+        font-size: 7.5vw;
+        letter-spacing: -2px;
+    }
+
+    .service-plus {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .service-details {
+        left: 45px;
+        bottom: 7px;
+        font-size: 7px;
+        letter-spacing: 1.2px;
+        max-width: 70%;
+    }
+
+    .services-hero-bg {
+        width: 400px;
+        height: 400px;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        opacity: 0.055;
+    }
+
+    .services-bg-outer {
+        width: 400px;
+        height: 400px;
+    }
+
+    .services-bg-inner {
+        width: 260px;
+        height: 260px;
+    }
+
+    .services-bg-dot {
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* SECTION 4 */
+
+    .work-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 85px 20px 100px;
+        overflow: visible;
+    }
+
+    .work-content {
+        height: auto;
+    }
+
+    .work-heading {
+        font-size: 15vw;
+        letter-spacing: -3px;
+        margin-bottom: 35px;
+    }
+
+    .work-list {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 18px;
+    }
+
+    .work-project:nth-child(1),
+    .work-project:nth-child(2),
+    .work-project:nth-child(3),
+    .work-project:nth-child(4),
+    .work-project:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .project-visual {
+        aspect-ratio: 1 / 1;
+        flex: none;
+    }
+
+    .project-name {
+        font-size: 12px;
+    }
+
+    .project-category {
+        font-size: 6px;
+        letter-spacing: 1.5px;
+    }
+
+    .project-arrow {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE (500px)
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .orbit-system {
+        width: 350px;
+        height: 350px;
+    }
+
+    .outer-orbit {
+        width: 350px;
+        height: 350px;
+    }
+
+    .inner-orbit {
+        width: 235px;
+        height: 235px;
+    }
+
+    .main-logo {
+        font-size: 51px;
+    }
+
+    .tagline {
+        margin-top: 15px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .orbit-dot {
+        width: 13px;
+        height: 13px;
+    }
+
+    .connect-title {
+        font-size: 16vw;
+    }
+
+    .connect-description {
+        width: 92%;
+        max-width: 92%;
+    }
+
+    .connect-orbit {
+        width: 320px;
+        height: 320px;
+        right: -125px;
+        top: 61%;
+    }
+
+    .connect-outer-ring {
+        width: 320px;
+        height: 320px;
+    }
+
+    .connect-inner-ring {
+        width: 210px;
+        height: 210px;
+    }
+
+    .services-section {
+        padding: 80px 20px 70px;
+    }
+
+    .services-heading {
+        font-size: 16vw;
+        margin-bottom: 38px;
+    }
+
+    .service-item {
+        min-height: 88px;
+        grid-template-columns: 38px 1fr 40px;
+    }
+
+    .service-name {
+        font-size: 7.2vw;
+        letter-spacing: -1.5px;
+    }
+
+    .service-plus {
+        width: 29px;
+        height: 29px;
+        font-size: 14px;
+    }
+
+    .service-details {
+        left: 38px;
+        font-size: 6.5px;
+    }
+
+    .services-hero-bg {
+        width: 340px;
+        height: 340px;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        opacity: 0.045;
+    }
+
+    .services-bg-outer {
+        width: 340px;
+        height: 340px;
+    }
+
+    .services-bg-inner {
+        width: 220px;
+        height: 220px;
+    }
+
+    .work-section {
+        padding: 80px 20px 100px;
+    }
+
+    .work-heading {
+        font-size: 16vw;
+        margin-bottom: 38px;
+    }
+
+    .project-name {
+        font-size: 11px;
+    }
+}

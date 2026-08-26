@@ -1,0 +1,223 @@
+/* =========================================================
+   SECTION 3 — SERVICES
+   ========================================================= */
+
+.services-section {
+    position: relative;
+    min-height: 100vh;
+    background: var(--dark);
+    padding: 90px 7vw 70px;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SERVICES BACKGROUND ORBIT
+   ========================================================= */
+
+.services-hero-bg {
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    opacity: 0.075;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services-bg-outer {
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    left: 0;
+    top: 0;
+    border: 1px solid rgba(245, 240, 235, 0.75);
+    border-radius: 50%;
+}
+
+.services-bg-inner {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(245, 240, 235, 0.75);
+    border-radius: 50%;
+}
+
+.services-bg-outer-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: servicesOuterRotate 16s linear infinite;
+}
+
+.services-bg-inner-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    animation: servicesInnerRotate 12s linear infinite;
+}
+
+.services-bg-dot-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+.services-bg-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(245, 240, 235, 0.75);
+}
+
+.services-bg-outer-1 { transform: rotate(0deg); }
+.services-bg-outer-2 { transform: rotate(120deg); }
+.services-bg-outer-3 { transform: rotate(240deg); }
+.services-bg-inner-1 { transform: rotate(0deg); }
+.services-bg-inner-2 { transform: rotate(120deg); }
+.services-bg-inner-3 { transform: rotate(240deg); }
+
+@keyframes servicesOuterRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes servicesInnerRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+
+/* =========================================================
+   SERVICES CONTENT
+   ========================================================= */
+
+.services-content {
+    position: relative;
+    z-index: 5;
+}
+
+.services-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.services-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(55px, 7.5vw, 110px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+    color: var(--cream);
+}
+
+.services-heading span {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   SERVICE LIST
+   ========================================================= */
+
+.services-list {
+    width: 100%;
+    border-top: 1px solid rgba(245, 240, 235, 0.18);
+}
+
+.service-item {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    border-bottom: 1px solid rgba(245, 240, 235, 0.18);
+    display: grid;
+    grid-template-columns: 90px 1fr 60px;
+    align-items: center;
+    cursor: pointer;
+    transition: padding 0.4s ease;
+}
+
+.service-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--orange);
+}
+
+.service-name {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(24px, 3.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: var(--cream);
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.service-plus {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(245, 240, 235, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    color: var(--cream);
+    transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.service-item:hover {
+    padding-left: 15px;
+}
+
+.service-item:hover .service-name {
+    color: var(--orange);
+    transform: translateX(10px);
+}
+
+.service-item:hover .service-plus {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: rotate(45deg);
+}
+
+.service-details {
+    position: absolute;
+    left: 90px;
+    bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: rgba(245, 240, 235, 0.42);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.service-item:hover .service-details {
+    opacity: 1;
+    transform: translateY(0);
+}
