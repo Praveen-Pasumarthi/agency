@@ -4,11 +4,14 @@
 
 .hero {
     width: 100%;
-    min-height: 650px;
     height: 100vh;
     position: relative;
-    overflow: hidden;
     background: var(--dark);
+    overflow: hidden;
+}
+
+.hero .orbit-system {
+    overflow: hidden;
 }
 
 
@@ -29,8 +32,8 @@
 
 .orbit-center-dot {
     position: absolute;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -126,9 +129,9 @@
 
 .main-logo {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(75px, 9vw, 145px);
+    font-size: clamp(120px, 17vw, 260px);
     font-weight: 900;
-    letter-spacing: -7px;
+    letter-spacing: clamp(4px, 1vw, 12px);
     line-height: 1.0;
     white-space: nowrap;
 }
@@ -142,9 +145,9 @@
 }
 
 .tagline {
-    margin-top: 22px;
-    font-size: 18px;
-    letter-spacing: 6px;
+    margin-top: 28px;
+    font-size: 20px;
+    letter-spacing: 8px;
     line-height: 1.8;
     color: var(--cream);
     white-space: nowrap;
@@ -169,7 +172,7 @@
 
 .number {
     color: var(--orange);
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 2px;
     display: flex;
     align-items: center;
@@ -202,20 +205,20 @@
 
 .est {
     color: var(--orange);
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 4px;
 }
 
 .year {
     margin-top: 18px;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 7px;
 }
 
 .bottom-left {
     position: absolute;
-    bottom: 35px;
-    left: 35px;
+    bottom: 120px;
+    left: 45px;
     z-index: 30;
     display: flex;
     align-items: center;
@@ -237,7 +240,7 @@
 
 .scroll {
     position: absolute;
-    bottom: 30px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 30;
@@ -255,8 +258,8 @@
 
 .scroll-right {
     position: absolute;
-    right: 35px;
-    bottom: 35px;
+    right: 45px;
+    bottom: 120px;
     z-index: 30;
     font-size: 10px;
     letter-spacing: 4px;
@@ -281,4 +284,198 @@
     margin-top: -1px;
     position: relative;
     z-index: 5;
+}
+
+
+/* =========================================================
+   HERO MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+        height: 100svh;
+        padding-top: 55px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 55px;
+        padding: 0 20px;
+        z-index: 100;
+        background: var(--dark);
+    }
+
+    :root {
+        --outer-size: 700px;
+        --inner-size: 460px;
+        --dot-size: 18px;
+    }
+
+    .orbit-system {
+        width: var(--outer-size);
+        height: var(--outer-size);
+    }
+
+    .outer-orbit {
+        width: var(--outer-size);
+        height: var(--outer-size);
+    }
+
+    .inner-orbit {
+        width: var(--inner-size);
+        height: var(--inner-size);
+    }
+
+    .orbit-dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+    }
+
+    .orbit-center-dot {
+        width: 22px;
+        height: 22px;
+    }
+
+    .main-logo {
+        font-size: clamp(65px, 20vw, 130px);
+        letter-spacing: 2px;
+    }
+
+    .tagline {
+        font-size: 12px;
+        letter-spacing: 4px;
+        margin-top: 20px;
+    }
+
+    .info-left {
+        left: 20px;
+        bottom: 100px;
+        top: auto;
+    }
+
+    .info-right {
+        right: 20px;
+        bottom: 100px;
+        top: auto;
+    }
+
+    .number {
+        font-size: 10px;
+    }
+
+    .number::after {
+        width: 25px;
+    }
+
+    .agency-text {
+        font-size: 6px;
+        letter-spacing: 1.5px;
+        margin-top: 15px;
+    }
+
+    .est {
+        font-size: 10px;
+    }
+
+    .year {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+    .bottom-left {
+        display: none;
+    }
+
+    .scroll {
+        bottom: 30px;
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
+
+    .scroll-right {
+        display: none;
+    }
+
+    .hero-curve-svg {
+        height: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    nav {
+        height: 50px;
+    }
+
+    :root {
+        --outer-size: 600px;
+        --inner-size: 395px;
+        --dot-size: 16px;
+    }
+
+    .orbit-system {
+        width: var(--outer-size);
+        height: var(--outer-size);
+    }
+
+    .outer-orbit {
+        width: var(--outer-size);
+        height: var(--outer-size);
+    }
+
+    .inner-orbit {
+        width: var(--inner-size);
+        height: var(--inner-size);
+    }
+
+    .orbit-dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+    }
+
+    .orbit-center-dot {
+        width: 20px;
+        height: 20px;
+    }
+
+    .main-logo {
+        font-size: clamp(55px, 18vw, 110px);
+        letter-spacing: 1px;
+    }
+
+    .tagline {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-top: 16px;
+    }
+
+    .info-left {
+        left: 15px;
+        bottom: 85px;
+    }
+
+    .info-right {
+        right: 15px;
+        bottom: 85px;
+    }
+
+    .number {
+        font-size: 9px;
+    }
+
+    .est {
+        font-size: 9px;
+    }
+
+    .year {
+        font-size: 11px;
+    }
+
+    .scroll {
+        bottom: 25px;
+    }
 }

@@ -20,9 +20,9 @@
     --circle-color: rgba(245, 240, 235, 0.14);
     --dot-color: rgba(245, 240, 235, 0.28);
 
-    --outer-size: 650px;
-    --inner-size: 430px;
-    --dot-size: 20px;
+    --outer-size: 1250px;
+    --inner-size: 820px;
+    --dot-size: 30px;
     --outer-speed: 12s;
     --inner-speed: 9s;
 }
@@ -40,6 +40,12 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -53,6 +59,64 @@ body {
 ::selection {
     background: var(--orange);
     color: var(--white);
+}
+
+
+/* =========================================================
+   CUSTOM THEME SCROLLBAR (FADES WHEN IDLE, GRABBABLE)
+   ========================================================= */
+
+.custom-scrollbar-track {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    z-index: 99999;
+    pointer-events: auto;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-scrollbar-track.visible,
+.custom-scrollbar-track.dragging,
+.custom-scrollbar-track:hover {
+    opacity: 1;
+}
+
+.custom-scrollbar-thumb {
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    width: 6px;
+    border-radius: 999px;
+    background: var(--orange);
+    box-shadow: 0 0 10px rgba(232, 93, 38, 0.45);
+    cursor: grab;
+    pointer-events: auto;
+    transition: width 0.2s ease, right 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-scrollbar-track:hover .custom-scrollbar-thumb {
+    width: 8px;
+    right: 3px;
+    box-shadow: 0 0 14px rgba(232, 93, 38, 0.65);
+}
+
+.custom-scrollbar-thumb:active,
+.custom-scrollbar-track.dragging .custom-scrollbar-thumb {
+    cursor: grabbing;
+    width: 10px;
+    right: 2px;
+    background: var(--orange-hover, #D14E1A);
+    box-shadow: 0 0 18px rgba(232, 93, 38, 0.85);
+}
+
+body.scrollbar-dragging,
+body.scrollbar-dragging * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
 }
 
 
@@ -177,18 +241,35 @@ nav {
    ========================================================= */
 
 @keyframes outerRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes innerRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
 }
 
 
@@ -241,10 +322,6 @@ nav {
 
 @media (max-width: 800px) {
 
-    nav {
-        padding: 0 20px;
-    }
-
     .menu {
         display: block;
     }
@@ -253,229 +330,158 @@ nav {
         display: none;
     }
 
-    /* HERO */
-
-    .orbit-system {
-        width: 430px;
-        height: 430px;
-        top: 50%;
-    }
-
-    .outer-orbit {
-        width: 430px;
-        height: 430px;
-    }
-
-    .inner-orbit {
-        width: 285px;
-        height: 285px;
-    }
-
-    .main-logo {
-        font-size: 65px;
-        letter-spacing: -4px;
-    }
-
-    .tagline {
-        font-size: 10px;
-        letter-spacing: 4px;
-    }
-
-    .info-left {
-        left: 20px;
-        top: auto;
-        bottom: 105px;
-    }
-
-    .info-right {
-        right: 20px;
-        top: 125px;
-    }
-
-    .agency-text {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
-
-    .bottom-left,
-    .scroll-right {
-        display: none;
-    }
-
-
-    /* SECTION 2 */
-
-    .connect-section {
-        min-height: 100vh;
-        padding: 100px 25px 100px;
-        justify-content: flex-start;
-    }
-
-    .connect-label {
-        left: 25px;
-        top: 40px;
-    }
-
-    .connect-title {
-        width: 100%;
-        font-size: 15vw;
-        letter-spacing: -3px;
-        margin-top: 30px;
-    }
-
-    .connect-description {
-        width: 85%;
-        max-width: 85%;
-        margin-top: 45px;
-        font-size: 12px;
-    }
-
-    .connect-keywords {
-        width: 90%;
-        margin-top: 28px;
-    }
-
-    .connect-orbit {
-        width: 360px;
-        height: 360px;
-        right: -120px;
-        top: 58%;
-    }
-
-    .connect-outer-ring {
-        width: 360px;
-        height: 360px;
-    }
-
-    .connect-inner-ring {
-        width: 235px;
-        height: 235px;
-    }
-
-    .connect-number {
-        bottom: 35px;
-        right: 25px;
-    }
-
 
     /* SECTION 3 */
 
     .services-section {
-        min-height: 100vh;
-        padding: 85px 25px 75px;
+        height: 100svh;
+        padding: 55px 25px 30px;
+        overflow: hidden;
     }
 
     .services-heading {
-        font-size: 15vw;
-        letter-spacing: -3px;
-        margin-bottom: 42px;
+        font-size: 12vw;
+        letter-spacing: -2px;
+        margin-bottom: 10px;
+    }
+
+    .services-list {
+        border-top: 1px solid rgba(245, 240, 235, 0.18);
     }
 
     .service-item {
-        min-height: 92px;
-        grid-template-columns: 45px 1fr 45px;
+        min-height: 0;
+        padding: 12px 0;
+        grid-template-columns: 28px 1fr 28px;
     }
 
     .service-number {
-        font-size: 9px;
+        font-size: 7px;
     }
 
     .service-name {
-        font-size: 7.5vw;
-        letter-spacing: -2px;
+        font-size: 5vw;
+        letter-spacing: -1px;
     }
 
     .service-plus {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
     }
 
     .service-details {
-        left: 45px;
-        bottom: 7px;
-        font-size: 7px;
-        letter-spacing: 1.2px;
-        max-width: 70%;
+        left: 28px;
+        bottom: 4px;
+        font-size: 5px;
+        letter-spacing: 1px;
+        max-width: 80%;
     }
 
     .services-hero-bg {
-        width: 400px;
-        height: 400px;
+        width: 280px;
+        height: 280px;
         left: 50%;
         top: 55%;
         transform: translate(-50%, -50%);
-        opacity: 0.055;
+        opacity: 0.04;
     }
 
     .services-bg-outer {
-        width: 400px;
-        height: 400px;
+        width: 280px;
+        height: 280px;
     }
 
     .services-bg-inner {
-        width: 260px;
-        height: 260px;
+        width: 180px;
+        height: 180px;
     }
 
     .services-bg-dot {
-        width: 13px;
-        height: 13px;
+        width: 11px;
+        height: 11px;
     }
 
 
     /* SECTION 4 */
 
     .work-section {
-        height: auto;
-        min-height: 100vh;
-        padding: 85px 20px 100px;
-        overflow: visible;
+        height: 100svh;
+        padding: 55px 20px 30px;
+        overflow: hidden;
     }
 
     .work-content {
-        height: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .work-heading {
-        font-size: 15vw;
-        letter-spacing: -3px;
-        margin-bottom: 35px;
+        font-size: 12vw;
+        letter-spacing: -2px;
+        margin-bottom: 12px;
     }
 
-    .work-list {
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        gap: 18px;
+    .work-hero-bg {
+        display: none;
     }
 
-    .work-project:nth-child(1),
-    .work-project:nth-child(2),
-    .work-project:nth-child(3),
-    .work-project:nth-child(4),
-    .work-project:nth-child(5) {
-        grid-column: span 1;
-        grid-row: span 1;
+
+    /* MOBILE MENU */
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 45%;
+        max-width: 260px;
+        height: 100vh;
+        background: var(--dark);
+        border-left: 1px solid rgba(245, 240, 235, 0.15);
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        padding: 40px;
+        z-index: 99;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
     }
 
-    .project-visual {
-        aspect-ratio: 1 / 1;
-        flex: none;
+    .mobile-menu.active {
+        transform: translateX(0);
     }
 
-    .project-name {
-        font-size: 12px;
+    .menu-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--cream);
+        font-size: 32px;
+        line-height: 1;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        padding: 5px;
     }
 
-    .project-category {
-        font-size: 6px;
-        letter-spacing: 1.5px;
+    .menu-close:hover {
+        color: var(--orange);
     }
 
-    .project-arrow {
-        font-size: 16px;
+    .mobile-menu a {
+        color: var(--cream);
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+        color: var(--orange);
     }
 }
 
@@ -486,118 +492,29 @@ nav {
 
 @media (max-width: 500px) {
 
-    .orbit-system {
-        width: 350px;
-        height: 350px;
-    }
-
-    .outer-orbit {
-        width: 350px;
-        height: 350px;
-    }
-
-    .inner-orbit {
-        width: 235px;
-        height: 235px;
-    }
-
-    .main-logo {
-        font-size: 51px;
-    }
-
-    .tagline {
-        margin-top: 15px;
-        font-size: 8px;
-        letter-spacing: 3px;
-    }
-
-    .orbit-dot {
-        width: 13px;
-        height: 13px;
-    }
-
     .connect-title {
-        font-size: 16vw;
+        font-size: 10vw;
     }
 
     .connect-description {
-        width: 92%;
-        max-width: 92%;
+        font-size: 12px;
     }
 
-    .connect-orbit {
-        width: 320px;
-        height: 320px;
-        right: -125px;
-        top: 61%;
-    }
-
-    .connect-outer-ring {
-        width: 320px;
-        height: 320px;
-    }
-
-    .connect-inner-ring {
-        width: 210px;
-        height: 210px;
-    }
-
-    .services-section {
-        padding: 80px 20px 70px;
+    .connect-keyword {
+        padding: 6px 12px;
+        font-size: 6px;
     }
 
     .services-heading {
-        font-size: 16vw;
-        margin-bottom: 38px;
-    }
-
-    .service-item {
-        min-height: 88px;
-        grid-template-columns: 38px 1fr 40px;
+        font-size: 10vw;
     }
 
     .service-name {
-        font-size: 7.2vw;
-        letter-spacing: -1.5px;
-    }
-
-    .service-plus {
-        width: 29px;
-        height: 29px;
-        font-size: 14px;
-    }
-
-    .service-details {
-        left: 38px;
-        font-size: 6.5px;
-    }
-
-    .services-hero-bg {
-        width: 340px;
-        height: 340px;
-        left: 50%;
-        top: 55%;
-        transform: translate(-50%, -50%);
-        opacity: 0.045;
-    }
-
-    .services-bg-outer {
-        width: 340px;
-        height: 340px;
-    }
-
-    .services-bg-inner {
-        width: 220px;
-        height: 220px;
-    }
-
-    .work-section {
-        padding: 80px 20px 100px;
+        font-size: 5vw;
     }
 
     .work-heading {
-        font-size: 16vw;
-        margin-bottom: 38px;
+        font-size: 10vw;
     }
 
     .project-name {
