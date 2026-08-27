@@ -1,0 +1,338 @@
+/* =========================================================
+   CONTACT / FOOTER SECTION — REPLICA
+   ========================================================= */
+
+.contact-section {
+    background: #1a3a3a;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.contact-content {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding: 80px 42px 0;
+    min-height: 450px;
+}
+
+.contact-character {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    transform: translateY(25px);
+}
+
+.contact-character-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    transform: translate(0, 0);
+    cursor: grab;
+}
+
+.contact-main {
+    display: flex;
+    gap: 60px;
+    flex: 1;
+    padding-bottom: 40px;
+    padding-left: 450px;
+}
+
+.contact-left {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.contact-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.contact-highlight {
+    color: var(--orange);
+}
+
+.section-label-light {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.section-label-light .label-dot {
+    background: var(--orange);
+}
+
+.contact-description {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-item a,
+.contact-item span {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--orange);
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: var(--cream);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(232, 93, 38, 0.2);
+}
+
+.submit-btn {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(232, 93, 38, 0.3);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 42px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background: #111;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.footer-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--cream);
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    gap: 4px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-contact-info a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-info a:hover {
+    color: var(--orange);
+}
+
+.footer-social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.footer-social-section span {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--orange);
+}
+
+/* =========================================================
+   CONTACT RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .contact-main {
+        gap: 40px;
+        padding-left: 300px;
+    }
+
+    .contact-title {
+        font-size: clamp(28px, 3.5vw, 44px);
+    }
+
+    .contact-character-img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .contact-content {
+        padding: 60px 20px 0;
+    }
+
+    .contact-character {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-bottom: -30px;
+    }
+
+    .contact-character-img {
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .contact-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        gap: 30px;
+    }
+
+    .contact-info {
+        justify-content: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-social-section {
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-title {
+        font-size: 8vw;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,258 @@
+/* =========================================================
+   DOTNEKT V14 — ORIGAMI THEME
+   Color palette: Cream / Dark / Orange / Teal
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --cream: #EFE1C4E6;
+    --cream-dark: #DED6C6;
+    --vanilla: #E8DFD0;
+    --dark: #1A1A1A;
+    --dark-light: #2D2D2D;
+    --orange: #E85D26;
+    --orange-hover: #D14E1A;
+    --teal: #1A6B5A;
+    --teal-light: #2A8B72;
+    --white: #FFFFFF;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark) var(--cream);
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--cream);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--dark);
+    border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+/* Paper + Grain Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* =========================================================
+   PAPER BACKGROUND
+   ========================================================= */
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--vanilla);
+    background-image:
+        /* warm paper variation */
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(255,255,255,.35),
+            transparent 55%
+        ),
+        /* subtle shade gradient */
+        linear-gradient(
+            175deg,
+            var(--vanilla) 0%,
+            #D9CEBC 40%,
+            #CFC3AD 100%
+        ),
+        /* fine paper fibers */
+        radial-gradient(
+            rgba(80, 60, 25, 0.08) 0.5px,
+            transparent 0.6px
+        ),
+        /* larger paper texture */
+        radial-gradient(
+            rgba(255,255,255,0.2) 0.6px,
+            transparent 0.8px
+        );
+    background-size:
+        100% 100%,
+        100% 100%,
+        4px 4px,
+        9px 9px;
+}
+
+/* =========================================================
+   NOISE OVERLAY (FINE)
+   ========================================================= */
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* =========================================================
+   SECTION ORANGE BOTTOM BORDER
+   ========================================================= */
+
+section {
+    border-bottom: 3px solid var(--dark);
+}
+
+/* =========================================================
+   SHARED ELEMENTS
+   ========================================================= */
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+}
+
+.label-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 42px;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.footer-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: var(--gray-500);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--gray-500);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--orange);
+}
+
+/* =========================================================
+   MOBILE MENU (GLOBAL)
+   ========================================================= */
+
+.mobile-menu {
+    display: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
