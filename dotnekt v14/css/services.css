@@ -64,6 +64,8 @@
     border: 1px solid rgba(26, 26, 26, 0.08);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     will-change: transform;
+    text-decoration: none;
+    color: inherit;
 }
 
 .service-card:hover {
@@ -86,6 +88,7 @@
     color: var(--dark);
     letter-spacing: 1px;
     margin-bottom: 6px;
+    text-decoration: none;
 }
 
 .service-description {
