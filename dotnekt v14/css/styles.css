@@ -240,6 +240,27 @@ section {
     transform: rotate(10deg);
 }
 
+/* Floating logo across sections */
+.floating-logo {
+    position: absolute;
+    width: 50px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-logo-1 { top: 40px; right: 10%; animation-delay: 0s; }
+.floating-logo-2 { bottom: 60px; right: 15%; animation-delay: 1.5s; }
+.floating-logo-3 { top: 50px; right: 5%; animation-delay: 3s; }
+.floating-logo-4 { bottom: 40px; left: 10%; animation-delay: 2s; }
+.floating-logo-5 { top: 60px; left: 15%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
 /* Greeting text - no box */
 .deco-greeting {
     position: absolute;
