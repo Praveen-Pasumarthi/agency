@@ -3,11 +3,12 @@
    ========================================================= */
 
 .connect-section {
-    min-height: auto;
+    min-height: 100vh;
     background: var(--cream);
     padding: 60px 42px;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }

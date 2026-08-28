@@ -263,4 +263,185 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+    // =====================================================
+    // PROJECT DETAIL — DYNAMIC DATA LOADING
+    // =====================================================
+
+    const projects = [
+        {
+            id: 1,
+            label: '01 / BRANDING',
+            title: 'NKS GAMING<br>GOS',
+            category: 'BRAND IDENTITY / VISUAL DESIGN',
+            about: 'A complete brand identity project designed for a gaming community that wanted to stand out in the crowded gaming space. The project involved creating a bold, energetic visual language.',
+            services: 'Branding<br>Visual Identity<br>Graphic Design',
+            image: 'images/project01.jpeg',
+            nextId: 2,
+            nextTitle: 'RVS LOADERS'
+        },
+        {
+            id: 2,
+            label: '02 / BRANDING',
+            title: 'RVS<br>LOADERS',
+            category: 'LOGO DESIGN / BRAND STRATEGY',
+            about: 'Brand identity and logo design for RVS Loaders, focusing on industrial strength and reliability. The visual language communicates power and professionalism.',
+            services: 'Logo Design<br>Brand Strategy<br>Visual Identity',
+            image: 'images/project02.jpeg',
+            nextId: 3,
+            nextTitle: 'SHADOW LEGENDS'
+        },
+        {
+            id: 3,
+            label: '03 / CONTENT',
+            title: 'SHADOW<br>LEGENDS',
+            category: 'CONTENT CREATION / VISUAL DESIGN',
+            about: 'Content creation and visual design for Shadow Legends campaign. Engaging visuals crafted to maximize audience engagement and brand recall.',
+            services: 'Content Creation<br>Visual Design<br>Social Media',
+            image: 'images/project03.jpeg',
+            nextId: 4,
+            nextTitle: 'NKS BLACKWORKS'
+        },
+        {
+            id: 4,
+            label: '04 / BRANDING',
+            title: 'NKS<br>BLACKWORKS',
+            category: 'BRAND IDENTITY / PACKAGING',
+            about: 'Dark, edgy brand identity for NKS Blackworks sub-brand. The design captures the rebellious spirit while maintaining brand cohesion with the parent brand.',
+            services: 'Brand Identity<br>Packaging Design<br>Art Direction',
+            image: 'images/project04.jpeg',
+            nextId: 5,
+            nextTitle: 'PROJECT CHAOS'
+        },
+        {
+            id: 5,
+            label: '05 / VIDEO EDIT',
+            title: 'PROJECT<br>CHAOS',
+            category: 'VIDEO EDITING / MOTION GRAPHICS',
+            about: 'High-energy video editing and motion graphics for gaming content. Dynamic transitions and effects that capture the intensity of competitive gaming.',
+            services: 'Video Editing<br>Motion Graphics<br>Color Grading',
+            image: 'images/project05.jpeg',
+            nextId: 6,
+            nextTitle: "KETHU'S CHAOS"
+        },
+        {
+            id: 6,
+            label: '06 / VISUAL IDENTITY',
+            title: "KETHU'S<br>CHAOS",
+            category: 'CHARACTER ART / BRAND IDENTITY',
+            about: 'Stylized character illustration and brand identity with low-poly aesthetic, featuring tech-savvy gamer persona. Modern digital art meets gaming culture.',
+            services: 'Character Art<br>Brand Identity<br>Digital Illustration',
+            image: 'images/web developer.png',
+            nextId: 1,
+            nextTitle: 'NKS GAMING GOs'
+        }
+    ];
+
+    // Check if we're on the project detail page
+    const projectTitle = document.getElementById('projectTitle');
+    if (projectTitle) {
+        const params = new URLSearchParams(window.location.search);
+        const projectId = parseInt(params.get('id')) || 1;
+        const project = projects.find(p => p.id === projectId) || projects[0];
+
+        // Update page content
+        document.getElementById('projectLabel').textContent = project.label;
+        document.getElementById('projectTitle').innerHTML = project.title;
+        document.getElementById('projectCategory').textContent = project.category;
+        document.getElementById('projectAbout').textContent = project.about;
+        document.getElementById('projectServices').innerHTML = project.services;
+        document.getElementById('projectImage').src = project.image;
+        document.getElementById('projectImage').alt = project.title.replace('<br>', ' ');
+
+        // Update next project link
+        const nextLink = document.getElementById('nextProjectLink');
+        nextLink.href = `project-detail.html?id=${project.nextId}`;
+        nextLink.innerHTML = `NEXT PROJECT <span>/</span>`;
+    }
+
+
+    // =====================================================
+    // SERVICE DETAIL — DYNAMIC DATA LOADING
+    // =====================================================
+
+    const services = [
+        {
+            id: 1,
+            label: '01 / BRANDING',
+            title: 'BRANDING',
+            tagline: 'Identities that stand out and stick.',
+            about: 'We craft bold, memorable brand identities that resonate with your audience and set you apart from the competition. From logo design to complete brand guidelines.',
+            deliverables: 'Logo Design<br>Brand Guidelines<br>Visual Identity System<br>Business Cards',
+            image: 'images/content writer.png',
+            nextId: 2,
+            nextTitle: 'WEB DESIGN'
+        },
+        {
+            id: 2,
+            label: '02 / WEB DESIGN',
+            title: 'WEB DESIGN',
+            tagline: 'Websites that look great and work smart.',
+            about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics.',
+            deliverables: 'UI/UX Design<br>Responsive Development<br>CMS Integration<br>E-Commerce Solutions',
+            image: 'images/web developer.png',
+            nextId: 3,
+            nextTitle: 'VIDEO / CONTENT'
+        },
+        {
+            id: 3,
+            label: '03 / VIDEO & CONTENT',
+            title: 'VIDEO / CONTENT',
+            tagline: 'Stories that move, engage and inspire.',
+            about: 'From concept to final cut, we produce video content and visual stories that capture attention and drive engagement across all platforms.',
+            deliverables: 'Video Production<br>Motion Graphics<br>Social Media Content<br>Thumbnail Design',
+            image: 'images/photographer.png',
+            nextId: 4,
+            nextTitle: 'DEVELOPMENT'
+        },
+        {
+            id: 4,
+            label: '04 / DEVELOPMENT',
+            title: 'DEVELOPMENT',
+            tagline: 'Clean, fast and future ready.',
+            about: 'We build robust, scalable web applications using modern technologies. Performance-first approach with clean, maintainable code.',
+            deliverables: 'Frontend Development<br>Backend Systems<br>API Integration<br>Performance Optimization',
+            image: 'images/social media marketing.png',
+            nextId: 5,
+            nextTitle: 'STRATEGY'
+        },
+        {
+            id: 5,
+            label: '05 / STRATEGY',
+            title: 'STRATEGY',
+            tagline: 'Ideas backed by thinking and research.',
+            about: 'We help brands find their voice, define their audience, and build meaningful connections through data-driven creative strategy.',
+            deliverables: 'Brand Strategy<br>Market Research<br>Content Planning<br>Growth Consulting',
+            image: 'images/pose 6.png',
+            nextId: 1,
+            nextTitle: 'BRANDING'
+        }
+    ];
+
+    // Check if we're on the service detail page
+    const serviceTitle = document.getElementById('serviceTitle');
+    if (serviceTitle) {
+        const params = new URLSearchParams(window.location.search);
+        const serviceId = parseInt(params.get('id')) || 1;
+        const service = services.find(s => s.id === serviceId) || services[0];
+
+        // Update page content
+        document.getElementById('serviceLabel').textContent = service.label;
+        document.getElementById('serviceTitle').innerHTML = service.title;
+        document.getElementById('serviceTagline').textContent = service.tagline;
+        document.getElementById('serviceAbout').textContent = service.about;
+        document.getElementById('serviceDeliverables').innerHTML = service.deliverables;
+        document.getElementById('serviceImage').src = service.image;
+        document.getElementById('serviceImage').alt = service.title;
+
+        // Update next service link
+        const nextLink = document.getElementById('nextServiceLink');
+        nextLink.href = `service-detail.html?id=${service.nextId}`;
+        nextLink.innerHTML = `NEXT SERVICE <span>/</span>`;
+    }
+
 });

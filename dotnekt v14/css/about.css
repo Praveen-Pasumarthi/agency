@@ -3,7 +3,7 @@
    ========================================================= */
 
 .about-section {
-    min-height: auto;
+    min-height: 100vh;
     background: var(--cream);
     padding: 80px 42px 0;
     display: flex;
@@ -200,10 +200,10 @@
 .about-image-wrapper::after {
     content: '';
     position: absolute;
-    bottom: 25px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 120%;
     height: 60px;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
     border-radius: 50%;
@@ -227,11 +227,11 @@
 
 .about-character {
     position: relative;
-    width: 100%;
-    max-width: 2600px;
+    width: 120%;
+    max-width: 3600px;
     z-index: 1;
     filter: none;
-    transform: translate(0, 0);
+    transform: translate(-150px, 50px);
     cursor: grab;
 }
 
@@ -328,11 +328,6 @@
         margin-top: 40px;
     }
 
-    .about-orange-circle {
-        width: 240px;
-        height: 240px;
-    }
-
     .about-character {
         max-width: 350px;
     }
@@ -340,12 +335,6 @@
     .about-speech-bubble {
         right: 0;
         top: 0;
-    }
-
-    .about-bottom-stats {
-        gap: 30px;
-        padding: 30px 20px;
-        flex-direction: column;
     }
 
     .about-deco {

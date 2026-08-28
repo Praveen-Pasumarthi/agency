@@ -3,18 +3,22 @@
    ========================================================= */
 
 .contact-section {
+    min-height: 100vh;
     background: #1a3a3a;
     padding: 0;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-content {
     display: flex;
     align-items: flex-start;
     position: relative;
-    padding: 80px 42px 0;
-    min-height: 450px;
+    padding: 80px 42px 40px;
+    flex: 1;
 }
 
 .contact-character {
@@ -281,7 +285,7 @@
 
 @media (max-width: 800px) {
     .contact-content {
-        padding: 60px 20px 0;
+        padding: 60px 20px 30px;
     }
 
     .contact-character {

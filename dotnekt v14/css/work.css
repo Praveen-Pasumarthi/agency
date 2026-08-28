@@ -3,9 +3,12 @@
    ========================================================= */
 
 .work-section {
-    min-height: auto;
+    min-height: 100vh;
     background: var(--cream);
     padding: 60px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }
@@ -28,20 +31,21 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .work-header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .work-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
+    font-size: clamp(36px, 5vw, 64px);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -3px;
     color: var(--dark);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .work-highlight {
@@ -75,17 +79,19 @@
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
 }
 
 .work-card {
     position: relative;
-    border-radius: 16px;
+    border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
     cursor: pointer;
+    text-decoration: none;
+    display: block;
 }
 
 .work-card img {
@@ -104,11 +110,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 24px;
+    padding: 16px;
     background: linear-gradient(transparent, rgba(26, 26, 26, 0.95));
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s ease;
@@ -120,18 +126,18 @@
 }
 
 .work-category {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--orange);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-weight: 600;
 }
 
 .work-name {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 800;
     color: var(--cream);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .work-footer {
@@ -176,7 +182,7 @@
     }
 
     .work-grid {
-        gap: 16px;
+        gap: 12px;
     }
 
     .work-overlay {
@@ -187,7 +193,24 @@
 
 @media (max-width: 500px) {
     .work-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .work-card {
+        border-radius: 8px;
+    }
+
+    .work-overlay {
+        padding: 10px;
+    }
+
+    .work-name {
+        font-size: 11px;
+    }
+
+    .work-category {
+        font-size: 8px;
     }
 
     .work-filters {
