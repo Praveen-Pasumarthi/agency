@@ -3,11 +3,10 @@
    ========================================================= */
 
 .contact-section {
-    min-height: 100vh;
     background: #1a3a3a;
     padding: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,11 +29,11 @@
 }
 
 .contact-character-img {
-    width: 100%;
-    max-width: 500px;
+    width: 110%;
+    max-width: 550px;
     height: auto;
     object-fit: contain;
-    transform: translate(0, 0);
+    transform: translate(-50px, 0px);
     cursor: grab;
 }
 
@@ -178,7 +177,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 42px;
+    padding: 10px 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     background: #111;
 }
@@ -190,8 +189,8 @@
 }
 
 .footer-logo {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 

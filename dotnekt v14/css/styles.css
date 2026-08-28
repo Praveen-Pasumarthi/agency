@@ -3,7 +3,14 @@
    Color palette: Cream / Dark / Orange / Teal
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'bvsatyamurty';
+    src: url('../../assets/bvsatyamurty.ttf') format('truetype');
+    font-weight: 400 900;
+    font-display: swap;
+}
 
 :root {
     --cream: #EFE1C4E6;
@@ -96,28 +103,20 @@ body::before {
     background-color: var(--vanilla);
     background-image:
         /* warm paper variation */
-        radial-gradient(
-            ellipse at 50% 45%,
-            rgba(255,255,255,.35),
-            transparent 55%
-        ),
+        radial-gradient(ellipse at 50% 45%,
+            rgba(255, 255, 255, .35),
+            transparent 55%),
         /* subtle shade gradient */
-        linear-gradient(
-            175deg,
+        linear-gradient(175deg,
             var(--vanilla) 0%,
             #D9CEBC 40%,
-            #CFC3AD 100%
-        ),
+            #CFC3AD 100%),
         /* fine paper fibers */
-        radial-gradient(
-            rgba(80, 60, 25, 0.08) 0.5px,
-            transparent 0.6px
-        ),
+        radial-gradient(rgba(80, 60, 25, 0.08) 0.5px,
+            transparent 0.6px),
         /* larger paper texture */
-        radial-gradient(
-            rgba(255,255,255,0.2) 0.6px,
-            transparent 0.8px
-        );
+        radial-gradient(rgba(255, 255, 255, 0.2) 0.6px,
+            transparent 0.8px);
     background-size:
         100% 100%,
         100% 100%,
@@ -154,6 +153,208 @@ section {
 /* =========================================================
    SHARED ELEMENTS
    ========================================================= */
+
+/* Cloud Box */
+.cloud-box {
+    background: var(--cream-dark);
+    border: 1.5px solid rgba(26, 26, 26, 0.15);
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cloud-box::before {
+    content: '';
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    background: rgba(26, 26, 26, 0.04);
+    border-radius: 50%;
+    top: -10%;
+    left: -5%;
+    pointer-events: none;
+}
+
+.cloud-box-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15%;
+    filter: grayscale(100%) sepia(100%) saturate(200%) hue-rotate(-10deg) brightness(0.9);
+}
+
+.cloud-box-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    padding: 20px;
+}
+
+.cloud-box-arrow {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    transform: rotate(10deg);
+}
+
+.cloud-box-hero .cloud-box-text {
+    color: var(--dark);
+}
+
+/* Hero badge */
+.cloud-box-hero {
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    width: 160px;
+    height: 160px;
+    z-index: 30;
+    background: transparent;
+    border: 2px solid var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cloud-box-hero .cloud-box-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+.cloud-box-hero .cloud-box-arrow {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    transform: rotate(10deg);
+}
+
+/* Greeting text - no box */
+.deco-greeting {
+    position: absolute;
+    z-index: 15;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.deco-greeting-1 {
+    animation-delay: 0s;
+}
+
+.deco-greeting-3 {
+    animation-delay: 1.2s;
+}
+
+.deco-greeting-4 {
+    animation-delay: 2.4s;
+}
+
+.deco-greeting-5 {
+    animation-delay: 3.6s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.deco-greeting-1 {
+    top: 115px;
+    left: 35%;
+    width: 160px;
+    height: 140px;
+}
+
+.deco-greeting-3 {
+    bottom: 40%;
+    left: 46%;
+    width: 120px;
+    height: 105px;
+}
+
+.deco-greeting-4 {
+    bottom: 40%;
+    right: 5%;
+    width: 125px;
+    height: 108px;
+}
+
+.deco-greeting-5 {
+    top: 90%;
+    left: 15%;
+    width: 115px;
+    height: 100px;
+}
+
+.greeting-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--orange);
+    text-align: center;
+    line-height: 1.3;
+}
+
+.greeting-telugu {
+    font-family: 'Bvsatyamurty', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.greeting-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.greeting-tamil {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+.greeting-malayalam {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+}
+
+/* About cloud box */
+.cloud-box-about {
+    position: absolute;
+    top: -20px;
+    left: 80px;
+    width: 180px;
+    height: 180px;
+    z-index: 5;
+    background: transparent;
+    border: 2px solid var(--dark);
+}
+
+.cloud-box-about .cloud-box-text {
+    color: var(--orange);
+}
+
+.cloud-box-telugu {
+    font-family: 'Bvsatyamurty', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--orange);
+    text-align: center;
+    line-height: 1.4;
+    padding: 20px;
+}
 
 .section-label {
     display: flex;
@@ -192,8 +393,8 @@ section {
 }
 
 .footer-logo {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 

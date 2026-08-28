@@ -72,16 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // MOBILE MENU
     // =====================================================
 
-    const menuButton = document.getElementById('menuButton');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuClose = document.getElementById('menuClose');
 
-    if (menuButton && mobileMenu && menuClose) {
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
+    if (mobileMenu && menuClose) {
         menuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -367,58 +361,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const services = [
         {
             id: 1,
-            label: '01 / BRANDING',
-            title: 'BRANDING',
+            label: '01 / SOCIAL MEDIA BRANDING',
+            title: 'SOCIAL MEDIA BRANDING',
             tagline: 'Identities that stand out and stick.',
             about: 'We craft bold, memorable brand identities that resonate with your audience and set you apart from the competition. From logo design to complete brand guidelines.',
             deliverables: 'Logo Design<br>Brand Guidelines<br>Visual Identity System<br>Business Cards',
-            image: 'images/content writer.png',
+            image: 'images/social media marketing.png',
             nextId: 2,
-            nextTitle: 'WEB DESIGN'
+            nextTitle: 'WEB DESIGN AND DEVELOPMENT'
         },
         {
             id: 2,
-            label: '02 / WEB DESIGN',
-            title: 'WEB DESIGN',
+            label: '02 / WEB DESIGN AND DEVELOPMENT',
+            title: 'WEB DESIGN AND DEVELOPMENT',
             tagline: 'Websites that look great and work smart.',
             about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics.',
             deliverables: 'UI/UX Design<br>Responsive Development<br>CMS Integration<br>E-Commerce Solutions',
             image: 'images/web developer.png',
             nextId: 3,
-            nextTitle: 'VIDEO / CONTENT'
+            nextTitle: 'VIDEO/CONTENT EDITING'
         },
         {
             id: 3,
-            label: '03 / VIDEO & CONTENT',
-            title: 'VIDEO / CONTENT',
+            label: '03 / VIDEO/CONTENT EDITING',
+            title: 'VIDEO/CONTENT EDITING',
             tagline: 'Stories that move, engage and inspire.',
             about: 'From concept to final cut, we produce video content and visual stories that capture attention and drive engagement across all platforms.',
             deliverables: 'Video Production<br>Motion Graphics<br>Social Media Content<br>Thumbnail Design',
             image: 'images/photographer.png',
             nextId: 4,
-            nextTitle: 'DEVELOPMENT'
+            nextTitle: 'CONTENT WRITING'
         },
         {
             id: 4,
-            label: '04 / DEVELOPMENT',
-            title: 'DEVELOPMENT',
-            tagline: 'Clean, fast and future ready.',
-            about: 'We build robust, scalable web applications using modern technologies. Performance-first approach with clean, maintainable code.',
-            deliverables: 'Frontend Development<br>Backend Systems<br>API Integration<br>Performance Optimization',
-            image: 'images/social media marketing.png',
-            nextId: 5,
-            nextTitle: 'STRATEGY'
-        },
-        {
-            id: 5,
-            label: '05 / STRATEGY',
-            title: 'STRATEGY',
-            tagline: 'Ideas backed by thinking and research.',
-            about: 'We help brands find their voice, define their audience, and build meaningful connections through data-driven creative strategy.',
-            deliverables: 'Brand Strategy<br>Market Research<br>Content Planning<br>Growth Consulting',
-            image: 'images/pose 6.png',
+            label: '04 / CONTENT WRITING',
+            title: 'CONTENT WRITING',
+            tagline: 'Words that connect, inform and convert.',
+            about: 'We create compelling written content that tells your brand story, engages your audience, and drives meaningful results across all platforms.',
+            deliverables: 'Blog Posts & Articles<br>Social Media Copy<br>Website Content<br>Email Campaigns',
+            image: 'images/content writer.png',
             nextId: 1,
-            nextTitle: 'BRANDING'
+            nextTitle: 'SOCIAL MEDIA BRANDING'
         }
     ];
 

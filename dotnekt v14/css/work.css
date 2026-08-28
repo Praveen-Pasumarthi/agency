@@ -3,14 +3,36 @@
    ========================================================= */
 
 .work-section {
-    min-height: 100vh;
+    min-height: auto;
     background: var(--cream);
-    padding: 60px 42px;
+    padding: 50px 42px 60px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+.work-character {
+    position: absolute;
+    top: 50px;
+    left: 1400px;
+    width: 400px;
+    z-index: 5;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .work-section::before {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,455 +17,479 @@
 
 <body>
 
-<!-- Noise overlay -->
-<div class="noise-overlay"></div>
+    <!-- Noise overlay -->
+    <div class="noise-overlay"></div>
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 1 — HERO
 ====================================================== -->
 
-<section class="hero page" id="home">
+    <section class="hero page" id="home">
 
-    <nav>
-        <div class="logo">
-            <img src="images/logo.png" alt="DOTNEKT" class="logo-img">
+        <nav>
+            <div class="logo">
+                <img src="images/logo teal.png" alt="DOTNEKT" class="logo-img">
+            </div>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <a href="#contact" class="cta-button">LET'S TALK ↗</a>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#services">SERVICES</a>
+                <a href="#work">WORK</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </nav>
+
+        <!-- Multi-language greetings -->
+        <div class="deco-greeting deco-greeting-1">
+            <span class="greeting-text greeting-telugu">స్వాగతం సుస్వాగతం</span>
+        </div>
+        <div class="deco-greeting deco-greeting-3">
+            <span class="greeting-text greeting-hindi">नमस्ते</span>
+        </div>
+        <div class="deco-greeting deco-greeting-4">
+            <span class="greeting-text greeting-tamil">வணக்கம்</span>
+        </div>
+        <div class="deco-greeting deco-greeting-5">
+            <span class="greeting-text greeting-malayalam">സ്വാഗതം</span>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <a href="#contact" class="cta-button">LET'S TALK ↗</a>
-
-        <button class="menu-circle" id="menuButton" aria-label="Open menu">
-            <span class="menu-line-h"></span>
-            <span class="menu-line-v"></span>
-        </button>
-
-        <div class="mobile-menu" id="mobileMenu">
-            <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#services">SERVICES</a>
-            <a href="#work">WORK</a>
-            <a href="#contact">CONTACT</a>
+        <!-- Decorative elements -->
+        <div class="deco deco-plus-1">+</div>
+        <div class="deco deco-plus-2">+</div>
+        <div class="deco deco-dots deco-dots-1">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
         </div>
-    </nav>
+        <div class="deco deco-dots deco-dots-2">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="deco deco-dots deco-dots-3">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="deco deco-dots deco-dots-4">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="deco deco-arrow">↗</div>
 
-    <!-- Decorative elements -->
-    <div class="deco deco-plus-1">+</div>
-    <div class="deco deco-plus-2">+</div>
-    <div class="deco deco-dots deco-dots-1">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="deco deco-dots deco-dots-2">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="deco deco-dots deco-dots-3">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="deco deco-dots deco-dots-4">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="deco deco-arrow">↗</div>
+        <!-- Brush Strokes -->
+        <div class="brush-stroke brush-orange">
+            <img src="images/orange 1.png" alt="">
+        </div>
+        <div class="brush-stroke brush-teal">
+            <img src="images/green 1.png" alt="">
+        </div>
 
-    <!-- Brush Strokes -->
-    <div class="brush-stroke brush-orange">
-        <img src="images/orange 1.png" alt="">
-    </div>
-    <div class="brush-stroke brush-teal">
-        <img src="images/green 1.png" alt="">
-    </div>
-
-    <div class="hero-content">
-        <div class="hero-left">
-            <h1 class="hero-title">
-                WE DON'T<br>
-                JUST <span class="hero-outline">CREATE.</span><br>
-                <span class="hero-highlight">WE CONNECT</span><span class="hero-dot">.</span>
-            </h1>
-            <p class="hero-description">
-                We connect ideas with strategy, creativity with purpose, and brands with the people they matter to.
-            </p>
-            <p class="hero-description">
-                From identity and design to digital experiences and stories, DOTNEKT brings the right pieces together.
-            </p>
-            <div class="hero-tags">
-                <span class="hero-tag">BRANDS</span>
-                <span class="hero-tag">IDEAS</span>
-                <span class="hero-tag">PEOPLE</span>
-                <span class="hero-tag">STORIES</span>
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    WE DON'T<br>
+                    JUST <span class="hero-outline">CREATE.</span><br>
+                    <span class="hero-highlight">WE CONNECT</span><span class="hero-dot">.</span>
+                </h1>
+                <p class="hero-description">
+                    We connect ideas with strategy, creativity with purpose, and brands with the people they matter to.
+                </p>
+                <p class="hero-description">
+                    From identity and design to digital experiences and stories, DOTNEKT brings the right pieces
+                    together.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#work" class="btn-primary">VIEW OUR WORK <span class="btn-arrow">↗</span></a>
+                    <a href="#about" class="btn-secondary">ABOUT US <span class="btn-arrow">↗</span></a>
+                </div>
             </div>
-            <div class="hero-buttons">
-                <a href="#work" class="btn-primary">VIEW OUR WORK <span class="btn-arrow">↗</span></a>
-                <a href="#about" class="btn-secondary">ABOUT US <span class="btn-arrow">↗</span></a>
+
+            <div class="hero-right">
+                <!-- Orbit image -->
+                <div class="hero-orbit-wrapper">
+                    <img src="images/orbit.png" alt="Orbit" class="hero-orbit-img">
+                </div>
+
+                <!-- Main character -->
+                <div class="hero-character-wrapper">
+                    <img src="images/pose 2.png" alt="Origami Character" class="hero-character">
+                </div>
+
+                <!-- Badge -->
+                <div class="cloud-box cloud-box-hero">
+                    <span class="cloud-box-text">NOT YOUR<br>NORMAL<br>AGENCY.</span>
+                    <svg class="cloud-box-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M5 35 Q20 20 35 5" stroke="#1A1A1A" stroke-width="2" fill="none" />
+                        <path d="M25 5 L35 5 L35 15" stroke="#1A1A1A" stroke-width="2" fill="none" />
+                    </svg>
+                </div>
             </div>
         </div>
 
-        <div class="hero-right">
-            <!-- Orbit image -->
-            <div class="hero-orbit-wrapper">
-                <img src="images/orbit.png" alt="Orbit" class="hero-orbit-img">
-            </div>
-
-            <!-- Main character -->
-            <div class="hero-character-wrapper">
-                <img src="images/pose 2.png" alt="Origami Character" class="hero-character">
-            </div>
-
-            <!-- Badge -->
-            <div class="hero-badge">
-                <span class="badge-text">NOT YOUR<br>NORMAL<br>AGENCY.</span>
-                <svg class="badge-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <path d="M5 35 Q20 20 35 5" stroke="#1A1A1A" stroke-width="2" fill="none"/>
-                    <path d="M25 5 L35 5 L35 15" stroke="#1A1A1A" stroke-width="2" fill="none"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 2 — ABOUT
 ====================================================== -->
 
-<section class="about-section page" id="about">
+    <section class="about-section page" id="about">
 
-    <!-- Decorative elements -->
-    <div class="about-deco about-deco-circle-1"></div>
-    <div class="about-deco about-deco-circle-2"></div>
-    <div class="about-deco about-deco-squiggle">~</div>
-    <div class="about-deco about-deco-arrow">↗</div>
-    <div class="about-deco about-deco-cross">+</div>
-    <div class="about-deco about-deco-dots">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-    </div>
+        <!-- Decorative elements -->
+        <div class="about-deco about-deco-circle-1"></div>
+        <div class="about-deco about-deco-circle-2"></div>
+        <div class="about-deco about-deco-squiggle">~</div>
+        <div class="about-deco about-deco-arrow">↗</div>
+        <div class="about-deco about-deco-cross">+</div>
+        <div class="about-deco about-deco-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
 
-    <div class="about-content">
-        <div class="about-left">
-            <div class="section-label"><span class="label-dot"></span> ABOUT US</div>
-            <h2 class="about-title">
-                WE'RE A BUNCH OF<br>
-                <span class="about-highlight">CREATIVE WEIRDOS</span>
-            </h2>
-            <p class="about-description">
-                DOTNEKT is a creative studio that builds brands, websites, digital experiences and content for modern businesses. We believe in ideas, experimentation and a little bit of chaos.
-            </p>
-            <div class="about-stats-row">
-                <div class="about-stat-item">
-                    <div class="about-stat-icon">💡</div>
-                    <span class="about-stat-label">Creative Thinking</span>
+        <div class="about-content">
+            <div class="about-left">
+                <div class="section-label"><span class="label-dot"></span> ABOUT US</div>
+                <h2 class="about-title">
+                    WE'RE A BUNCH OF<br>
+                    <span class="about-highlight">CREATIVE WEIRDOS</span>
+                </h2>
+                <p class="about-description">
+                    DOTNEKT is a creative studio that builds brands, websites, digital experiences and content for
+                    modern businesses. We believe in ideas, experimentation and a little bit of chaos.
+                </p>
+                <div class="about-stats-row">
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">💡</div>
+                        <span class="about-stat-label">Creative Thinking</span>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">✦</div>
+                        <span class="about-stat-label">Clean Design</span>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">&lt;/&gt;</div>
+                        <span class="about-stat-label">Modern Technology</span>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">◎</div>
+                        <span class="about-stat-label">Real Impact</span>
+                    </div>
                 </div>
-                <div class="about-stat-item">
-                    <div class="about-stat-icon">✦</div>
-                    <span class="about-stat-label">Clean Design</span>
+                <div class="about-tags">
+                    <span class="about-tag">BRANDS</span>
+                    <span class="about-tag">IDEAS</span>
+                    <span class="about-tag">PEOPLE</span>
+                    <span class="about-tag">STORIES</span>
                 </div>
-                <div class="about-stat-item">
-                    <div class="about-stat-icon">&lt;/&gt;</div>
-                    <span class="about-stat-label">Modern Technology</span>
-                </div>
-                <div class="about-stat-item">
-                    <div class="about-stat-icon">◎</div>
-                    <span class="about-stat-label">Real Impact</span>
+            </div>
+            <div class="about-right">
+                <div class="about-image-wrapper">
+                    <img src="images/team 2.png" alt="DOTNEKT Team" class="about-character">
+                    <div class="about-speech-bubble">
+                        <span>Different<br>Minds.<br>Better<br>Ideas.</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="about-right">
-            <div class="about-image-wrapper">
-                <img src="images/team 2.png" alt="DOTNEKT Team" class="about-character">
-                <div class="about-speech-bubble">
-                    <span>Different<br>Minds.<br>Better<br>Ideas.</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</section>
+    </section>
 
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 3 — SERVICES
 ====================================================== -->
 
-<section class="services-section page" id="services">
+    <section class="services-section page" id="services">
 
-    <div class="services-content">
-        <div class="services-header">
-            <div class="section-label"><span class="label-dot"></span> SERVICES</div>
-            <h2 class="services-title">
-                WHAT WE<br>
-                <span class="services-highlight">DO.</span>
-            </h2>
+        <div class="services-content">
+            <div class="services-header">
+                <div class="section-label"><span class="label-dot"></span> SERVICES</div>
+                <h2 class="services-title">
+                    WHAT WE<br>
+                    <span class="services-highlight">DO.</span>
+                </h2>
+            </div>
+
+            <div class="services-grid">
+                <a href="service-detail.html?id=1" class="service-card">
+                    <img src="images/social media marketing.png" alt="Social Media Branding" class="service-image">
+                    <h3 class="service-name">SOCIAL MEDIA BRANDING</h3>
+                    <p class="service-description">Identities that stand out and stick.</p>
+                    <span class="service-link">EXPLORE →</span>
+                </a>
+
+                <a href="service-detail.html?id=2" class="service-card">
+                    <img src="images/web developer.png" alt="Web Design and Development" class="service-image">
+                    <h3 class="service-name">WEB DESIGN AND DEVELOPMENT</h3>
+                    <p class="service-description">Websites that look great and work smart.</p>
+                    <span class="service-link">EXPLORE →</span>
+                </a>
+
+                <a href="service-detail.html?id=3" class="service-card">
+                    <img src="images/photographer.png" alt="Video/Content Editing" class="service-image">
+                    <h3 class="service-name">VIDEO/CONTENT EDITING</h3>
+                    <p class="service-description">Stories that move, engage and inspire.</p>
+                    <span class="service-link">EXPLORE →</span>
+                </a>
+
+                <a href="service-detail.html?id=4" class="service-card">
+                    <img src="images/content writer.png" alt="Content Writing" class="service-image">
+                    <h3 class="service-name">CONTENT WRITING</h3>
+                    <p class="service-description">Words that connect, inform and convert.</p>
+                    <span class="service-link">EXPLORE →</span>
+                </a>
+            </div>
         </div>
 
-        <div class="services-grid">
-            <a href="service-detail.html?id=1" class="service-card">
-                <img src="images/content writer.png" alt="Branding" class="service-image">
-                <h3 class="service-name">BRANDING</h3>
-                <p class="service-description">Identities that stand out and stick.</p>
-                <span class="service-link">EXPLORE →</span>
-            </a>
-
-            <a href="service-detail.html?id=2" class="service-card">
-                <img src="images/web developer.png" alt="Web Design" class="service-image">
-                <h3 class="service-name">WEB DESIGN</h3>
-                <p class="service-description">Websites that look great and work smart.</p>
-                <span class="service-link">EXPLORE →</span>
-            </a>
-
-            <a href="service-detail.html?id=3" class="service-card">
-                <img src="images/photographer.png" alt="Video Content" class="service-image">
-                <h3 class="service-name">VIDEO / CONTENT</h3>
-                <p class="service-description">Stories that move, engage and inspire.</p>
-                <span class="service-link">EXPLORE →</span>
-            </a>
-
-            <a href="service-detail.html?id=4" class="service-card">
-                <img src="images/social media marketing.png" alt="Development" class="service-image">
-                <h3 class="service-name">DEVELOPMENT</h3>
-                <p class="service-description">Clean, fast and future ready.</p>
-                <span class="service-link">EXPLORE →</span>
-            </a>
-
-            <a href="service-detail.html?id=5" class="service-card">
-                <img src="images/pose 6.png" alt="Strategy" class="service-image">
-                <h3 class="service-name">STRATEGY</h3>
-                <p class="service-description">Ideas backed by thinking and research.</p>
-                <span class="service-link">EXPLORE →</span>
-            </a>
-        </div>
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 4 — CONNECT / WE MAKE WEIRD
 ====================================================== -->
 
-<section class="connect-section page" id="connect">
+    <section class="connect-section page" id="connect">
 
-    <div class="connect-content">
-        <div class="connect-left">
-            <img src="images/pose 3.png" alt="Origami Character" class="connect-character">
-        </div>
-        <div class="connect-center">
-            <h2 class="connect-title">
-                WE MAKE <span class="connect-highlight">WEIRD,</span><br>
-                MEANINGFUL AND<br>
-                <span class="connect-highlight">MEMORABLE</span> STUFF.
-            </h2>
-        </div>
-        <div class="connect-right">
-            <div class="connect-services">
-                <div class="connect-service-item">
-                    <span>Strategy</span>
-                    <span class="plus">+</span>
+        <img src="images/pose 4.png" alt="Origami Character" class="connect-character">
+
+        <div class="connect-content">
+            <div class="connect-header">
+                <div class="section-label"><span class="label-dot"></span> HOW WE WORK</div>
+                <h2 class="connect-title">
+                    FROM <span class="connect-highlight">IDEA</span> TO<br>
+                    <span class="connect-highlight">REALITY.</span>
+                </h2>
+            </div>
+
+            <div class="connect-steps">
+                <div class="connect-step">
+                    <span class="step-number">01</span>
+                    <div class="step-info">
+                        <h3>Discovery</h3>
+                        <p>We learn about your brand, goals, and audience to build a solid foundation.</p>
+                    </div>
                 </div>
-                <div class="connect-service-item">
-                    <span>Design</span>
-                    <span class="plus">+</span>
+                <div class="connect-step">
+                    <span class="step-number">02</span>
+                    <div class="step-info">
+                        <h3>Strategy</h3>
+                        <p>We plan the approach — what to say, where to say it, and how to stand out.</p>
+                    </div>
                 </div>
-                <div class="connect-service-item">
-                    <span>Development</span>
-                    <span class="plus">+</span>
+                <div class="connect-step">
+                    <span class="step-number">03</span>
+                    <div class="step-info">
+                        <h3>Design</h3>
+                        <p>We craft visuals that capture attention and communicate your brand identity.</p>
+                    </div>
                 </div>
-                <div class="connect-service-item">
-                    <span>Content</span>
-                    <span class="plus">+</span>
+                <div class="connect-step">
+                    <span class="step-number">04</span>
+                    <div class="step-info">
+                        <h3>Develop</h3>
+                        <p>We build fast, responsive websites and digital experiences that work seamlessly.</p>
+                    </div>
                 </div>
-                <div class="connect-service-item">
-                    <span>Chaos</span>
-                    <span class="plus">+</span>
+                <div class="connect-step">
+                    <span class="step-number">05</span>
+                    <div class="step-info">
+                        <h3>Launch</h3>
+                        <p>We deploy everything and make sure it runs flawlessly across all platforms.</p>
+                    </div>
+                </div>
+                <div class="connect-step">
+                    <span class="step-number">06</span>
+                    <div class="step-info">
+                        <h3>Grow</h3>
+                        <p>We iterate, optimize, and help your brand evolve with real results.</p>
+                    </div>
                 </div>
             </div>
-            <div class="connect-cta">
-                <p>LET'S BUILD SOMETHING WEIRD TOGETHER.</p>
-                <span class="emoji">😊</span>
-            </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 5 — OUR WORK
 ====================================================== -->
 
-<section class="work-section page" id="work">
+    <section class="work-section page" id="work">
 
-    <div class="work-content">
-        <div class="work-header">
-            <div class="section-label"><span class="label-dot"></span> OUR WORK</div>
-            <h2 class="work-title">
-                SOME OF OUR<br>
-                <span class="work-highlight">FAVORITES</span>
-            </h2>
-            <div class="work-filters">
-                <button class="filter-btn active">ALL</button>
-                <button class="filter-btn">BRANDING</button>
-                <button class="filter-btn">WEB</button>
-                <button class="filter-btn">VIDEO</button>
-                <button class="filter-btn">CONTENT</button>
-                <button class="filter-btn">IDENTITY</button>
+        <img src="images/pose 3.png" alt="Origami Character" class="work-character">
+
+        <div class="work-content">
+            <div class="work-header">
+                <div class="section-label"><span class="label-dot"></span> OUR WORK</div>
+                <h2 class="work-title">
+                    SOME OF OUR<br>
+                    <span class="work-highlight">FAVORITES</span>
+                </h2>
+                <div class="work-filters">
+                    <button class="filter-btn active">ALL</button>
+                    <button class="filter-btn">BRANDING</button>
+                    <button class="filter-btn">WEB</button>
+                    <button class="filter-btn">VIDEO</button>
+                    <button class="filter-btn">CONTENT</button>
+                    <button class="filter-btn">IDENTITY</button>
+                </div>
+            </div>
+
+            <div class="work-grid">
+                <a href="project-detail.html?id=1" class="work-card">
+                    <img src="images/project01.jpeg" alt="NKS Gaming GOs">
+                    <div class="work-overlay">
+                        <span class="work-category">BRANDING</span>
+                        <span class="work-name">NKS GAMING GOs</span>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=2" class="work-card">
+                    <img src="images/project02.jpeg" alt="RVS Loaders">
+                    <div class="work-overlay">
+                        <span class="work-category">BRANDING</span>
+                        <span class="work-name">RVS LOADERS</span>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=3" class="work-card">
+                    <img src="images/project03.jpeg" alt="Shadow Legends">
+                    <div class="work-overlay">
+                        <span class="work-category">CONTENT</span>
+                        <span class="work-name">SHADOW LEGENDS</span>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=4" class="work-card">
+                    <img src="images/project04.jpeg" alt="NKS Blackworks">
+                    <div class="work-overlay">
+                        <span class="work-category">BRANDING</span>
+                        <span class="work-name">NKS BLACKWORKS</span>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=5" class="work-card">
+                    <img src="images/project05.jpeg" alt="Project Chaos">
+                    <div class="work-overlay">
+                        <span class="work-category">VIDEO EDIT</span>
+                        <span class="work-name">PROJECT CHAOS</span>
+                    </div>
+                </a>
+                <a href="project-detail.html?id=6" class="work-card">
+                    <img src="images/web developer.png" alt="Kethus's Chaos">
+                    <div class="work-overlay">
+                        <span class="work-category">VISUAL IDENTITY</span>
+                        <span class="work-name">KETHUS'S CHAOS</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-footer">
+                <button class="load-more-btn">LOAD MORE ↗</button>
             </div>
         </div>
 
-        <div class="work-grid">
-            <a href="project-detail.html?id=1" class="work-card">
-                <img src="images/project01.jpeg" alt="NKS Gaming GOs">
-                <div class="work-overlay">
-                    <span class="work-category">BRANDING</span>
-                    <span class="work-name">NKS GAMING GOs</span>
-                </div>
-            </a>
-            <a href="project-detail.html?id=2" class="work-card">
-                <img src="images/project02.jpeg" alt="RVS Loaders">
-                <div class="work-overlay">
-                    <span class="work-category">BRANDING</span>
-                    <span class="work-name">RVS LOADERS</span>
-                </div>
-            </a>
-            <a href="project-detail.html?id=3" class="work-card">
-                <img src="images/project03.jpeg" alt="Shadow Legends">
-                <div class="work-overlay">
-                    <span class="work-category">CONTENT</span>
-                    <span class="work-name">SHADOW LEGENDS</span>
-                </div>
-            </a>
-            <a href="project-detail.html?id=4" class="work-card">
-                <img src="images/project04.jpeg" alt="NKS Blackworks">
-                <div class="work-overlay">
-                    <span class="work-category">BRANDING</span>
-                    <span class="work-name">NKS BLACKWORKS</span>
-                </div>
-            </a>
-            <a href="project-detail.html?id=5" class="work-card">
-                <img src="images/project05.jpeg" alt="Project Chaos">
-                <div class="work-overlay">
-                    <span class="work-category">VIDEO EDIT</span>
-                    <span class="work-name">PROJECT CHAOS</span>
-                </div>
-            </a>
-            <a href="project-detail.html?id=6" class="work-card">
-                <img src="images/web developer.png" alt="Kethus's Chaos">
-                <div class="work-overlay">
-                    <span class="work-category">VISUAL IDENTITY</span>
-                    <span class="work-name">KETHUS'S CHAOS</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="work-footer">
-            <button class="load-more-btn">LOAD MORE ↗</button>
-        </div>
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
+    <!-- =====================================================
      SECTION 6 — CONTACT US
 ====================================================== -->
 
-<section class="contact-section" id="contact">
+    <section class="contact-section" id="contact">
 
-    <div class="contact-content">
-        <div class="contact-character">
-            <img src="images/pose 6.png" alt="DOTNEKT Character" class="contact-character-img">
-        </div>
-        <div class="contact-main">
-            <div class="contact-left">
-                <div class="section-label section-label-light"><span class="label-dot"></span> CONTACT US</div>
-                <h2 class="contact-title">
-                    LET'S CREATE<br>
-                    SOMETHING<br>
-                    <span class="contact-highlight">AWESOME.</span>
-                </h2>
-                <p class="contact-description">
-                    Tell us about your project and we'll get back to you faster than you can say chaos.
-                </p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">EMAIL</span>
-                        <a href="mailto:hello@dotnekt.studio">hello@dotnekt.studio</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">PHONE</span>
-                        <a href="tel:+919876543210">+91 98765 43210</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">LOCATION</span>
-                        <span>India (Remote First)</span>
+        <div class="contact-content">
+            <div class="contact-character">
+                <img src="images/pose 6.png" alt="DOTNEKT Character" class="contact-character-img">
+            </div>
+            <div class="contact-main">
+                <div class="contact-left">
+                    <div class="section-label section-label-light"><span class="label-dot"></span> CONTACT US</div>
+                    <h2 class="contact-title">
+                        LET'S CREATE<br>
+                        SOMETHING<br>
+                        <span class="contact-highlight">AWESOME.</span>
+                    </h2>
+                    <p class="contact-description">
+                        Tell us about your project and we'll get back to you faster than you can say chaos.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">EMAIL</span>
+                            <a href="mailto:hello@dotnekt.studio">hello@dotnekt.studio</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">PHONE</span>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LOCATION</span>
+                            <span>India (Remote First)</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="contact-right">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Project Details" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">SEND MESSAGE ↗</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-left">
-            <img src="images/pose 1.png" alt="DOTNEKT" class="footer-logo">
-            <span class="footer-brand">DOTNEKT</span>
-        </div>
-        <div class="footer-center">
-            <span>© 2026 DOTNEKT Studio.</span>
-            <span>All rights reserved.</span>
-        </div>
-        <div class="footer-right">
-            <div class="footer-contact-info">
-                <a href="mailto:hello@dotnekt.studio">hello@dotnekt.studio</a>
-                <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
-            <div class="footer-social-section">
-                <span>Follow the chaos</span>
-                <div class="footer-social">
-                    <a href="#">Be</a>
-                    <a href="#">Ig</a>
-                    <a href="#">Dr</a>
+                <div class="contact-right">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Project Details" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">SEND MESSAGE ↗</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </footer>
 
-</section>
+        <footer class="footer">
+            <div class="footer-left">
+                <img src="images/logo orange.png" alt="DOTNEKT" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <span>© 2026 DOTNEKT Studio.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <div class="footer-contact-info">
+                    <a href="mailto:dotnekt@gmail.com">dotnekt@gmail.com</a>
+                    <a href="tel:+919652216655">+91 9652216655</a>
+                </div>
+                <div class="footer-social-section">
+                    <span>Follow the chaos</span>
+                    <div class="footer-social">
+                        <a href="#">Be</a>
+                        <a href="#">Ig</a>
+                        <a href="#">Dr</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </section>
 
 
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
