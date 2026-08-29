@@ -10,6 +10,16 @@ body {
     color: var(--cream);
     font-family: 'Space Grotesk', sans-serif;
     overflow: hidden;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body::before,
+.noise-overlay {
+    display: none !important;
 }
 
 
@@ -22,12 +32,18 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 10000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 42px;
     background: transparent;
+    pointer-events: auto;
+}
+
+.detail-nav a {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .logo {
@@ -313,13 +329,19 @@ body {
    ========================================================= */
 
 .project-footer {
-    position: absolute;
+    position: fixed;
     left: 7vw;
     right: 7vw;
     bottom: 20px;
-    z-index: 10;
+    z-index: 10000;
     display: flex;
     justify-content: space-between;
+    pointer-events: auto;
+}
+
+.project-footer a {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .project-footer .back {

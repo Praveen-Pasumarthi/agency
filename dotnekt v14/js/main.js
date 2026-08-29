@@ -386,6 +386,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =====================================================
+    // WORK DETAIL — DYNAMIC DATA LOADING
+    // =====================================================
+
+    const workCategories = [
+        {
+            id: 1,
+            label: '01 / DESIGN',
+            title: 'DESIGN',
+            category: 'Logos, Flyers, Brochures & Visual Identity',
+            about: 'We craft bold, memorable visual identities that make brands stand out. From logo design to complete brand guidelines, our design work captures the essence of every brand we touch.',
+            services: 'Logo Design<br>Brand Identity<br>Flyers & Brochures<br>Visual Identity Systems<br>Business Cards',
+            placeholder: 'RECIPE IN PROGRESS',
+            prevId: 4,
+            nextId: 2
+        },
+        {
+            id: 2,
+            label: '02 / EDITING',
+            title: 'EDITING',
+            category: 'Photo Editing, Video Editing & Production',
+            about: 'From concept to final cut, we produce visual content that captures attention and drives engagement. Our editing work spans photo retouching, video production, and motion graphics.',
+            services: 'Photo Editing<br>Video Editing<br>Video Production<br>Motion Graphics<br>Color Grading',
+            placeholder: 'STIRRING UP IDEAS',
+            prevId: 1,
+            nextId: 3
+        },
+        {
+            id: 3,
+            label: '03 / WEB',
+            title: 'WEB',
+            category: 'Design & Development',
+            about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics, and seamless user experiences.',
+            services: 'UI/UX Design<br>Responsive Development<br>Landing Pages<br>E-Commerce Solutions<br>CMS Integration',
+            placeholder: 'UNDER CONSTRUCTION',
+            prevId: 2,
+            nextId: 4
+        },
+        {
+            id: 4,
+            label: '04 / SOCIAL',
+            title: 'SOCIAL',
+            category: 'Social Media Marketing',
+            about: 'We create and manage social media strategies that connect brands with their audiences. From content creation to campaign management, we help brands grow their digital presence.',
+            services: 'Social Media Strategy<br>Content Creation<br>Campaign Management<br>Community Growth<br>Analytics & Reporting',
+            placeholder: 'ALMOST READY TO SERVE',
+            prevId: 3,
+            nextId: 1
+        }
+    ];
+
+    // Check if we're on the work detail page
+    const workTitle = document.getElementById('workTitle');
+    if (workTitle) {
+        const params = new URLSearchParams(window.location.search);
+        const workId = parseInt(params.get('id')) || 1;
+        const work = workCategories.find(w => w.id === workId) || workCategories[0];
+
+        // Update page title
+        document.getElementById('pageTitle').textContent = `${work.title} — DOTNEKT`;
+
+        // Update page content
+        document.getElementById('workLabel').textContent       = work.label;
+        document.getElementById('workTitle').textContent       = work.title;
+        document.getElementById('workCategory').textContent    = work.category;
+        document.getElementById('workAbout').textContent       = work.about;
+        document.getElementById('workServices').innerHTML      = work.services;
+        document.getElementById('workPlaceholder').textContent = work.placeholder;
+
+        // Prev / Next navigation
+        const prevLink = document.getElementById('prevWorkLink');
+        const nextLink = document.getElementById('nextWorkLink');
+
+        if (work.id === 1) {
+            prevLink.href = 'index.html#work';
+            prevLink.innerHTML = '&mdash; BACK TO WORK';
+        } else {
+            prevLink.href = `work-detail.html?id=${work.prevId}`;
+            prevLink.innerHTML = '&mdash; PREV CATEGORY';
+        }
+
+        nextLink.href = `work-detail.html?id=${work.nextId}`;
+        nextLink.innerHTML = 'NEXT CATEGORY <span>/</span>';
+    }
+
+
+    // =====================================================
     // PEOPLE PAGE — DYNAMIC DATA LOADING
     // =====================================================
 

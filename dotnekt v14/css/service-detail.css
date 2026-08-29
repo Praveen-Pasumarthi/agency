@@ -9,6 +9,16 @@ html, body {
     color: var(--cream);
     font-family: 'Space Grotesk', sans-serif;
     overflow: hidden;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body::before,
+.noise-overlay {
+    display: none !important;
 }
 
 
@@ -21,17 +31,15 @@ html, body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10000;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 42px;
     background: transparent;
-    pointer-events: auto;
 }
 
 .detail-nav a {
-    pointer-events: auto;
     cursor: pointer;
 }
 
@@ -41,7 +49,7 @@ html, body {
     gap: 10px;
     text-decoration: none;
     color: var(--cream);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -149,18 +157,6 @@ html, body {
 .service-dot-1 { transform: rotate(0deg); }
 .service-dot-2 { transform: rotate(120deg); }
 .service-dot-3 { transform: rotate(240deg); }
-
-.orbit-center-dot {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: var(--orange);
-    z-index: 2;
-}
 
 
 /* ANIMATION */
@@ -340,18 +336,12 @@ html, body {
     left: 7vw;
     right: 7vw;
     bottom: 20px;
-    z-index: 10000;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
-    pointer-events: auto;
 }
 
 .service-footer a {
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.service-footer .back {
     color: var(--cream);
     text-decoration: none;
     font-size: 10px;
@@ -360,20 +350,7 @@ html, body {
     transition: color 0.3s ease;
 }
 
-.service-footer .back:hover {
-    color: var(--orange);
-}
-
-.next-service {
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.next-service:hover {
+.service-footer a:hover {
     color: var(--orange);
 }
 

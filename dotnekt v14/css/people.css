@@ -331,8 +331,15 @@ body::before {
 }
 
 @keyframes peopleFloat {
-    0%, 100% { transform: scale(1) translateY(0); }
-    50% { transform: scale(1) translateY(-8px); }
+
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1) translateY(-8px);
+    }
 }
 
 .people-image-container:hover .people-image {
