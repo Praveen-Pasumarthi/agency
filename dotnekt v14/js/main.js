@@ -90,22 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =====================================================
-    // SMOOTH SCROLL
-    // =====================================================
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
     // =====================================================
     // CONTACT FORM
     // =====================================================
@@ -473,6 +457,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.3 });
 
         peopleImages.forEach(img => imageObserver.observe(img));
+    }
+
+    // =====================================================
+    // SERVICE DETAIL — IMAGE REVEAL ANIMATION
+    // =====================================================
+
+    const serviceImage = document.querySelector('.service-image');
+    if (serviceImage) {
+        setTimeout(() => {
+            serviceImage.classList.add('revealed');
+        }, 300);
     }
 
 });

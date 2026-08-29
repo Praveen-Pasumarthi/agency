@@ -21,12 +21,18 @@ html, body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 10000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 42px;
     background: transparent;
+    pointer-events: auto;
+}
+
+.detail-nav a {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .back-link {
@@ -144,6 +150,18 @@ html, body {
 .service-dot-2 { transform: rotate(120deg); }
 .service-dot-3 { transform: rotate(240deg); }
 
+.orbit-center-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--orange);
+    z-index: 2;
+}
+
 
 /* ANIMATION */
 
@@ -197,7 +215,7 @@ html, body {
 
 .service-tagline {
     margin-top: 25px;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 1px;
     color: rgba(245, 240, 235, 0.5);
 }
@@ -212,7 +230,7 @@ html, body {
 }
 
 .info-label {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 3px;
     color: var(--orange);
     text-transform: uppercase;
@@ -221,7 +239,7 @@ html, body {
 
 .info-text {
     max-width: 390px;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 2.0;
     color: rgba(245, 240, 235, 0.6);
 }
@@ -232,7 +250,7 @@ html, body {
 
 
 /* =========================================================
-   IMAGE
+   IMAGE — PEOPLE-STYLE CIRCULAR FRAME
    ========================================================= */
 
 .service-main-image {
@@ -241,16 +259,75 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0b0b0b;
-    border: 1px solid rgba(245, 240, 235, 0.15);
     overflow: hidden;
 }
 
-.service-main-image img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    display: block;
+.service-image-container {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-image-bg {
+    position: absolute;
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.15;
+    border: 2px solid rgba(245, 240, 235, 0.12);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.service-image-container:hover .service-image-bg {
+    opacity: 0.25;
+    transform: scale(1.05);
+}
+
+.service-image {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-image.revealed {
+    opacity: 1;
+    transform: scale(1);
+    animation: serviceImageFloat 5s ease-in-out infinite 0.6s;
+}
+
+@keyframes serviceImageFloat {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1) translateY(-8px); }
+}
+
+.service-image-container:hover .service-image {
+    animation-play-state: paused;
+    transform: scale(1.05);
+}
+
+/* Ring decoration */
+.service-image-container::before {
+    content: '';
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 240, 235, 0.08);
+    transition: border-color 0.4s ease;
+}
+
+.service-image-container:hover::before {
+    border-color: rgba(245, 240, 235, 0.18);
 }
 
 
@@ -259,13 +336,19 @@ html, body {
    ========================================================= */
 
 .service-footer {
-    position: absolute;
+    position: fixed;
     left: 7vw;
     right: 7vw;
     bottom: 20px;
-    z-index: 10;
+    z-index: 10000;
     display: flex;
     justify-content: space-between;
+    pointer-events: auto;
+}
+
+.service-footer a {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .service-footer .back {
@@ -343,6 +426,26 @@ html, body {
     .service-main-image {
         height: 60vh;
         margin-top: 45px;
+    }
+
+    .service-image-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .service-image-bg {
+        width: 270px;
+        height: 270px;
+    }
+
+    .service-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .service-image-container::before {
+        width: 290px;
+        height: 290px;
     }
 
     .service-information {
