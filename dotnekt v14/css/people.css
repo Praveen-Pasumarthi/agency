@@ -36,8 +36,21 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 42px;
+    padding: 12px 42px;
     background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin-top: -20px;
 }
 
 .back-link {
@@ -211,7 +224,10 @@ body::before {
    ========================================================= */
 
 .people-header {
-    margin-bottom: 20px;
+    position: absolute;
+    top: 12vh;
+    left: 7vw;
+    z-index: 10;
 }
 
 .people-label {
@@ -239,6 +255,7 @@ body::before {
 .people-grid {
     display: flex;
     flex-direction: column;
+    padding-top: 28vh;
     padding-bottom: 60px;
 }
 
@@ -266,65 +283,76 @@ body::before {
 
 
 /* =========================================================
-   IMAGE CONTAINER — BIG + POP-OUT EFFECT
+   IMAGE CONTAINER — CIRCULAR FRAME EFFECT
    ========================================================= */
 
 .people-image-container {
     position: relative;
     flex-shrink: 0;
-    width: 480px;
-    height: 480px;
+    width: 520px;
+    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .people-image-bg {
     position: absolute;
-    width: 370px;
-    height: 370px;
+    width: 410px;
+    height: 410px;
     border-radius: 50%;
     background: var(--teal);
-    opacity: 0.12;
+    opacity: 0.15;
+    border: 2px solid rgba(245, 240, 235, 0.12);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.people-member:hover .people-image-bg {
-    opacity: 0.2;
+.people-image-container:hover .people-image-bg {
+    opacity: 0.25;
     transform: scale(1.05);
 }
 
 .people-image {
     position: absolute;
-    width: 440px;
-    max-width: none;
-    height: auto;
-    object-fit: contain;
-    transform: translateY(-25px);
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
-    transition: transform 0.4s ease, filter 0.4s ease;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
     z-index: 2;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.people-member:hover .people-image {
-    transform: translateY(-35px);
-    filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.6));
+.people-image.revealed {
+    opacity: 1;
+    transform: scale(1);
+    animation: peopleFloat 5s ease-in-out infinite 0.6s;
 }
 
-/* Pop-out ring decoration */
+@keyframes peopleFloat {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1) translateY(-8px); }
+}
+
+.people-image-container:hover .people-image {
+    animation-play-state: paused;
+    transform: scale(1.05);
+}
+
+/* Ring decoration */
 .people-image-container::before {
     content: '';
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 440px;
+    height: 440px;
     border-radius: 50%;
     border: 1px solid rgba(245, 240, 235, 0.08);
     transition: border-color 0.4s ease;
 }
 
-.people-member:hover .people-image-container::before {
-    border-color: rgba(245, 240, 235, 0.15);
+.people-image-container:hover::before {
+    border-color: rgba(245, 240, 235, 0.18);
 }
 
 
@@ -345,6 +373,7 @@ body::before {
     text-transform: uppercase;
     margin-bottom: 10px;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .people-role {
@@ -448,22 +477,23 @@ body::before {
     }
 
     .people-image-container {
-        width: 340px;
-        height: 340px;
+        width: 400px;
+        height: 400px;
     }
 
     .people-image-bg {
-        width: 280px;
-        height: 280px;
+        width: 330px;
+        height: 330px;
     }
 
     .people-image {
-        width: 360px;
+        width: 300px;
+        height: 300px;
     }
 
     .people-image-container::before {
-        width: 300px;
-        height: 300px;
+        width: 360px;
+        height: 360px;
     }
 
     .people-info {
@@ -523,7 +553,8 @@ body::before {
     }
 
     .people-image {
-        width: 340px;
+        width: 250px;
+        height: 250px;
     }
 
     .people-image-container::before {
@@ -569,21 +600,22 @@ body::before {
     }
 
     .people-image-bg {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
     }
 
     .people-image {
-        width: 270px;
+        width: 190px;
+        height: 190px;
     }
 
     .people-image-container::before {
-        width: 220px;
-        height: 220px;
+        width: 230px;
+        height: 230px;
     }
 
     .people-name {
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
     .people-role {

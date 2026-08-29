@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =====================================================
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -103,33 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     block: 'start'
                 });
             }
-        });
-    });
-
-    // =====================================================
-    // WORK FILTERS
-    // =====================================================
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const workCards = document.querySelectorAll('.work-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-
-            // For now, just animate the cards (no actual filtering logic)
-            workCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 50);
-            });
         });
     });
 
@@ -237,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // TILT EFFECT ON CARDS
     // =====================================================
 
-    document.querySelectorAll('.project-card, .work-card, .service-card, .hero-tag').forEach(card => {
+    document.querySelectorAll('.project-card, .service-card, .hero-tag').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -325,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'CHARACTER ART / BRAND IDENTITY',
             about: 'Stylized character illustration and brand identity with low-poly aesthetic, featuring tech-savvy gamer persona. Modern digital art meets gaming culture.',
             services: 'Character Art<br>Brand Identity<br>Digital Illustration',
-            image: 'images/web developer.png',
+            image: 'images/services/web-developer.png',
             nextId: 1,
             nextTitle: 'NKS GAMING GOs'
         }
@@ -366,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tagline: 'Identities that stand out and stick.',
             about: 'We craft bold, memorable brand identities that resonate with your audience and set you apart from the competition. From logo design to complete brand guidelines.',
             deliverables: 'Logo Design<br>Brand Guidelines<br>Visual Identity System<br>Business Cards',
-            image: 'images/social media marketing.png',
+            image: 'images/services/social-media-marketing.png',
             nextId: 2,
             nextTitle: 'WEB DESIGN AND DEVELOPMENT'
         },
@@ -377,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tagline: 'Websites that look great and work smart.',
             about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics.',
             deliverables: 'UI/UX Design<br>Responsive Development<br>CMS Integration<br>E-Commerce Solutions',
-            image: 'images/web developer.png',
+            image: 'images/services/web-developer.png',
             nextId: 3,
             nextTitle: 'VIDEO/CONTENT EDITING'
         },
@@ -388,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tagline: 'Stories that move, engage and inspire.',
             about: 'From concept to final cut, we produce video content and visual stories that capture attention and drive engagement across all platforms.',
             deliverables: 'Video Production<br>Motion Graphics<br>Social Media Content<br>Thumbnail Design',
-            image: 'images/photographer.png',
+            image: 'images/services/photographer.png',
             nextId: 4,
             nextTitle: 'CONTENT WRITING'
         },
@@ -399,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tagline: 'Words that connect, inform and convert.',
             about: 'We create compelling written content that tells your brand story, engages your audience, and drives meaningful results across all platforms.',
             deliverables: 'Blog Posts & Articles<br>Social Media Copy<br>Website Content<br>Email Campaigns',
-            image: 'images/content writer.png',
+            image: 'images/services/content-writer.png',
             nextId: 1,
             nextTitle: 'SOCIAL MEDIA BRANDING'
         }
@@ -435,31 +408,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamMembers = [
         {
             id: 1,
-            name: 'ARJUN REDDY',
-            role: 'CREATIVE DIRECTOR',
-            bio: 'Visionary leader with a passion for bold, boundary-pushing design. Arjun brings over a decade of experience in brand strategy and visual identity, shaping stories that resonate and inspire.',
-            image: 'images/team 1.png'
+            name: 'SINDHU REDDY',
+            role: 'PHOTOGRAPHER & DESIGNER',
+            bio: 'Capturing the world through a creative lens, Sindhu brings stories to life with her photographic eye and design expertise.',
+            image: 'images/team/sindhu.png'
         },
         {
             id: 2,
-            name: 'PRIYA SHARMA',
-            role: 'LEAD DESIGNER',
-            bio: 'Detail-obsessed designer who turns complex ideas into clean, elegant visuals. Priya\'s work spans UI/UX, branding, and motion graphics with a keen eye for aesthetics.',
-            image: 'images/team 2.png'
+            name: 'PRAVEEN PASUMARTHI',
+            role: 'WEB DEVELOPER & DESIGNER',
+            bio: 'A versatile developer with a designer\'s instincts. Praveen builds clean, responsive websites while keeping the visual experience sharp, blending code and creativity seamlessly.',
+            image: 'images/team/praveen.jpeg'
         },
         {
             id: 3,
-            name: 'VIKRAM PATEL',
-            role: 'TECH LEAD',
-            bio: 'Full-stack developer with a designer\'s eye. Vikram bridges the gap between creativity and code, building performant web experiences that look as good as they function.',
-            image: 'images/pose 1.png'
+            name: 'NIKHIL KRISHNA',
+            role: 'DESIGNER & EDITOR',
+            bio: 'A creative powerhouse with a sharp eye for detail. Nikhil blends design and editing skills to craft polished visual experiences, from sleek layouts to seamless video cuts.',
+            image: 'images/team/nikhil.jpeg'
         },
         {
             id: 4,
-            name: 'NEHA GUPTA',
-            role: 'CONTENT STRATEGIST',
-            bio: 'Words are her craft, strategy is her game. Neha crafts compelling narratives that connect brands with their audiences across every touchpoint and platform.',
-            image: 'images/pose 2.png'
+            name: 'VENKU REDDY',
+            role: 'FOUNDER & CREATIVE DIRECTOR',
+            bio: 'The driving force behind DOTNEKT. Venku combines visionary leadership with hands-on creative expertise, shaping bold brand identities and guiding every project from concept to delivery.',
+            image: 'images/team/venku.jpeg'
         }
     ];
 
@@ -482,6 +455,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageEl.alt = member.name;
             }
         });
+    }
+
+    // =====================================================
+    // PEOPLE PAGE — IMAGE REVEAL ANIMATION
+    // =====================================================
+
+    const peopleImages = document.querySelectorAll('.people-image');
+    if (peopleImages.length > 0) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    imageObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        peopleImages.forEach(img => imageObserver.observe(img));
     }
 
 });
