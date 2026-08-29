@@ -427,4 +427,61 @@ document.addEventListener('DOMContentLoaded', () => {
         nextLink.innerHTML = `NEXT SERVICE <span>/</span>`;
     }
 
+
+    // =====================================================
+    // PEOPLE PAGE — DYNAMIC DATA LOADING
+    // =====================================================
+
+    const teamMembers = [
+        {
+            id: 1,
+            name: 'ARJUN REDDY',
+            role: 'CREATIVE DIRECTOR',
+            bio: 'Visionary leader with a passion for bold, boundary-pushing design. Arjun brings over a decade of experience in brand strategy and visual identity, shaping stories that resonate and inspire.',
+            image: 'images/team 1.png'
+        },
+        {
+            id: 2,
+            name: 'PRIYA SHARMA',
+            role: 'LEAD DESIGNER',
+            bio: 'Detail-obsessed designer who turns complex ideas into clean, elegant visuals. Priya\'s work spans UI/UX, branding, and motion graphics with a keen eye for aesthetics.',
+            image: 'images/team 2.png'
+        },
+        {
+            id: 3,
+            name: 'VIKRAM PATEL',
+            role: 'TECH LEAD',
+            bio: 'Full-stack developer with a designer\'s eye. Vikram bridges the gap between creativity and code, building performant web experiences that look as good as they function.',
+            image: 'images/pose 1.png'
+        },
+        {
+            id: 4,
+            name: 'NEHA GUPTA',
+            role: 'CONTENT STRATEGIST',
+            bio: 'Words are her craft, strategy is her game. Neha crafts compelling narratives that connect brands with their audiences across every touchpoint and platform.',
+            image: 'images/pose 2.png'
+        }
+    ];
+
+    // Check if we're on the people page
+    const peopleTitle = document.getElementById('peopleTitle');
+    if (peopleTitle) {
+        // Update page content from data
+        teamMembers.forEach((member, index) => {
+            const num = index + 1;
+            const nameEl = document.getElementById(`memberName${num}`);
+            const roleEl = document.getElementById(`memberRole${num}`);
+            const bioEl = document.getElementById(`memberBio${num}`);
+            const imageEl = document.getElementById(`memberImage${num}`);
+
+            if (nameEl) nameEl.textContent = member.name;
+            if (roleEl) roleEl.textContent = member.role;
+            if (bioEl) bioEl.textContent = member.bio;
+            if (imageEl) {
+                imageEl.src = member.image;
+                imageEl.alt = member.name;
+            }
+        });
+    }
+
 });
