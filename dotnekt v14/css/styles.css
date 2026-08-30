@@ -494,15 +494,24 @@ section {
 }
 
 /* =========================================================
+   HAMBURGER BUTTON — HIDDEN ON DESKTOP
+   ========================================================= */
+
+.menu {
+    display: none;
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 800px) {
-    .footer {
-        flex-direction: column;
-        gap: 0;
-        text-align: center;
-        height: auto;
-        padding: 10px 20px;
+    .menu {
+        display: block;
+    }
+
+    .logo-img {
+        height: 45px;
+        margin-left: -10px;
     }
 }

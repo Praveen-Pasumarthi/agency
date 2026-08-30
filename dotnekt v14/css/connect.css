@@ -121,14 +121,28 @@
 }
 
 @media (max-width: 800px) {
+    .connect-section.page {
+        overflow: visible;
+    }
+
     .connect-section {
         padding: 60px 20px;
+        z-index: 5;
+        position: relative;
     }
 
     .connect-character {
         width: 180px;
-        top: -20px;
+        top: -120px;
         right: 10px;
+    }
+
+    .connect-character-2 {
+        display: none;
+    }
+
+    .connect-header {
+        margin-bottom: 40px;
     }
 
     .connect-steps {

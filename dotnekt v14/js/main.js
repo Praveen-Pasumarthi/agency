@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mobileMenu = document.getElementById('mobileMenu');
     const menuClose = document.getElementById('menuClose');
+    const menuOpen = document.getElementById('menuOpen');
 
     if (mobileMenu && menuClose) {
         menuClose.addEventListener('click', () => {
@@ -86,6 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
+        });
+    }
+
+    if (menuOpen && mobileMenu) {
+        menuOpen.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     }
 
@@ -170,10 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroOrbit || heroCharacterWrapper) {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
+            const isMobile = window.innerWidth <= 800;
+            const rate = scrolled * (isMobile ? 0.15 : 0.3);
 
             if (heroOrbit) {
-                heroOrbit.style.transform = `translateY(${-rate}px)`;
+                const orbitTranslateX = isMobile ? 'translateX(-50%) ' : '';
+                heroOrbit.style.transform = `${orbitTranslateX}translateY(${-rate}px)`;
             }
 
             if (heroCharacterWrapper) {

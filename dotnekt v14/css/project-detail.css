@@ -69,11 +69,16 @@ body::before,
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 1.5px solid rgba(245, 240, 235, 0.3);
+    border-radius: 30px;
+    white-space: nowrap;
 }
 
 .back-link:hover {
     color: var(--orange);
+    border-color: var(--orange);
 }
 
 
@@ -350,11 +355,15 @@ body::before,
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 1.5px solid rgba(245, 240, 235, 0.3);
+    border-radius: 30px;
 }
 
 .project-footer .back:hover {
     color: var(--orange);
+    border-color: var(--orange);
 }
 
 .next-project {
@@ -363,11 +372,15 @@ body::before,
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 1.5px solid rgba(245, 240, 235, 0.3);
+    border-radius: 30px;
 }
 
 .next-project:hover {
     color: var(--orange);
+    border-color: var(--orange);
 }
 
 
@@ -385,12 +398,18 @@ body::before,
 
     html,
     body {
-        overflow: auto;
-        height: auto;
+        overflow: hidden;
+        height: 100vh;
     }
 
     .detail-nav {
-        padding: 16px 20px;
+        padding: 12px 20px;
+    }
+
+    .back-link {
+        font-size: 8px;
+        letter-spacing: 2px;
+        padding: 8px 14px;
     }
 
     .project-hero-orbit {
@@ -410,39 +429,78 @@ body::before,
     }
 
     .project-page {
-        height: auto;
-        min-height: calc(100vh - 70px);
-        padding: 40px 20px 80px;
+        height: 100vh;
+        overflow: hidden;
+        padding: 150px 20px 80px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .project-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
     }
 
     .project-title {
-        font-size: 14vw;
+        font-size: 12vw;
         letter-spacing: -3px;
+        line-height: 0.95;
     }
 
-    .project-main-image {
-        width: 260px;
-        height: 260px;
-    }
-
-    .project-main-image::before {
-        width: 300px;
-        height: 300px;
+    .project-category {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-top: 10px;
     }
 
     .project-information {
-        margin-top: 35px;
+        margin-top: 16px;
+    }
+
+    .project-information .info-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+    }
+
+    .project-information .info-text {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .project-information .services-info {
+        margin-top: 12px;
+    }
+
+    .project-details {
+        order: 2;
+    }
+
+    .project-main-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        flex-shrink: 1;
+        order: 1;
+    }
+
+    .project-main-image::before {
+        width: 240px;
+        height: 240px;
     }
 
     .project-footer {
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        margin: 50px 20px 30px;
+        position: fixed;
+        left: 7vw;
+        right: 7vw;
+        bottom: 20px;
     }
 }
 

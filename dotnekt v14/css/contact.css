@@ -311,60 +311,172 @@
     }
 }
 
+/* =========================================================
+   CONTACT + FOOTER — MOBILE
+   ========================================================= */
+
 @media (max-width: 800px) {
-    .contact-content {
-        padding: 60px 20px 30px;
+
+    /* --- Contact Section --- */
+    .contact-section {
+        overflow: hidden;
+        position: relative;
     }
 
-    .contact-character {
+    .contact-content {
+        flex-direction: column;
+        padding: 40px 20px 140px; /* bottom padding leaves room for character */
+        gap: 0;
         position: relative;
-        left: auto;
-        bottom: auto;
-        margin-bottom: -30px;
+    }
+
+    /* Restore character — pinned to bottom-left of the contact content */
+    .contact-character {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        left: -10px;
+        right: auto;
+        transform: none;
+        z-index: 10;
+        pointer-events: none;
     }
 
     .contact-character-img {
-        max-width: 250px;
-        margin: 0 auto;
-        display: block;
+        width: auto;
+        max-width: 160px;
+        height: auto;
+        transform: none;
     }
 
     .contact-main {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         padding-left: 0;
-        gap: 30px;
+        gap: 28px;
+        width: 100%;
     }
 
-    .contact-info {
+    .contact-left {
+        padding-top: 0;
+        text-align: center;
+    }
+
+    .contact-title {
+        font-size: clamp(28px, 9vw, 42px);
+        letter-spacing: -1px;
+    }
+
+    .section-label-light {
         justify-content: center;
     }
 
-    .footer {
-        flex-direction: column;
-        gap: 20px;
+    .contact-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Keep email / phone / location in a single row */
+    .contact-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .contact-item {
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .contact-item a,
+    .contact-item span {
+        font-size: 12px;
+    }
+
+    .contact-label {
+        font-size: 9px;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        font-size: 16px; /* prevents iOS zoom on focus */
+    }
+
+    .submit-btn {
+        align-self: center;
+        width: 100%;
         text-align: center;
-        padding: 30px 20px;
+    }
+
+    /* --- Footer: single compact row --- */
+    .footer {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: auto;
+        gap: 0;
+        padding: 10px 14px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-left {
+        flex-shrink: 0;
+    }
+
+    .footer-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .footer-center {
+        flex: 1;
+        align-items: center;
+        font-size: 9px;
+        gap: 1px;
+        padding: 0 8px;
+        order: 0;
     }
 
     .footer-right {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        order: 0;
+    }
+
+    .footer-contact-info {
+        display: none; /* hide email/phone in footer on mobile — already in contact section */
     }
 
     .footer-social-section {
-        align-items: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .contact-title {
-        font-size: 8vw;
+        align-items: flex-end;
+        gap: 4px;
     }
 
-    .contact-info {
-        flex-direction: column;
-        gap: 20px;
+    .footer-social-section span {
+        display: none; /* hide "Follow the chaos" label to save space */
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+
+    .footer-social a {
+        font-size: 12px;
     }
 }

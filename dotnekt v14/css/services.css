@@ -147,6 +147,11 @@
 @media (max-width: 800px) {
     .services-section {
         padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .services-header {
+        margin-bottom: 20px;
     }
 
     .services-grid {
@@ -155,17 +160,26 @@
     }
 
     .services-title {
-        font-size: 10vw;
+        font-size: 9vw;
     }
 
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-name {
+        font-size: 14px;
+    }
+
+    .service-description {
+        display: none;
     }
 }
 
 @media (max-width: 500px) {
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .service-card {
@@ -179,6 +193,7 @@
     .service-image {
         width: 80px;
         height: 80px;
+        min-width: 80px;
         margin-bottom: 0;
     }
 
@@ -187,12 +202,11 @@
     }
 
     .service-description {
-        font-size: 11px;
-        margin-bottom: 8px;
+        display: none;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+    .service-link {
+        font-size: 12px;
+        white-space: nowrap;
     }
 }
