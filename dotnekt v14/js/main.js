@@ -457,11 +457,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('pageTitle').textContent = `${work.title} — DOTNEKT`;
 
         // Update page content
-        document.getElementById('workLabel').textContent       = work.label;
-        document.getElementById('workTitle').textContent       = work.title;
-        document.getElementById('workCategory').textContent    = work.category;
-        document.getElementById('workAbout').textContent       = work.about;
-        document.getElementById('workServices').innerHTML      = work.services;
+        document.getElementById('workLabel').textContent = work.label;
+        document.getElementById('workTitle').textContent = work.title;
+        document.getElementById('workCategory').textContent = work.category;
+        document.getElementById('workAbout').textContent = work.about;
+        document.getElementById('workServices').innerHTML = work.services;
         document.getElementById('workPlaceholder').textContent = work.placeholder;
 
         // Prev / Next navigation
@@ -488,28 +488,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const teamMembers = [
         {
             id: 1,
-            name: 'SINDHU REDDY',
+            name: 'SINDHU',
             role: 'PHOTOGRAPHER & DESIGNER',
             bio: 'Capturing the world through a creative lens, Sindhu brings stories to life with her photographic eye and design expertise.',
             image: 'images/team/sindhu.png'
         },
         {
             id: 2,
-            name: 'PRAVEEN PASUMARTHI',
+            name: 'PRAVEEN',
             role: 'WEB DEVELOPER & DESIGNER',
             bio: 'A versatile developer with a designer\'s instincts. Praveen builds clean, responsive websites while keeping the visual experience sharp, blending code and creativity seamlessly.',
             image: 'images/team/praveen.jpeg'
         },
         {
             id: 3,
-            name: 'NIKHIL KRISHNA',
+            name: 'NIKHIL',
             role: 'DESIGNER & EDITOR',
             bio: 'A creative powerhouse with a sharp eye for detail. Nikhil blends design and editing skills to craft polished visual experiences, from sleek layouts to seamless video cuts.',
             image: 'images/team/nikhil.jpeg'
         },
         {
             id: 4,
-            name: 'VENKU REDDY',
+            name: 'VENKU',
             role: 'FOUNDER & CREATIVE DIRECTOR',
             bio: 'The driving force behind DOTNEKT. Venku combines visionary leadership with hands-on creative expertise, shaping bold brand identities and guiding every project from concept to delivery.',
             image: 'images/team/venku.jpeg'
