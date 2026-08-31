@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update next service link
         const nextLink = document.getElementById('nextServiceLink');
         nextLink.href = `service-detail.html?id=${service.nextId}`;
-        nextLink.innerHTML = `NEXT SERVICE <span>/</span>`;
+        nextLink.innerHTML = `NEXT SERVICE →`;
     }
 
 
@@ -470,14 +470,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (work.id === 1) {
             prevLink.href = 'index.html#work';
-            prevLink.innerHTML = '&mdash; BACK TO WORK';
+            prevLink.innerHTML = '← BACK TO WORK';
         } else {
             prevLink.href = `work-detail.html?id=${work.prevId}`;
-            prevLink.innerHTML = '&mdash; PREV CATEGORY';
+            prevLink.innerHTML = '← PREV CATEGORY';
         }
 
         nextLink.href = `work-detail.html?id=${work.nextId}`;
-        nextLink.innerHTML = 'NEXT CATEGORY <span>/</span>';
+        nextLink.innerHTML = 'NEXT CATEGORY →';
     }
 
 

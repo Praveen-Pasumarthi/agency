@@ -149,7 +149,8 @@
 .about-stats-row {
     display: flex;
     gap: 32px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .about-stat-item {
@@ -157,7 +158,8 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    min-width: 80px;
+    min-width: 0;
+    flex: 1 1 0;
 }
 
 .about-stat-icon {
@@ -311,163 +313,3 @@
     z-index: 1;
 }
 
-/* =========================================================
-   ABOUT RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1100px) {
-    .about-content {
-        gap: 40px;
-    }
-
-    .about-title {
-        font-size: clamp(40px, 5vw, 60px);
-    }
-
-    .about-orange-circle {
-        width: 280px;
-        height: 280px;
-    }
-}
-
-@media (max-width: 800px) {
-    .about-section {
-        padding: 40px 20px 0;
-    }
-
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .about-left {
-        max-width: 100%;
-    }
-
-    .about-title {
-        font-size: 9vw;
-        letter-spacing: -1px;
-    }
-
-    .about-description {
-        font-size: 13px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .about-stats-row {
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .about-tags {
-        justify-content: center;
-    }
-
-    .about-stat-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
-    }
-
-    .about-stat-label {
-        font-size: 10px;
-    }
-
-    .about-tag {
-        padding: 8px 18px;
-        font-size: 10px;
-    }
-
-    .floating-logo {
-        display: none;
-    }
-
-    .about-right {
-        margin-top: 10px;
-        overflow: visible;
-    }
-
-    .about-image-wrapper {
-        max-width: 100%;
-        overflow: visible;
-        position: relative;
-    }
-
-    .about-character {
-        width: 100%;
-        max-width: 100%;
-        transform: translate(0, 10px);
-    }
-
-    .about-image-wrapper::after {
-        bottom: -10px;
-        opacity: 0.4;
-    }
-
-    .about-speech-bubble {
-        position: absolute;
-        right: 10px;
-        top: -30px;
-        padding: 10px 14px;
-        z-index: 10;
-        width: fit-content;
-        border-radius: 12px;
-    }
-
-    .about-speech-bubble span {
-        font-size: 11px !important;
-        line-height: 1.5;
-        white-space: nowrap;
-    }
-
-    .about-image-wrapper::after {
-        bottom: -30px;
-        opacity: 0.4;
-    }
-
-    .about-deco {
-        display: none;
-    }
-
-    .about-bottom-stats {
-        position: relative;
-        left: auto;
-        transform: none;
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .about-title {
-        font-size: 10vw;
-    }
-
-    .about-stats-row {
-        gap: 14px;
-    }
-
-    .about-stat-item {
-        min-width: 60px;
-    }
-
-    .about-stat-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 13px;
-    }
-
-    .about-tag {
-        padding: 7px 14px;
-        font-size: 9px;
-    }
-
-    .about-speech-bubble {
-        padding: 10px 14px;
-    }
-
-    .about-speech-bubble span {
-        font-size: 11px;
-    }
-}

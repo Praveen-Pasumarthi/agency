@@ -501,17 +501,3 @@ section {
     display: none;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 800px) {
-    .menu {
-        display: block;
-    }
-
-    .logo-img {
-        height: 45px;
-        margin-left: -10px;
-    }
-}

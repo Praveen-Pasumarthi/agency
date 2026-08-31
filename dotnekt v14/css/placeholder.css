@@ -46,6 +46,9 @@ html, body {
     color: var(--orange);
 }
 
+.back-text-short {
+    display: none;
+}
 
 /* =========================================================
    ORBIT (reused from project-detail)
