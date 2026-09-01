@@ -104,7 +104,7 @@
     align-items: center;
     gap: 10px;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -113,8 +113,8 @@
 }
 
 .label-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--orange);
     border-radius: 50%;
     display: inline-block;
@@ -123,7 +123,7 @@
 /* Title */
 .about-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(48px, 5.5vw, 72px);
+    font-size: clamp(52px, 6vw, 80px);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -2px;
@@ -138,8 +138,8 @@
 /* Description */
 .about-description {
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    color: #555;
+    font-size: 17px;
+    color: #3a3a3a;
     line-height: 1.8;
     margin-bottom: 40px;
     max-width: 480px;
@@ -158,8 +158,6 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    min-width: 0;
-    flex: 1 1 0;
 }
 
 .about-stat-icon {
@@ -192,18 +190,19 @@
 }
 
 .about-tag {
-    border: 1.5px solid var(--dark);
-    padding: 10px 24px;
+    border: none;
+    padding: 14px 28px;
     border-radius: 30px;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    color: var(--dark);
-    background: transparent;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--cream);
+    background: var(--dark);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    position: relative;
 }
 
 .about-tag:hover {
@@ -269,8 +268,8 @@
 /* Speech bubble */
 .about-speech-bubble {
     position: absolute;
-    top: 20px;
-    right: -20px;
+    top: 100px;
+    right: 80px;
     background: var(--cream);
     border: 2px solid var(--dark);
     border-radius: 16px;
@@ -312,4 +311,3 @@
     border-top: 10px solid var(--cream);
     z-index: 1;
 }
-

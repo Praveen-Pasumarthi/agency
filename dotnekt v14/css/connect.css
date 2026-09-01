@@ -6,7 +6,7 @@
     background: var(--cream);
     padding: 80px 42px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     min-height: auto;
 }
 
@@ -45,7 +45,7 @@
 
 .connect-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(40px, 5.5vw, 72px);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -3px;
@@ -84,7 +84,7 @@
 
 .step-number {
     font-family: 'Inter', sans-serif;
-    font-size: 42px;
+    font-size: 22px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.2);
     line-height: 1;
@@ -92,7 +92,7 @@
 
 .connect-step h3 {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 800;
     color: var(--cream);
     letter-spacing: 0.5px;
@@ -100,8 +100,7 @@
 }
 
 .connect-step p {
-    font-size: 13px;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
 }
-

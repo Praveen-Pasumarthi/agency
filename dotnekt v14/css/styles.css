@@ -265,9 +265,9 @@ section {
 /* Floating logo across sections */
 .floating-logo {
     position: absolute;
-    width: 50px;
-    top: 40px;
-    right: 10%;
+    width: 150px;
+    top: 0px;
+    right: calc(10% - 80px);
     z-index: 5;
     pointer-events: none;
     opacity: 0.6;
@@ -406,7 +406,7 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gray-500);
@@ -414,8 +414,8 @@ section {
 }
 
 .label-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--orange);
     border-radius: 50%;
 }
@@ -500,4 +500,3 @@ section {
 .menu {
     display: none;
 }
-

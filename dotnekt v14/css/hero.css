@@ -33,7 +33,7 @@
 }
 
 .logo-img {
-    height: 250px;
+    height: 260px;
     width: auto;
     object-fit: contain;
 }
@@ -183,7 +183,7 @@
 
 .hero-description {
     font-size: 18px;
-    color: var(--gray-600);
+    color: #3a3a3a;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -297,8 +297,8 @@
 /* Orbit Image */
 .hero-orbit-wrapper {
     position: absolute;
-    top: 30px;
-    left: -10px;
+    top: 40px;
+    left: 30px;
     width: 90%;
     height: 90%;
     z-index: 1;
@@ -313,8 +313,8 @@
 /* Main Character */
 .hero-character-wrapper {
     position: absolute;
-    bottom: -60px;
-    right: -60px;
+    bottom: -110px;
+    right: -170px;
     width: 850px;
     height: 850px;
     z-index: 20;
@@ -430,4 +430,3 @@
     height: 100%;
     object-fit: contain;
 }
-

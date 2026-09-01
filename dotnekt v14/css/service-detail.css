@@ -44,7 +44,7 @@ body::before,
 }
 
 .detail-nav .logo-img {
-    height: clamp(50px, 6vw, 100px);
+    height: clamp(60px, 6vw, 110px);
     width: auto;
 }
 
@@ -475,7 +475,7 @@ body::before,
     }
 
     .detail-nav .logo-img {
-        height: clamp(40px, 10vw, 65px);
+        height: clamp(50px, 10vw, 75px);
     }
 
     .back-link {
