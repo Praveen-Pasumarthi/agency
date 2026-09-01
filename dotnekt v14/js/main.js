@@ -335,18 +335,18 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'SOCIAL MEDIA BRANDING',
             tagline: 'Identities that stand out and stick.',
             about: 'We craft bold, memorable brand identities that resonate with your audience and set you apart from the competition. From logo design to complete brand guidelines.',
-            deliverables: 'Logo Design<br>Brand Guidelines<br>Visual Identity System<br>Business Cards',
+            deliverables: 'Brand Guidelines<br>Social Media Posts<br>Campaigns',
             image: 'images/services/social-media-marketing.png',
             nextId: 2,
-            nextTitle: 'WEB DESIGN AND DEVELOPMENT'
+            nextTitle: 'DESIGN AND WEB DEVELOPMENT'
         },
         {
             id: 2,
-            label: '02 / WEB DESIGN AND DEVELOPMENT',
-            title: 'WEB DESIGN AND DEVELOPMENT',
+            label: '02 / DESIGN AND WEB DEVELOPMENT',
+            title: 'DESIGN AND WEB DEVELOPMENT',
             tagline: 'Websites that look great and work smart.',
             about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics.',
-            deliverables: 'UI/UX Design<br>Responsive Development<br>CMS Integration<br>E-Commerce Solutions',
+            deliverables: 'UI/UX Design<br>Responsive Web Development<br>Logo Design & Thumbnail Design<br> Flyers & Brochures',
             image: 'images/services/web-developer.png',
             nextId: 3,
             nextTitle: 'VIDEO/CONTENT EDITING'
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'VIDEO/CONTENT EDITING',
             tagline: 'Stories that move, engage and inspire.',
             about: 'From concept to final cut, we produce video content and visual stories that capture attention and drive engagement across all platforms.',
-            deliverables: 'Video Production<br>Motion Graphics<br>Social Media Content<br>Thumbnail Design',
+            deliverables: 'Video Production<br>Social Media Content<br>Photography<br> Reels & Short Form Video',
             image: 'images/services/photographer.png',
             nextId: 4,
             nextTitle: 'CONTENT WRITING'
@@ -407,9 +407,9 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             label: '01 / DESIGN',
             title: 'DESIGN',
-            category: 'Logos, Flyers, Brochures & Visual Identity',
+            category: 'Logos, Flyers & Brochures',
             about: 'We craft bold, memorable visual identities that make brands stand out. From logo design to complete brand guidelines, our design work captures the essence of every brand we touch.',
-            services: 'Logo Design<br>Brand Identity<br>Flyers & Brochures<br>Visual Identity Systems<br>Business Cards',
+            services: 'Logo Design<br>Thumbnail Design<br>Flyers & Brochures',
             placeholder: 'RECIPE IN PROGRESS',
             prevId: 4,
             nextId: 2
@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'EDITING',
             category: 'Photo Editing, Video Editing & Production',
             about: 'From concept to final cut, we produce visual content that captures attention and drives engagement. Our editing work spans photo retouching, video production, and motion graphics.',
-            services: 'Photo Editing<br>Video Editing<br>Video Production<br>Motion Graphics<br>Color Grading',
+            services: 'Photo Editing<br>Video Editing<br>Reels & Short Form Video<br>Color Grading',
             placeholder: 'STIRRING UP IDEAS',
             prevId: 1,
             nextId: 3
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'WEB',
             category: 'Design & Development',
             about: 'We design and build fast, responsive, visually stunning websites that convert visitors into customers. Clean code, modern aesthetics, and seamless user experiences.',
-            services: 'UI/UX Design<br>Responsive Development<br>Landing Pages<br>E-Commerce Solutions<br>CMS Integration',
+            services: 'UI/UX Design<br>Responsive Web Development<br> Hosting and Deployment',
             placeholder: 'UNDER CONSTRUCTION',
             prevId: 2,
             nextId: 4
