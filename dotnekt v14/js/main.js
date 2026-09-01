@@ -79,12 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenu && menuClose) {
         menuClose.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
+            menuOpen.classList.remove('active');
             document.body.style.overflow = '';
         });
 
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                menuOpen.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuOpen && mobileMenu) {
         menuOpen.addEventListener('click', () => {
             mobileMenu.classList.add('active');
+            menuOpen.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     }

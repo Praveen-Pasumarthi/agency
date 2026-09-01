@@ -104,35 +104,34 @@
     cursor: pointer;
     display: none;
     position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-.menu-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+.menu-line {
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
     background: var(--dark);
     display: block;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.dot-top {
-    top: 9px;
-    left: 50%;
-    transform: translateX(-50%);
+.menu.active .menu-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.dot-left {
-    left: 11px;
-    bottom: 9px;
+.menu.active .menu-line:nth-child(2) {
+    opacity: 0;
 }
 
-.dot-right {
-    right: 11px;
-    bottom: 9px;
+.menu.active .menu-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-.menu:hover .menu-dot {
+.menu:hover .menu-line {
     background: var(--orange);
 }
 

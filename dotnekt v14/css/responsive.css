@@ -112,6 +112,11 @@
     .connect-character {
         width: 250px;
         right: 30px;
+        top: -80px;
+    }
+
+    .connect-header {
+        margin-bottom: 100px;
     }
 
     .connect-steps {
@@ -156,11 +161,11 @@
 
     /* --- GLOBAL --- */
     .menu {
-        display: block;
+        display: flex;
     }
 
     .logo-img {
-        height: 45px;
+        height: clamp(80px, 26vw, 130px);
         margin-left: -10px;
     }
 
@@ -273,7 +278,48 @@
     }
 
     .deco-greeting {
-        display: none;
+        position: absolute;
+        z-index: 15;
+    }
+
+    .deco-greeting-1 {
+        top: 90px;
+        left: 15%;
+        width: auto;
+        height: auto;
+    }
+
+    .deco-greeting-3 {
+        top: 35%;
+        left: 85%;
+        width: auto;
+        height: auto;
+        bottom: auto;
+    }
+
+    .deco-greeting-4 {
+        top: 60%;
+        right: 5%;
+        left: auto;
+        width: auto;
+        height: auto;
+        bottom: auto;
+    }
+
+    .deco-greeting-5 {
+        top: auto;
+        bottom: 30%;
+        left: 5%;
+        width: auto;
+        height: auto;
+    }
+
+    .greeting-text {
+        font-size: 12px;
+    }
+
+    .greeting-telugu {
+        font-size: 14px;
     }
 
     .hero-description {
@@ -443,7 +489,7 @@
 
     .connect-character {
         width: 180px;
-        top: -120px;
+        top: 10px;
         right: 10px;
     }
 
@@ -777,7 +823,7 @@
     /* --- CONNECT --- */
     .connect-character {
         width: 140px;
-        top: -10px;
+        top: 10px;
         right: 5px;
     }
 

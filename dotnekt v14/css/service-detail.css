@@ -475,7 +475,7 @@ body::before,
     }
 
     .detail-nav .logo-img {
-        height: clamp(35px, 8vw, 60px);
+        height: clamp(40px, 10vw, 65px);
     }
 
     .back-link {
