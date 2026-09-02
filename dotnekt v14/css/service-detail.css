@@ -475,7 +475,7 @@ body::before,
         margin: 0;
         padding: 14px 20px;
         gap: 14px;
-        background: linear-gradient(to top, #1a1a1a 60%, transparent);
+        background: #1a1a1a;
         z-index: 10;
     }
 
@@ -626,7 +626,7 @@ body::before,
         margin: 0;
         padding: 12px 16px;
         gap: 10px;
-        background: linear-gradient(to top, #1a1a1a 60%, transparent);
+        background: #1a1a1a;
         z-index: 10;
     }
 
@@ -648,8 +648,8 @@ body::before,
 
     html,
     body {
-        overflow: hidden;
-        height: 100%;
+        overflow: auto;
+        height: auto;
     }
 
     .service-hero-orbit {
@@ -659,36 +659,38 @@ body::before,
     }
 
     .service-page {
-        padding: 35px 7vw 80px;
-        height: calc(100vh - 75px);
+        padding: 100px 5vw 100px;
+        height: auto;
+        min-height: 100vh;
         display: grid;
         grid-template-columns: 0.8fr 1.2fr;
-        column-gap: 6vw;
+        column-gap: 5vw;
         align-items: center;
+        overflow: visible;
     }
 
     .service-main-image {
-        height: min(72vh, 650px);
+        height: auto;
     }
 
     .service-image-container {
-        width: 400px;
-        height: 400px;
+        width: 380px;
+        height: 380px;
     }
 
     .service-image-bg {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
     }
 
     .service-image {
-        width: 290px;
-        height: 290px;
+        width: 270px;
+        height: 270px;
     }
 
     .service-image-container::before {
-        width: 340px;
-        height: 340px;
+        width: 320px;
+        height: 320px;
     }
 
     .service-label {
@@ -721,7 +723,7 @@ body::before,
         margin: 0;
         padding: 16px 40px;
         gap: 16px;
-        background: linear-gradient(to top, #1a1a1a 60%, transparent);
+        background: #1a1a1a;
         z-index: 100;
     }
 

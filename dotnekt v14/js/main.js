@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrolled = window.pageYOffset;
             const width = window.innerWidth;
             const isMobile = width <= 800;
-            const isTablet = width <= 1024;
+            const isPortrait = window.innerHeight >= width;
+            const isTablet = width <= 1024 || (!isPortrait && width <= 1400);
             const rate = scrolled * (isMobile ? 0.15 : 0.3);
 
             if (heroOrbit && !isTablet) {
