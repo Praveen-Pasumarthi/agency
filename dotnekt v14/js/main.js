@@ -181,23 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroOrbit || heroCharacterWrapper) {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const isMobile = window.innerWidth <= 800;
+            const width = window.innerWidth;
+            const isMobile = width <= 800;
+            const isTablet = width <= 1024;
             const rate = scrolled * (isMobile ? 0.15 : 0.3);
 
-            if (heroOrbit) {
+            if (heroOrbit && !isTablet) {
                 const orbitTranslateX = isMobile ? 'translateX(-50%) ' : '';
                 heroOrbit.style.transform = `${orbitTranslateX}translateY(${-rate}px)`;
             }
 
-            if (heroCharacterWrapper) {
+            if (heroCharacterWrapper && !isTablet) {
                 heroCharacterWrapper.style.transform = `translateY(${-rate * 0.8}px)`;
             }
 
-            if (heroBrushTeal) {
+            if (heroBrushTeal && !isTablet) {
                 heroBrushTeal.style.transform = `translateY(${-rate * 0.8}px)`;
             }
 
-            if (heroBadge) {
+            if (heroBadge && !isTablet) {
                 heroBadge.style.transform = `translateY(${-rate * 0.6}px)`;
             }
         });

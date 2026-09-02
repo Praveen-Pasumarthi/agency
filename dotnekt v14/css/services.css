@@ -89,6 +89,9 @@
     will-change: transform;
     text-decoration: none;
     color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .service-card:hover {
@@ -98,10 +101,11 @@
 
 .service-image {
     width: 100%;
-    aspect-ratio: 1;
+    flex: 1;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 14px;
+    min-height: 0;
 }
 
 .service-name {
@@ -112,6 +116,7 @@
     letter-spacing: 1px;
     margin-bottom: 6px;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .service-description {
@@ -119,6 +124,7 @@
     color: rgba(239, 225, 196, 0.5);
     line-height: 1.5;
     margin-bottom: 12px;
+    flex-shrink: 0;
 }
 
 .service-link {
@@ -128,6 +134,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .service-link:hover {
