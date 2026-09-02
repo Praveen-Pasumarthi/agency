@@ -639,3 +639,96 @@ body::before,
         white-space: nowrap;
     }
 }
+
+/* =========================================================
+   LANDSCAPE — iPad landscape (1024–1400px)
+   Replicates desktop split layout with gradient footer
+   ========================================================= */
+@media (min-width: 1024px) and (max-width: 1400px) and (orientation: landscape) {
+
+    html,
+    body {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .service-hero-orbit {
+        width: 140vmin;
+        height: 140vmin;
+        opacity: 0.06;
+    }
+
+    .service-page {
+        padding: 35px 7vw 80px;
+        height: calc(100vh - 75px);
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        column-gap: 6vw;
+        align-items: center;
+    }
+
+    .service-main-image {
+        height: min(72vh, 650px);
+    }
+
+    .service-image-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .service-image-bg {
+        width: 320px;
+        height: 320px;
+    }
+
+    .service-image {
+        width: 290px;
+        height: 290px;
+    }
+
+    .service-image-container::before {
+        width: 340px;
+        height: 340px;
+    }
+
+    .service-label {
+        font-size: 10px;
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    .service-title {
+        font-size: clamp(30px, 5vw, 60px);
+        letter-spacing: -1px;
+    }
+
+    .service-tagline {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    .info-text {
+        font-size: 15px;
+        line-height: 2.0;
+        max-width: 390px;
+    }
+
+    .service-footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 16px 40px;
+        gap: 16px;
+        background: linear-gradient(to top, #1a1a1a 60%, transparent);
+        z-index: 100;
+    }
+
+    .service-footer a {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        padding: 12px 24px;
+        white-space: nowrap;
+    }
+}

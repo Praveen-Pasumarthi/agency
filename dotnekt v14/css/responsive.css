@@ -2113,3 +2113,313 @@
         font-size: 10px;
     }
 }
+
+/* =========================================================
+   LANDSCAPE — iPad Air / Pro landscape (1024–1200px)
+   Prevents desktop row layout from breaking hero + about
+   ========================================================= */
+@media (min-width: 1024px) and (max-width: 1200px) and (orientation: landscape) {
+
+    /* --- HERO --- */
+    .hero {
+        padding: 0 60px;
+        overflow: visible;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .hero-left {
+        max-width: 45%;
+        width: 45%;
+        margin-left: 0;
+        padding-top: 60px;
+        padding-left: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 4.5vw, 54px);
+    }
+
+    .hero-description {
+        font-size: clamp(13px, 1.5vw, 17px);
+        max-width: 100%;
+    }
+
+    .hero-right {
+        width: 550px;
+        height: 550px;
+        position: absolute;
+        top: 47%;
+        right: -80px;
+        transform: translateY(-50%);
+        overflow: visible;
+    }
+
+    .hero-orbit-wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 420px;
+        height: 420px;
+        z-index: 1;
+    }
+
+    .hero-character-wrapper {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        width: 480px;
+        height: 480px;
+        z-index: 20;
+    }
+
+    /* --- ABOUT --- */
+    .about-section {
+        padding: 50px 40px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: left;
+        gap: 30px;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-left {
+        max-width: 55%;
+        width: 55%;
+        padding-top: 0;
+        padding-right: 0;
+    }
+
+    .about-description {
+        max-width: 100%;
+    }
+
+    .about-body {
+        max-width: 100%;
+    }
+
+    .about-brand-tagline {
+        max-width: 100%;
+    }
+
+    .about-right {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .about-character {
+        width: 80%;
+        max-width: 80%;
+        transform: translate(0, 20px);
+    }
+}
+
+/* =========================================================
+   LANDSCAPE — iPad Mini landscape (820–1024px)
+   ========================================================= */
+@media (min-width: 820px) and (max-width: 1024px) and (orientation: landscape) {
+
+    /* --- HERO --- */
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 60px;
+    }
+
+    .hero-right {
+        width: 100%;
+        height: 450px;
+        position: relative;
+        display: block;
+        overflow: visible;
+        margin-top: -10px;
+    }
+
+    .hero-orbit-wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 380px;
+        height: 380px;
+        z-index: 1;
+    }
+
+    .hero-character-wrapper {
+        position: absolute;
+        bottom: 10px;
+        right: -4%;
+        width: 430px;
+        height: 430px;
+        z-index: 20;
+    }
+
+    /* --- ABOUT --- */
+    .about-content {
+        flex-direction: column;
+        text-align: left;
+        gap: 30px;
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .about-left {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 0;
+        padding-right: 0;
+    }
+
+    .about-description {
+        max-width: 100%;
+    }
+
+    .about-body {
+        max-width: 100%;
+    }
+
+    .about-brand-tagline {
+        max-width: 100%;
+    }
+
+    .about-right {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .about-character {
+        width: 100%;
+        max-width: 100%;
+        transform: translate(0, 20px);
+    }
+}
+
+/* =========================================================
+   LANDSCAPE — iPad Pro 12.9" landscape (1200–1400px)
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1400px) and (orientation: landscape) {
+
+    /* --- HERO --- */
+    .hero {
+        padding: 0 70px;
+        overflow: visible;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .hero-left {
+        max-width: 50%;
+        width: 50%;
+        margin-left: 0;
+        padding-top: 60px;
+        padding-left: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(36px, 5vw, 65px);
+    }
+
+    .hero-description {
+        font-size: clamp(14px, 1.7vw, 20px);
+        max-width: 100%;
+    }
+
+    .hero-right {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        top: 47%;
+        right: -100px;
+        transform: translateY(-50%);
+        overflow: visible;
+    }
+
+    .hero-orbit-wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 480px;
+        height: 480px;
+        z-index: 1;
+    }
+
+    .hero-character-wrapper {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        width: 530px;
+        height: 530px;
+        z-index: 20;
+    }
+
+    /* --- ABOUT --- */
+    .about-section {
+        padding: 50px 50px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: left;
+        gap: 30px;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-left {
+        max-width: 55%;
+        width: 55%;
+        padding-top: 0;
+        padding-right: 0;
+    }
+
+    .about-description {
+        max-width: 100%;
+    }
+
+    .about-body {
+        max-width: 100%;
+    }
+
+    .about-brand-tagline {
+        max-width: 100%;
+    }
+
+    .about-right {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .about-character {
+        width: 80%;
+        max-width: 80%;
+        transform: translate(0, 20px);
+    }
+}
