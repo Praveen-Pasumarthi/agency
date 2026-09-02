@@ -1677,15 +1677,15 @@
     }
 
     .step-number {
-        font-size: 24px;
-    }
-
-    .connect-step h3 {
         font-size: 16px;
     }
 
+    .connect-step h3 {
+        font-size: 20px;
+    }
+
     .connect-step p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .connect-title {
@@ -1927,22 +1927,40 @@
     }
 
     .cloud-box-hero {
-        width: clamp(80px, 12vw, 110px);
-        height: clamp(80px, 12vw, 110px);
-        top: -360px;
-        right: 15px;
+        display: none;
     }
 
-    .cloud-box-hero .cloud-box-text {
-        font-size: 10px;
+    .brush-stroke {
+        display: none;
+    }
+
+    .deco-greeting-1 {
+        top: 80px;
+        left: 15%;
+    }
+
+    .deco-greeting-3 {
+        top: 70%;
+        bottom: 40%;
+        left: 85%;
+    }
+
+    .deco-greeting-4 {
+        top: 15%;
+        right: 5%;
+    }
+
+    .deco-greeting-5 {
+        bottom: 20%;
+        left: 5%;
     }
 
     .greeting-text {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .greeting-telugu {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .hero-tag {
@@ -1994,39 +2012,76 @@
     }
 
     /* --- SERVICES --- */
+    .services-section {
+        padding: 40px 16px;
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .services-content {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
     .services-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     .service-card {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        gap: 14px;
-        padding: 14px;
+        gap: 8px;
+        padding: 12px;
+        width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
+        border-radius: 16px;
     }
 
     .service-image {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
         margin-bottom: 0;
-        border-radius: 12px;
+        border-radius: 10px;
+        object-fit: cover;
     }
 
     .service-name {
-        font-size: 12px;
+        font-size: 10px;
+        margin-bottom: 0;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
     }
 
-    .service-descriptionription {
+    .service-description {
         display: none;
     }
 
     .service-link {
-        font-size: 11px;
+        font-size: 9px;
         white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* --- ABOUT --- */
+    .about-content {
+        text-align: center;
+    }
+
+    .about-description {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .about-body {
+        font-size: 14px;
+        text-align: center;
     }
 
     /* --- CONNECT --- */
