@@ -2214,8 +2214,23 @@
         max-width: 100%;
     }
 
+    .about-tags {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .about-tag {
+        padding: 8px 16px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .about-speech-bubble {
+        display: none;
+    }
+
     .about-right {
-        margin-top: 0;
+        margin-top: 80px;
         display: flex;
         justify-content: flex-end;
         flex: 0 0 50%;
@@ -2428,8 +2443,19 @@
         max-width: 100%;
     }
 
+    .about-tags {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .about-tag {
+        padding: 10px 20px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
     .about-right {
-        margin-top: 0;
+        margin-top: 140px;
         display: flex;
         justify-content: flex-end;
         flex: 0 0 50%;
