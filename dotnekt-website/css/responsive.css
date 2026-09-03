@@ -4,13 +4,150 @@
    ========================================================= */
 
 /* =========================================================
+   1101px – 1536px — LAPTOP SCREENS & ASPECT RATIOS
+   ========================================================= */
+@media (min-width: 1101px) and (max-width: 1536px) {
+    .hero {
+        padding: 0 45px;
+    }
+
+    .hero-content {
+        max-width: 1300px;
+        padding-top: 25px;
+    }
+
+    .hero-left {
+        margin-left: 0;
+        max-width: 580px;
+        padding-top: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(42px, 4.4vw, 70px);
+        letter-spacing: -2.5px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.65;
+        margin-bottom: 14px;
+        max-width: 540px;
+    }
+
+    .hero-right {
+        width: 720px;
+        height: 720px;
+        right: -100px;
+        top: 50%;
+    }
+
+    .hero-character-wrapper {
+        width: 640px;
+        height: 640px;
+        bottom: -40px;
+        right: -80px;
+    }
+
+    .hero-orbit-wrapper {
+        width: 88%;
+        height: 88%;
+    }
+
+    .cloud-box-hero {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cloud-box-hero .cloud-box-text {
+        font-size: 11px;
+    }
+
+    .brush-orange {
+        left: -180px;
+        top: 65%;
+        width: 320px;
+        height: 320px;
+        opacity: 0.5;
+    }
+
+    .deco-greeting-1 {
+        top: 90px;
+        left: 36%;
+    }
+
+    .deco-greeting-3 {
+        bottom: 42%;
+        left: 53%;
+    }
+
+    .deco-greeting-5 {
+        bottom: 20%;
+        left: 52%;
+    }
+}
+
+/* Shorter laptop viewport heights (e.g. 1366x768, 1440x900, scaled 1080p) */
+@media (min-width: 1101px) and (max-height: 820px) {
+    .hero nav {
+        height: 70px;
+    }
+
+    .logo-img {
+        height: 140px;
+    }
+
+    .hero-content {
+        padding-top: 0;
+    }
+
+    .hero-left {
+        padding-top: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(34px, 3.4vw, 50px);
+        letter-spacing: -2px;
+        margin-bottom: 10px;
+        white-space: nowrap;
+    }
+
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 6px;
+        max-width: 490px;
+    }
+
+    .hero-right {
+        width: 580px;
+        height: 580px;
+        right: -60px;
+        top: 50%;
+    }
+
+    .hero-character-wrapper {
+        width: 500px;
+        height: 500px;
+        bottom: -20px;
+        right: -40px;
+    }
+}
+
+/* =========================================================
    1200px — LARGE TABLET (hero only)
    ========================================================= */
 @media (max-width: 1200px) {
+    .hero-left {
+        margin-left: 0;
+        max-width: 560px;
+    }
+
     .hero-right {
-        width: 750px;
-        height: 750px;
-        right: -150px;
+        width: 700px;
+        height: 700px;
+        right: -120px;
     }
 
     .hero-character-wrapper {

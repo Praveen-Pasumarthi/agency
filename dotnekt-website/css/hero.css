@@ -19,6 +19,8 @@
 .hero nav {
     position: relative;
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 90px;
     display: flex;
     align-items: center;
@@ -149,23 +151,24 @@
     width: 100%;
     position: relative;
     z-index: 10;
-    padding-top: 40px;
+    padding-top: 25px;
 }
 
 .hero-left {
-    margin-left: -160px;
-    max-width: 750px;
-    padding-top: 40px;
+    margin-left: 0;
+    max-width: 650px;
+    padding-top: 20px;
 }
 
 .hero-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(60px, 7.5vw, 105px);
+    font-size: clamp(46px, 4.4vw, 76px);
     font-weight: 900;
-    line-height: 1;
-    letter-spacing: -4px;
+    line-height: 1.05;
+    letter-spacing: -3px;
     color: var(--dark);
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    white-space: nowrap;
 }
 
 .hero-highlight {
@@ -182,10 +185,11 @@
 }
 
 .hero-description {
-    font-size: 18px;
+    font-size: 16px;
     color: #222222;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    line-height: 1.65;
+    margin-bottom: 14px;
+    max-width: 580px;
 }
 
 .hero-tags {
@@ -405,11 +409,12 @@
 }
 
 .brush-orange {
-    left: -200px;
-    top: 50%;
-    width: 400px;
-    height: 400px;
+    left: -220px;
+    top: 65%;
+    width: 360px;
+    height: 360px;
     rotate: 70deg;
+    opacity: 0.55;
 }
 
 .brush-orange img {
